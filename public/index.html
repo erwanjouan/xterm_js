@@ -22,10 +22,93 @@
       height: 100%;
       padding: 8px;
     }
+
+    /* Command Palette */
+    #cp-backdrop {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      background: rgba(0, 0, 0, 0.45);
+    }
+    #command-palette {
+      position: absolute;
+      top: 18%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 520px;
+      background: #252526;
+      border: 1px solid #454545;
+      border-radius: 6px;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.7);
+      overflow: hidden;
+    }
+    #cp-input {
+      width: 100%;
+      padding: 12px 16px;
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid #3c3c3c;
+      color: #d4d4d4;
+      font-family: Menlo, Monaco, "Courier New", monospace;
+      font-size: 14px;
+      outline: none;
+    }
+    #cp-input::placeholder { color: #555; }
+    #cp-list {
+      list-style: none;
+      margin: 0;
+      padding: 4px 0;
+      max-height: 320px;
+      overflow-y: auto;
+    }
+    #cp-list li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 7px 16px;
+      color: #ccc;
+      font-family: Menlo, Monaco, "Courier New", monospace;
+      font-size: 13px;
+      cursor: pointer;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+    #cp-list li:hover { background: #2a2d2e; }
+    #cp-list li.cp-selected {
+      background: #094771;
+      color: #fff;
+    }
+    .cp-icon {
+      flex-shrink: 0;
+      width: 16px;
+      text-align: center;
+      font-size: 11px;
+    }
+    .cp-icon-cmd  { color: #666; }
+    .cp-icon-link { color: #4ec9b0; }
+    #cp-list li.cp-selected .cp-icon-cmd  { color: #aaa; }
+    #cp-list li.cp-selected .cp-icon-link { color: #9cdcfe; }
+    #cp-hint {
+      padding: 6px 16px;
+      font-size: 11px;
+      color: #555;
+      font-family: Menlo, Monaco, "Courier New", monospace;
+      border-top: 1px solid #3c3c3c;
+    }
   </style>
 </head>
 <body>
   <div id="terminal"></div>
+
+  <div id="cp-backdrop">
+    <div id="command-palette">
+      <input id="cp-input" type="text" placeholder="Search commands…" autocomplete="off" spellcheck="false" />
+      <ul id="cp-list"></ul>
+      <div id="cp-hint">↑↓ navigate &nbsp;·&nbsp; Tab fill &nbsp;·&nbsp; Enter run &nbsp;·&nbsp; Esc close</div>
+    </div>
+  </div>
+
   <script src="/client.js"></script>
 </body>
 </html>

@@ -42,10 +42,16 @@ const ws_1 = require("ws");
 const pty = __importStar(require("node-pty"));
 const path_1 = __importDefault(require("path"));
 const fs_1 = __importDefault(require("fs"));
+const js_yaml_1 = __importDefault(require("js-yaml"));
 const app = (0, express_1.default)();
 const server = (0, http_1.createServer)(app);
 const wss = new ws_1.WebSocketServer({ server });
 app.use(express_1.default.static(path_1.default.join(__dirname, '../public')));
+app.get('/api/config', (_req, res) => {
+    const configPath = path_1.default.join(__dirname, '../config.yaml');
+    const config = js_yaml_1.default.load(fs_1.default.readFileSync(configPath, 'utf8'));
+    res.json(config);
+});
 function resolveShell() {
     if (process.platform !== 'win32') {
         return {

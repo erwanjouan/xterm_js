@@ -1,1 +1,5 @@
 node_modules
+.idea
+dist/
+public/client.js
+public/client.css

@@ -4,12 +4,19 @@ import { WebSocketServer, WebSocket } from 'ws';
 import * as pty from 'node-pty';
 import path from 'path';
 import fs from 'fs';
+import yaml from 'js-yaml';
 
 const app = express();
 const server = createServer(app);
 const wss = new WebSocketServer({ server });
 
 app.use(express.static(path.join(__dirname, '../public')));
+
+app.get('/api/config', (_req, res) => {
+  const configPath = path.join(__dirname, '../config.yaml');
+  const config = yaml.load(fs.readFileSync(configPath, 'utf8'));
+  res.json(config);
+});
 
 function resolveShell(): { shell: string; args: string[]; env: Record<string, string> } {
   if (process.platform !== 'win32') {

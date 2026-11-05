@@ -1,0 +1,20 @@
+commands:
+  - symbol: "🐍"
+    label: "i indep"
+  - symbol: "🐍"
+    label: "i docus-perso"
+  - symbol: "☕"
+    label: "i ma-petite-entreprise"
+  - symbol: "🐍"
+    label: "i tech-notes"
+
+links:
+  - symbol: "🐙"
+    label: "GitHub"
+    url: "https://github.com"
+  - symbol: "📦"
+    label: "npm"
+    url: "https://npmjs.com"
+  - symbol: "📖"
+    label: "MDN"
+    url: "https://developer.mozilla.org"
