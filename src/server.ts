@@ -6,15 +6,27 @@ import path from 'path';
 import fs from 'fs';
 import yaml from 'js-yaml';
 
+interface CommandConfig {
+  label: string;
+  symbol?: string;
+  steps?: string[];
+}
+
+interface AppConfig {
+  commands: CommandConfig[];
+  links: { label: string; url: string; symbol?: string }[];
+}
+
 const app = express();
 const server = createServer(app);
 const wss = new WebSocketServer({ server });
 
+const configPath = path.join(__dirname, '../config.yaml');
+const config = yaml.load(fs.readFileSync(configPath, 'utf8')) as AppConfig;
+
 app.use(express.static(path.join(__dirname, '../public')));
 
 app.get('/api/config', (_req, res) => {
-  const configPath = path.join(__dirname, '../config.yaml');
-  const config = yaml.load(fs.readFileSync(configPath, 'utf8'));
   res.json(config);
 });
 
@@ -62,6 +74,11 @@ function resolveShell(): { shell: string; args: string[]; env: Record<string, st
   };
 }
 
+function writeToTty(ptyProcess: pty.IPty, data: string) {
+  if (process.platform === 'win32') ptyProcess.write(data); // ConPTY workaround: first write is consumed internally
+  ptyProcess.write(data);
+}
+
 const { shell, args, env: shellEnv } = resolveShell();
 
 wss.on('connection', (ws: WebSocket) => {
@@ -87,11 +104,19 @@ wss.on('connection', (ws: WebSocket) => {
     }
   });
 
-  ws.on('message', (raw: Buffer) => {
+  ws.on('message', async (raw: Buffer) => {
     try {
       const msg = JSON.parse(raw.toString());
       if (msg.type === 'input') {
-        ptyProcess.write(msg.data);
+        writeToTty(ptyProcess, msg.data);
+      } else if (msg.type === 'command') {
+        const command = config.commands.find(c => c.label === msg.name);
+        if (!command) return;
+        const steps = command.steps ?? [command.label];
+        for (const step of steps) {
+          writeToTty(ptyProcess, step + '\r');
+          await new Promise(resolve => setTimeout(resolve, 100));
+        }
       } else if (msg.type === 'resize') {
         ptyProcess.resize(msg.cols, msg.rows);
       }

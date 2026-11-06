@@ -137,7 +137,7 @@ class CommandPalette {
       window.open(s.url, '_blank', 'noopener,noreferrer');
     } else {
       if (this.ws.readyState === WebSocket.OPEN) {
-        this.ws.send(JSON.stringify({ type: 'input', data: s.label + '\r' }));
+        this.ws.send(JSON.stringify({ type: 'command', name: s.label }));
       }
     }
     this.close();

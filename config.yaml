@@ -1,12 +1,24 @@
 commands:
   - symbol: "🐍"
-    label: "i indep"
+    label: "docus-perso"
+    steps:
+      - "cd ~/Development/mkdocs/DocusPerso"
+      - "pycharm . > /dev/null 2>&1 &"
   - symbol: "🐍"
-    label: "i docus-perso"
+    label: "indep"
+    steps:
+      - "cd ~/Development/mkdocs/indep"
+      - "pycharm . > /dev/null 2>&1 &"
+  - symbol: "🐍"
+    label: "tech-notes"
+    steps:
+      - "cd ~/Development/mkdocs/tech-notes"
+      - "pycharm . > /dev/null 2>&1 &"
   - symbol: "☕"
-    label: "i ma-petite-entreprise"
-  - symbol: "🐍"
-    label: "i tech-notes"
+    label: "ma-petite-entreprise"
+    steps:
+      - "cd ~/Development/java/ma-petite-entreprise"
+      - "idea pom.xml > /dev/null 2>&1 &"
 
 links:
   - symbol: "🐙"
