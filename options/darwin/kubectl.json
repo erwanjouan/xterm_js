@@ -141,7 +141,7 @@
   },
   {
     "flags": "annotate",
-    "description": "Mettre à jour les annotations d'une ressource"
+    "description": "Update the annotations on a resource"
   },
   {
     "flags": "completion",
@@ -157,7 +157,7 @@
   },
   {
     "flags": "config",
-    "description": "Modifier des fichiers kubeconfig"
+    "description": "Modify kubeconfig files"
   },
   {
     "flags": "kuberc",

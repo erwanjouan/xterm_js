@@ -1,1 +1,106 @@
-[]
+[
+  {
+    "flags": "ESTABLISHED",
+    "description": "The socket has an established connection."
+  },
+  {
+    "flags": "SYN_SENT",
+    "description": "The socket is actively attempting to establish a connection."
+  },
+  {
+    "flags": "SYN_RECV",
+    "description": "A connection request has been received from the network."
+  },
+  {
+    "flags": "FIN_WAIT1",
+    "description": "The socket is closed, and the connection is shutting down."
+  },
+  {
+    "flags": "FIN_WAIT2",
+    "description": "Connection is closed, and the socket is waiting for a shutdown from the remote end."
+  },
+  {
+    "flags": "TIME_WAIT",
+    "description": "The socket is waiting after close to handle packets still in the network."
+  },
+  {
+    "flags": "CLOSED",
+    "description": "The socket is not being used."
+  },
+  {
+    "flags": "CLOSE_WAIT",
+    "description": "The remote end has shut down, waiting for the socket to close."
+  },
+  {
+    "flags": "LAST_ACK",
+    "description": "The remote end has shut down, and the socket is closed. Waiting for acknowledgement."
+  },
+  {
+    "flags": "LISTEN",
+    "description": "The socket is listening for incoming connections. Such sockets are not included in the output unless you specify the --listening (-l) or\n--all (-a) option."
+  },
+  {
+    "flags": "CLOSING",
+    "description": "Both sockets are shut down but we still don't have all our data sent."
+  },
+  {
+    "flags": "UNKNOWN",
+    "description": "The state of the socket is unknown."
+  },
+  {
+    "flags": "SOCK_DGRAM",
+    "description": "The socket is used in Datagram (connectionless) mode."
+  },
+  {
+    "flags": "SOCK_STREAM",
+    "description": "This is a stream (connection) socket."
+  },
+  {
+    "flags": "SOCK_RAW",
+    "description": "The socket is used as a raw socket."
+  },
+  {
+    "flags": "SOCK_RDM",
+    "description": "This one serves reliably-delivered messages."
+  },
+  {
+    "flags": "SOCK_SEQPACKET",
+    "description": "This is a sequential packet socket."
+  },
+  {
+    "flags": "SOCK_PACKET",
+    "description": "Raw interface access socket."
+  },
+  {
+    "flags": "UNKNOWN",
+    "description": "Who ever knows what the future will bring us - just fill in here :-)"
+  },
+  {
+    "flags": "FREE",
+    "description": "The socket is not allocated"
+  },
+  {
+    "flags": "LISTENING",
+    "description": "The socket is listening for a connection request. Such sockets are only included in the output if you specify the --listening (-l) or\n--all (-a) option."
+  },
+  {
+    "flags": "CONNECTING",
+    "description": "The socket is about to establish a connection."
+  },
+  {
+    "flags": "CONNECTED",
+    "description": "The socket is connected."
+  },
+  {
+    "flags": "DISCONNECTING",
+    "description": "The socket is disconnecting."
+  },
+  {
+    "flags": "(empty)",
+    "description": "The socket is not connected to another one."
+  },
+  {
+    "flags": "UNKNOWN",
+    "description": "This state should never happen."
+  }
+]

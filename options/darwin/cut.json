@@ -1,0 +1,30 @@
+[
+  {
+    "flags": "-b list",
+    "description": "The list specifies byte positions."
+  },
+  {
+    "flags": "-c list",
+    "description": "The list specifies character positions."
+  },
+  {
+    "flags": "-d delim",
+    "description": "Use delim as the field delimiter character instead of the tab character."
+  },
+  {
+    "flags": "-f list",
+    "description": "The list specifies fields, separated in the input by the field delimiter character (see the -d option).  Output fields are separated by a single occurrence of the field delimiter character."
+  },
+  {
+    "flags": "-n",
+    "description": "Do not split multi-byte characters.  Characters will only be output if at least one byte is selected, and, after a prefix of zero or more unselected bytes, the rest of the bytes that form the character are selected."
+  },
+  {
+    "flags": "-s",
+    "description": "Suppress lines with no field delimiter characters.  Unless specified, lines with no delimiters are passed through unmodified."
+  },
+  {
+    "flags": "-w",
+    "description": "Use whitespace (spaces and tabs) as the delimiter.  Consecutive spaces and tabs count as one single field separator."
+  }
+]
