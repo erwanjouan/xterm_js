@@ -341,20 +341,12 @@ ws.addEventListener('open', () => {
   ws.send(JSON.stringify({ type: 'resize', cols, rows }));
 });
 
-function formatGB(n: number): string {
+function formatBytes(n: number): string {
   return (n / (1024 ** 3)).toFixed(1) + ' GB';
 }
 
-function formatRate(bytesPerSec: number): string {
-  if (bytesPerSec >= 1024 * 1024) return (bytesPerSec / (1024 * 1024)).toFixed(1) + ' MB/s';
-  if (bytesPerSec >= 1024)        return (bytesPerSec / 1024).toFixed(0) + ' KB/s';
-  return bytesPerSec.toFixed(0) + ' B/s';
-}
-
-const cpuEl = document.getElementById('stats-cpu')!;
-const memEl = document.getElementById('stats-mem')!;
-const rxEl  = document.getElementById('stats-rx')!;
-const txEl  = document.getElementById('stats-tx')!;
+const cpuEl  = document.getElementById('stats-cpu')!;
+const memEl  = document.getElementById('stats-mem')!;
 
 ws.addEventListener('message', (event) => {
   const msg = JSON.parse(event.data as string);
@@ -362,9 +354,7 @@ ws.addEventListener('message', (event) => {
     terminal.write(msg.data as string);
   } else if (msg.type === 'stats') {
     cpuEl.textContent = `CPU ${msg.cpu}%`;
-    memEl.textContent = `${formatGB(msg.memUsed)} / ${formatGB(msg.memTotal)}`;
-    rxEl.textContent  = `↓ ${formatRate(msg.netRx)}`;
-    txEl.textContent  = `↑ ${formatRate(msg.netTx)}`;
+    memEl.textContent = `${formatBytes(msg.memUsed)} / ${formatBytes(msg.memTotal)}`;
   }
 });
 
