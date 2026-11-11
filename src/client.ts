@@ -188,7 +188,9 @@ class InputTracker {
 }
 
 function parseInput(line: string): { cmd: string | null; filterText: string } {
-  const raw = line.trimStart();
+  // After a pipe, analyse only the last pipeline segment
+  const pipeIdx = line.lastIndexOf('|');
+  const raw = (pipeIdx === -1 ? line : line.slice(pipeIdx + 1)).trimStart();
   if (!raw) return { cmd: null, filterText: '' };
 
   const tokens = raw.split(/\s+/);
