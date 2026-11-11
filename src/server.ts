@@ -4,6 +4,8 @@ import { WebSocketServer, WebSocket } from 'ws';
 import * as pty from 'node-pty';
 import path from 'path';
 import fs from 'fs';
+import os from 'os';
+import { spawnSync } from 'child_process';
 import yaml from 'js-yaml';
 import { CommandOption } from './man-parser';
 
@@ -169,6 +171,76 @@ wss.on('connection', (ws: WebSocket) => {
     ptyProcess.kill();
   });
 });
+
+// ----- System stats broadcast -------------------------------------------------
+let prevCpus = os.cpus();
+
+function getCpuPercent(prev: os.CpuInfo[], curr: os.CpuInfo[]): number {
+  let totalDelta = 0, idleDelta = 0;
+  for (let i = 0; i < curr.length; i++) {
+    const p = prev[i].times, c = curr[i].times;
+    const pTotal = p.user + p.nice + p.sys + p.idle + p.irq;
+    const cTotal = c.user + c.nice + c.sys + c.idle + c.irq;
+    totalDelta += cTotal - pTotal;
+    idleDelta  += c.idle - p.idle;
+  }
+  return totalDelta > 0 ? Math.round((1 - idleDelta / totalDelta) * 100) : 0;
+}
+
+interface NetSample { rx: number; tx: number; }
+
+function sampleNetworkBytes(): NetSample {
+  if (process.platform === 'linux') {
+    try {
+      let rx = 0, tx = 0;
+      for (const line of fs.readFileSync('/proc/net/dev', 'utf8').split('\n').slice(2)) {
+        const parts = line.trim().split(/\s+/);
+        if (!parts[0] || parts[0].startsWith('lo:')) continue;
+        rx += parseInt(parts[1] ?? '0', 10) || 0;
+        tx += parseInt(parts[9] ?? '0', 10) || 0;
+      }
+      return { rx, tx };
+    } catch { return { rx: 0, tx: 0 }; }
+  }
+  if (process.platform === 'darwin') {
+    const r = spawnSync('netstat', ['-ib'], { encoding: 'utf8' });
+    if (r.status !== 0) return { rx: 0, tx: 0 };
+    let rx = 0, tx = 0;
+    for (const line of r.stdout.split('\n')) {
+      const p = line.trim().split(/\s+/);
+      // Only count hardware Link# rows, skip loopback
+      if (p.length >= 10 && p[2]?.startsWith('<Link') && !p[0]?.startsWith('lo')) {
+        rx += parseInt(p[6] ?? '0', 10) || 0;
+        tx += parseInt(p[9] ?? '0', 10) || 0;
+      }
+    }
+    return { rx, tx };
+  }
+  return { rx: 0, tx: 0 };
+}
+
+const INTERVAL_MS = 2000;
+let prevNet = sampleNetworkBytes();
+
+setInterval(() => {
+  const currCpus = os.cpus();
+  const cpu      = getCpuPercent(prevCpus, currCpus);
+  prevCpus       = currCpus;
+
+  const memTotal = os.totalmem();
+  const memUsed  = memTotal - os.freemem();
+
+  const currNet = sampleNetworkBytes();
+  const netRx   = Math.max(0, currNet.rx - prevNet.rx) / (INTERVAL_MS / 1000);
+  const netTx   = Math.max(0, currNet.tx - prevNet.tx) / (INTERVAL_MS / 1000);
+  prevNet = currNet;
+
+  const payload = JSON.stringify({ type: 'stats', cpu, memUsed, memTotal, netRx, netTx });
+  for (const client of wss.clients) {
+    if (client.readyState === WebSocket.OPEN) client.send(payload);
+  }
+}, INTERVAL_MS);
+// -----------------------------------------------------------------------------
 
 const PORT = Number(process.env.PORT ?? 3000);
 server.listen(PORT, '127.0.0.1', () => {
