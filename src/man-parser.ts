@@ -5,6 +5,47 @@ export interface CommandOption {
   description: string;
 }
 
+// ----- linux.die.net web scraper (Windows fallback) ---------------------------
+
+function stripHtml(html: string): string {
+  return html
+    .replace(/<[^>]+>/g, '')
+    .replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&')
+    .replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&nbsp;/g, ' ')
+    .trim();
+}
+
+export function loadManOptionsFromWeb(cmd: string): CommandOption[] {
+  const result = spawnSync(
+    'curl',
+    ['-s', '--max-time', '10', `https://linux.die.net/man/1/${cmd}`],
+    { encoding: 'utf8', timeout: 15000 }
+  );
+  if (!result.stdout) return [];
+
+  const html = result.stdout;
+  const options: CommandOption[] = [];
+  // Each option block is a <dl compact> … </dl>
+  const dlRe = /<dl compact>([\s\S]*?)<\/dl>/gi;
+  let dlMatch;
+
+  while ((dlMatch = dlRe.exec(html)) !== null) {
+    const parts = dlMatch[1].split(/<dt>/i).slice(1);
+    for (const part of parts) {
+      const ddIdx = part.search(/<dd>/i);
+      if (ddIdx === -1) continue;
+      const flags = stripHtml(part.slice(0, ddIdx));
+      // Description ends at the next <dt> (if any)
+      const afterDd = part.slice(ddIdx + 4);
+      const description = stripHtml(afterDd.split(/<dt>/i)[0]);
+      if (flags) options.push({ flags, description });
+    }
+  }
+
+  return options;
+}
+// -----------------------------------------------------------------------------
+
 export function extractManOptions(text: string): CommandOption[] {
   const lines = text.split('\n');
   const options: CommandOption[] = [];

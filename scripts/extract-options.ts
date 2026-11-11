@@ -1,4 +1,4 @@
-import { loadManOptions, loadGitSubcommands, loadGitSubcmdOptions, loadDockerSubcommands, loadDockerSubcmdOptions, loadKubectlSubcommands, loadKubectlSubcmdOptions } from '../src/man-parser';
+import { loadManOptions, loadManOptionsFromWeb, loadGitSubcommands, loadGitSubcmdOptions, loadDockerSubcommands, loadDockerSubcmdOptions, loadKubectlSubcommands, loadKubectlSubcmdOptions } from '../src/man-parser';
 import path from 'path';
 import fs from 'fs';
 
@@ -51,7 +51,14 @@ for (const cmd of commands) {
       }
     }
   } else {
-    const opts = loadManOptions(cmd);
+    let opts = process.platform === 'win32'
+      ? loadManOptionsFromWeb(cmd)
+      : loadManOptions(cmd);
+    // Fallback to web scraper when local man page returns nothing
+    if (opts.length === 0 && process.platform !== 'win32') {
+      opts = loadManOptionsFromWeb(cmd);
+      if (opts.length > 0) console.log(`  (man returned nothing — fell back to linux.die.net)`);
+    }
     console.log(`${cmd.padEnd(8)} ${opts.length} options  →  ${write(cmd, opts)}`);
   }
 }
