@@ -15,17 +15,16 @@ function stripHtml(html: string): string {
     .trim();
 }
 
-export function loadManOptionsFromWeb(cmd: string): CommandOption[] {
+function fetchOptionsFromSection(cmd: string, section: number): CommandOption[] {
   const result = spawnSync(
     'curl',
-    ['-s', '--max-time', '10', `https://linux.die.net/man/1/${cmd}`],
+    ['-s', '--max-time', '10', `https://linux.die.net/man/${section}/${cmd}`],
     { encoding: 'utf8', timeout: 15000 }
   );
   if (!result.stdout) return [];
 
   const html = result.stdout;
   const options: CommandOption[] = [];
-  // Each option block is a <dl compact> … </dl>
   const dlRe = /<dl compact>([\s\S]*?)<\/dl>/gi;
   let dlMatch;
 
@@ -35,7 +34,6 @@ export function loadManOptionsFromWeb(cmd: string): CommandOption[] {
       const ddIdx = part.search(/<dd>/i);
       if (ddIdx === -1) continue;
       const flags = stripHtml(part.slice(0, ddIdx));
-      // Description ends at the next <dt> (if any)
       const afterDd = part.slice(ddIdx + 4);
       const description = stripHtml(afterDd.split(/<dt>/i)[0]);
       if (flags) options.push({ flags, description });
@@ -43,6 +41,13 @@ export function loadManOptionsFromWeb(cmd: string): CommandOption[] {
   }
 
   return options;
+}
+
+export function loadManOptionsFromWeb(cmd: string): CommandOption[] {
+  // Try section 1 (user commands) first; fall back to section 8 (network/admin)
+  const opts = fetchOptionsFromSection(cmd, 1);
+  if (opts.length > 0) return opts;
+  return fetchOptionsFromSection(cmd, 8);
 }
 // -----------------------------------------------------------------------------
 
