@@ -1,0 +1,82 @@
+[
+  {
+    "flags": "-A",
+    "description": "Display the apparent size instead of the disk usage.  This can be helpful when operating on compressed volumes or sparse files."
+  },
+  {
+    "flags": "-B blocksize",
+    "description": "Calculate block counts in blocksize byte blocks.  This is different from the -h, -k, -m, --si and -g options or setting BLOCKSIZE and gives an estimate of how much space the examined file hierarchy would require on a filesystem with the given blocksize.  Unless in -A mode, blocksize is rounded up to the next multiple of 512."
+  },
+  {
+    "flags": "-H",
+    "description": "Symbolic links on the command line are followed, symbolic links in file hierarchies are not followed."
+  },
+  {
+    "flags": "-I mask",
+    "description": "Ignore files and directories matching the specified mask."
+  },
+  {
+    "flags": "-L",
+    "description": "Symbolic links on the command line and in file hierarchies are followed."
+  },
+  {
+    "flags": "-P",
+    "description": "No symbolic links are followed.  This is the default."
+  },
+  {
+    "flags": "-a",
+    "description": "Display an entry for each file in a file hierarchy."
+  },
+  {
+    "flags": "-c",
+    "description": "Display a grand total."
+  },
+  {
+    "flags": "-d depth",
+    "description": "Display an entry for all files and directories depth directories deep."
+  },
+  {
+    "flags": "-g",
+    "description": "Display block counts in 1073741824-byte (1 GiB) blocks."
+  },
+  {
+    "flags": "-h",
+    "description": "“Human-readable” output.  Use unit suffixes: Byte, Kilobyte, Megabyte, Gigabyte, Terabyte and Petabyte based on powers of 1024."
+  },
+  {
+    "flags": "-k",
+    "description": "Display block counts in 1024-byte (1 kiB) blocks."
+  },
+  {
+    "flags": "-l",
+    "description": "If a file has multiple hard links, count its size multiple times. The default behavior of du is to count files with multiple hard links only once.  When the -l option is specified, the hard link checks are disabled, and these files are counted (and displayed) as many times as they are found."
+  },
+  {
+    "flags": "-m",
+    "description": "Display block counts in 1048576-byte (1 MiB) blocks."
+  },
+  {
+    "flags": "-n",
+    "description": "Ignore files and directories with user “nodump” flag (UF_NODUMP) set."
+  },
+  {
+    "flags": "-r",
+    "description": "Generate messages about directories that cannot be read, files that cannot be opened, and so on.  This is the default case. This option exists solely for conformance with X/Open Portability Guide Issue 4 (“XPG4”)."
+  },
+  {
+    "flags": "-s",
+    "description": "Display an entry for each specified file.  (Equivalent to -d 0)"
+  },
+  {
+    "flags": "-t threshold",
+    "description": "Display only entries for which size exceeds threshold.  If threshold is negative, display only entries for which size is less than the absolute value of threshold."
+  },
+  {
+    "flags": "-x",
+    "description": "File system mount points are not traversed."
+  },
+  {
+    "flags": "-h, -k, -m and --si options all override each other; the last one",
+    "description": "specified determines the block counts used."
+  }
+]

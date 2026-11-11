@@ -1,0 +1,66 @@
+[
+  {
+    "flags": "-a",
+    "description": "Show all mount points, including those that were mounted with the MNT_IGNORE flag.  This is implied for file systems specified on the command line."
+  },
+  {
+    "flags": "-b",
+    "description": "Explicitly use 512 byte blocks, overriding any BLOCKSIZE specification from the environment.  This is the same as the -P option.  The -k option overrides this option."
+  },
+  {
+    "flags": "-c",
+    "description": "Display a grand total."
+  },
+  {
+    "flags": "-g",
+    "description": "Use 1073741824 byte (1 Gibibyte) blocks rather than the default. This overrides any BLOCKSIZE specification from the environment."
+  },
+  {
+    "flags": "-h",
+    "description": "“Human-readable” output.  Use unit suffixes: Byte, Kibibyte, Mebibyte, Gibibyte, Tebibyte and Pebibyte (based on powers of 1024) in order to reduce the number of digits to four or fewer. This applies to the Size, Used, and Avail columns only; the iused and ifree columns will be displayed in powers of 1000."
+  },
+  {
+    "flags": "-H, --si",
+    "description": "Same as -h but based on powers of 1000."
+  },
+  {
+    "flags": "-I",
+    "description": "Suppress inode counts.  See -i below."
+  },
+  {
+    "flags": "-i",
+    "description": "Include statistics on the number of free and used inodes.  In conjunction with the -h or -H options, the number of inodes is scaled by powers of 1000.  In case the filesystem has no inodes then ‘-’ is displayed instead of the usage percentage."
+  },
+  {
+    "flags": "-k",
+    "description": "Use 1024 byte (1 Kibibyte) blocks rather than the default.  This overrides the -P option and any BLOCKSIZE specification from the environment."
+  },
+  {
+    "flags": "-l",
+    "description": "Select locally-mounted file system for display.  If used in combination with the -T type option, file system types will be added or excluded acccording to the parameters of that option."
+  },
+  {
+    "flags": "-m",
+    "description": "Use 1048576 byte (1 Mebibyte) blocks rather than the default. This overrides any BLOCKSIZE specification from the environment."
+  },
+  {
+    "flags": "-n",
+    "description": "Print out the previously obtained statistics from the file systems.  This option should be used if it is possible that one or more file systems are in a state such that they will not be able to provide statistics without a long delay.  When this option is specified, df will not request new statistics from the file systems, but will respond with the possibly stale statistics that were previously obtained."
+  },
+  {
+    "flags": "-P",
+    "description": "Explicitly use 512 byte blocks, overriding any BLOCKSIZE specification from the environment.  This is the same as the -b option.  The -g and -k options override this option.  In compatibility mode, this also suppresses inode counts."
+  },
+  {
+    "flags": "-T type",
+    "description": "Select file systems to display.  More than one type may be specified in a comma separated list.  The list of file system types can be prefixed with “no” to specify the file system types for which action should not be taken.  If used in combination with the -l option, the parameters of this option will modify the list of locally-mounted file systems selected by the -l option. For example, the df command:"
+  },
+  {
+    "flags": "-t",
+    "description": "If used with no arguments, this option is a no-op (macOS already prints the total allocated-space figures).  If used with an argument, it acts like -T, but this usage is deprecated and should not be relied upon."
+  },
+  {
+    "flags": "-Y",
+    "description": "Include file system type."
+  }
+]
