@@ -104,7 +104,6 @@ function resolveShell(): { shell: string; args: string[]; env: Record<string, st
 }
 
 function writeToTty(ptyProcess: pty.IPty, data: string) {
-  if (process.platform === 'win32') ptyProcess.write(data); // ConPTY workaround: first write is consumed internally
   ptyProcess.write(data);
 }
 
@@ -142,7 +141,10 @@ wss.on('connection', (ws: WebSocket) => {
         const command = config.launcher.commands.find(c => c.label === msg.name);
         if (!command) return;
         const steps = command.steps ?? [command.label];
-        for (const step of steps) {
+        // On Windows, ConPTY silently discards the first write after Alt+X opens
+        // the palette. A harmless `echo` absorbs that slot so the real steps land.
+        const allSteps = process.platform === 'win32' ? ['echo', ...steps] : steps;
+        for (const step of allSteps) {
           writeToTty(ptyProcess, step + '\r');
           await new Promise(resolve => setTimeout(resolve, 100));
         }
