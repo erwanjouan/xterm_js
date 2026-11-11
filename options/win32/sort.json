@@ -1,0 +1,118 @@
+[
+  {
+    "flags": "-b, --ignore-leading-blanks",
+    "description": "ignore leading blanks"
+  },
+  {
+    "flags": "-d, --dictionary-order",
+    "description": "consider only blanks and alphanumeric characters"
+  },
+  {
+    "flags": "-f, --ignore-case",
+    "description": "fold lower case to upper case characters"
+  },
+  {
+    "flags": "-g, --general-numeric-sort",
+    "description": "compare according to general numerical value"
+  },
+  {
+    "flags": "-i, --ignore-nonprinting",
+    "description": "consider only printable characters"
+  },
+  {
+    "flags": "-M, --month-sort",
+    "description": "compare (unknown) < 'JAN' < ... < 'DEC'"
+  },
+  {
+    "flags": "-h, --human-numeric-sort",
+    "description": "compare human readable numbers (e.g., 2K 1G)"
+  },
+  {
+    "flags": "-n, --numeric-sort",
+    "description": "compare according to string numerical value"
+  },
+  {
+    "flags": "-R, --random-sort",
+    "description": "sort by random hash of keys"
+  },
+  {
+    "flags": "--random-source=FILE",
+    "description": "get random bytes from FILE"
+  },
+  {
+    "flags": "-r, --reverse",
+    "description": "reverse the result of comparisons"
+  },
+  {
+    "flags": "--sort=WORD",
+    "description": "sort according to WORD: general-numeric -g, human-numeric -h, month -M, numeric -n, random -R, version -V"
+  },
+  {
+    "flags": "-V, --version-sort",
+    "description": "natural sort of (version) numbers within text"
+  },
+  {
+    "flags": "--batch-size=NMERGE",
+    "description": "merge at most NMERGE inputs at once; for more use temp files"
+  },
+  {
+    "flags": "-c, --check, --check=diagnose-first",
+    "description": "check for sorted input; do not sort"
+  },
+  {
+    "flags": "-C, --check=quiet, --check=silent",
+    "description": "like -c, but do not report first bad line"
+  },
+  {
+    "flags": "--compress-program=PROG",
+    "description": "compress temporaries with PROG; decompress them with PROG -d"
+  },
+  {
+    "flags": "--files0-from=F",
+    "description": "read input from the files specified by NUL-terminated names in file F; If F is - then read names from standard input"
+  },
+  {
+    "flags": "-k, --key=POS1[,POS2]",
+    "description": "start a key at POS1 (origin 1), end it at POS2 (default end of line)"
+  },
+  {
+    "flags": "-m, --merge",
+    "description": "merge already sorted files; do not sort"
+  },
+  {
+    "flags": "-o, --output=FILE",
+    "description": "write result to FILE instead of standard output"
+  },
+  {
+    "flags": "-s, --stable",
+    "description": "stabilize sort by disabling last-resort comparison"
+  },
+  {
+    "flags": "-S, --buffer-size=SIZE",
+    "description": "use SIZE for main memory buffer"
+  },
+  {
+    "flags": "-t, --field-separator=SEP",
+    "description": "use SEP instead of non-blank to blank transition"
+  },
+  {
+    "flags": "-T, --temporary-directory=DIR",
+    "description": "use DIR for temporaries, not $TMPDIR or /tmp; multiple options specify multiple directories"
+  },
+  {
+    "flags": "-u, --unique",
+    "description": "with -c, check for strict ordering; without -c, output only the first of an equal run"
+  },
+  {
+    "flags": "-z, --zero-terminated",
+    "description": "end lines with 0 byte, not newline"
+  },
+  {
+    "flags": "--help",
+    "description": "display this help and exit"
+  },
+  {
+    "flags": "--version",
+    "description": "output version information and exit"
+  }
+]

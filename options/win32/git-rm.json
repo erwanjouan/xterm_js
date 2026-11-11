@@ -1,0 +1,38 @@
+[
+  {
+    "flags": "-n, --[no-]dry-run",
+    "description": "dry run"
+  },
+  {
+    "flags": "-q, --[no-]quiet",
+    "description": "do not list removed files"
+  },
+  {
+    "flags": "--[no-]cached",
+    "description": "only remove from the index"
+  },
+  {
+    "flags": "-f, --[no-]force",
+    "description": "override the up-to-date check"
+  },
+  {
+    "flags": "-r",
+    "description": "allow recursive removal"
+  },
+  {
+    "flags": "--[no-]ignore-unmatch exit with a zero status even if nothing matched",
+    "description": ""
+  },
+  {
+    "flags": "--[no-]sparse",
+    "description": "allow updating entries outside of the sparse-checkout cone"
+  },
+  {
+    "flags": "--[no-]pathspec-from-file <file>",
+    "description": "read pathspec from file"
+  },
+  {
+    "flags": "--[no-]pathspec-file-nul",
+    "description": "with --pathspec-from-file, pathspec elements are separated with NUL character"
+  }
+]

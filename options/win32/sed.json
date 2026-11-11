@@ -1,0 +1,130 @@
+[
+  {
+    "flags": "-n, --quiet, --silent",
+    "description": "suppress automatic printing of pattern space"
+  },
+  {
+    "flags": "-e script, --expression=script",
+    "description": "add the script to the commands to be executed"
+  },
+  {
+    "flags": "-f script-file, --file=script-file",
+    "description": "add the contents of script-file to the commands to be executed"
+  },
+  {
+    "flags": "--follow-symlinks",
+    "description": "follow symlinks when processing in place; hard links will still be broken."
+  },
+  {
+    "flags": "-i[SUFFIX], --in-place[=SUFFIX]",
+    "description": "edit files in place (makes backup if extension supplied). The default operation mode is to break symbolic and hard links. This can be changed with\n--follow-symlinks and --copy."
+  },
+  {
+    "flags": "-c, --copy",
+    "description": "use copy instead of rename when shuffling files in -i mode. While this will avoid breaking links (symbolic or hard), the resulting editing operation\nis not atomic. This is rarely the desired mode; --follow-symlinks is usually enough, and it is both faster and more secure."
+  },
+  {
+    "flags": "-l N, --line-length=N",
+    "description": "specify the desired line-wrap length for the 'l' command"
+  },
+  {
+    "flags": "--posix",
+    "description": "disable all GNU extensions."
+  },
+  {
+    "flags": "-r, --regexp-extended",
+    "description": "use extended regular expressions in the script."
+  },
+  {
+    "flags": "-s, --separate",
+    "description": "consider files as separate rather than as a single continuous long stream."
+  },
+  {
+    "flags": "-u, --unbuffered",
+    "description": "load minimal amounts of data from the input files and flush the output buffers more often"
+  },
+  {
+    "flags": "--version",
+    "description": "output version information and exit"
+  },
+  {
+    "flags": ": label",
+    "description": "Label for b and t commands."
+  },
+  {
+    "flags": "#comment",
+    "description": "The comment extends until the next newline (or the end of a -e script fragment)."
+  },
+  {
+    "flags": "q [exit-code]",
+    "description": "Immediately quit the sed script without processing any more input, except that if auto-print is not disabled the current pattern space will be\nprinted. The exit code argument is a GNU extension."
+  },
+  {
+    "flags": "Q [exit-code]",
+    "description": "Immediately quit the sed script without processing any more input. This is a GNU extension."
+  },
+  {
+    "flags": "r filename",
+    "description": "Append text read from filename."
+  },
+  {
+    "flags": "R filename",
+    "description": "Append a line read from filename. Each invocation of the command reads a line from the file. This is a GNU extension."
+  },
+  {
+    "flags": "b label",
+    "description": "Branch to label; if label is omitted, branch to end of script."
+  },
+  {
+    "flags": "t label",
+    "description": "If a s/// has done a successful substitution since the last input line was read and since the last t or T command, then branch to label; if\nlabel is omitted, branch to end of script."
+  },
+  {
+    "flags": "T label",
+    "description": "If no s/// has done a successful substitution since the last input line was read and since the last t or T command, then branch to label; if\nlabel is omitted, branch to end of script. This is a GNU extension."
+  },
+  {
+    "flags": "l width",
+    "description": "List out the current line in a ''visually unambiguous'' form, breaking it at width characters. This is a GNU extension."
+  },
+  {
+    "flags": "s/regexp/replacement/",
+    "description": "Attempt to match regexp against the pattern space. If successful, replace that portion matched with replacement. The replacement may\ncontain the special character & to refer to that portion of the pattern space which matched, and the special escapes \\1 through \\9 to refer to the\ncorresponding matching sub-expressions in the regexp."
+  },
+  {
+    "flags": "w filename",
+    "description": "Write the current pattern space to filename."
+  },
+  {
+    "flags": "W filename",
+    "description": "Write the first line of the current pattern space to filename. This is a GNU extension."
+  },
+  {
+    "flags": "y/source/dest/",
+    "description": "Transliterate the characters in the pattern space which appear in source to the corresponding character in dest."
+  },
+  {
+    "flags": "first~step",
+    "description": "Match every step'th line starting with line first. For example, ''sed -n 1~2p'' will print all the odd-numbered lines in the input stream, and\nthe address 2~5 will match every fifth line, starting with the second. first can be zero; in this case, sed operates as if it were equal to\nstep. (This is an extension.)"
+  },
+  {
+    "flags": "/regexp/",
+    "description": "Match lines matching the regular expression regexp."
+  },
+  {
+    "flags": "\\cregexpc",
+    "description": "Match lines matching the regular expression regexp. The c may be any character."
+  },
+  {
+    "flags": "0,addr2",
+    "description": "Start out in \"matched first address\" state, until addr2 is found. This is similar to 1,addr2, except that if addr2 matches the very\nfirst line of input the 0,addr2 form will be at the end of its range, whereas the 1,addr2 form will still be at the beginning of its range. This\nworks only when addr2 is a regular expression."
+  },
+  {
+    "flags": "addr1,+N",
+    "description": "Will match addr1 and the N lines following addr1."
+  },
+  {
+    "flags": "addr1,~N",
+    "description": "Will match addr1 and the lines following addr1 until the next line whose input line number is a multiple of N."
+  }
+]

@@ -1,0 +1,114 @@
+[
+  {
+    "flags": "-a",
+    "description": "Audible ping."
+  },
+  {
+    "flags": "-A",
+    "description": "Adaptive ping. Interpacket interval adapts to round-trip time, so that effectively not more than one (or more, if preload is set) unanswered probes present\nin the network. Minimal interval is 200msec for not super-user. On networks with low rtt this mode is essentially equivalent to flood mode."
+  },
+  {
+    "flags": "-b",
+    "description": "Allow pinging a broadcast address."
+  },
+  {
+    "flags": "-B",
+    "description": "Do not allow ping to change source address of probes. The address is bound to one selected when ping starts."
+  },
+  {
+    "flags": "-c count",
+    "description": "Stop after sending count ECHO_REQUEST packets. With deadline option, ping waits for count ECHO_REPLY packets, until the timeout\nexpires."
+  },
+  {
+    "flags": "-d",
+    "description": "Set the SO_DEBUG option on the socket being used. Essentially, this socket option is not used by Linux kernel."
+  },
+  {
+    "flags": "-F flow label",
+    "description": "Allocate and set 20 bit flow label on echo request packets. (Only ping6). If value is zero, kernel allocates random flow label."
+  },
+  {
+    "flags": "-f",
+    "description": "Flood ping. For every ECHO_REQUEST sent a period ''.'' is printed, while for ever ECHO_REPLY received a backspace is printed. This provides a rapid display\nof how many packets are being dropped. If interval is not given, it sets interval to zero and outputs packets as fast as they come back or one hundred times\nper second, whichever is more. Only the super-user may use this option with zero interval."
+  },
+  {
+    "flags": "-i interval",
+    "description": "Wait interval seconds between sending each packet. The default is to wait for one second between each packet normally, or not to wait in flood mode.\nOnly super-user may set interval to values less 0.2 seconds."
+  },
+  {
+    "flags": "-I interface address",
+    "description": "Set source address to specified interface address. Argument may be numeric IP address or name of device. When pinging IPv6 link-local address this option\nis required."
+  },
+  {
+    "flags": "-l preload",
+    "description": "If preload is specified, ping sends that many packets not waiting for reply. Only the super-user may select preload more than 3."
+  },
+  {
+    "flags": "-L",
+    "description": "Suppress loopback of multicast packets. This flag only applies if the ping destination is a multicast address."
+  },
+  {
+    "flags": "-n",
+    "description": "Numeric output only. No attempt will be made to lookup symbolic names for host addresses."
+  },
+  {
+    "flags": "-p pattern",
+    "description": "You may specify up to 16 ''pad'' bytes to fill out the packet you send. This is useful for diagnosing data-dependent problems in a network. For example,\n-p ff will cause the sent packet to be filled with all ones."
+  },
+  {
+    "flags": "-Q tos",
+    "description": "Set Quality of Service -related bits in ICMP datagrams. tos can be either decimal or hex number. Traditionally (RFC1349), these have been\ninterpreted as: 0 for reserved (currently being redefined as congestion control), 1-4 for Type of Service and 5-7 for Precedence. Possible settings for Type of\nService are: minimal cost: 0x02, reliability: 0x04, throughput: 0x08, low delay: 0x10. Multiple TOS bits should not be set simultaneously. Possible settings\nfor special Precedence range from priority (0x20) to net control (0xe0). You must be root (CAP_NET_ADMIN capability) to use Critical or higher precedence\nvalue. You cannot set bit 0x01 (reserved) unless ECN has been enabled in the kernel. In RFC2474, these fields has been redefined as 8-bit Differentiated\nServices (DS), consisting of: bits 0-1 of separate data (ECN will be used, here), and bits 2-7 of Differentiated Services Codepoint (DSCP)."
+  },
+  {
+    "flags": "-q",
+    "description": "Quiet output. Nothing is displayed except the summary lines at startup time and when finished."
+  },
+  {
+    "flags": "-R",
+    "description": "Record route. Includes the RECORD_ROUTE option in the ECHO_REQUEST packet and displays the route buffer on returned packets. Note that the IP header is\nonly large enough for nine such routes. Many hosts ignore or discard this option."
+  },
+  {
+    "flags": "-r",
+    "description": "Bypass the normal routing tables and send directly to a host on an attached interface. If the host is not on a directly-attached network, an error is\nreturned. This option can be used to ping a local host through an interface that has no route through it provided the option -I is also used."
+  },
+  {
+    "flags": "-s packetsize",
+    "description": "Specifies the number of data bytes to be sent. The default is 56, which translates into 64 ICMP data bytes when combined with the 8 bytes of ICMP header\ndata."
+  },
+  {
+    "flags": "-S sndbuf",
+    "description": "Set socket sndbuf. If not specified, it is selected to buffer not more than one packet."
+  },
+  {
+    "flags": "-t ttl",
+    "description": "Set the IP Time to Live."
+  },
+  {
+    "flags": "-T timestamp option",
+    "description": "Set special IP timestamp options. timestamp option may be either tsonly (only timestamps), tsandaddr (timestamps and addresses) or\ntsprespec host1 [host2 [host3 [host4]]] (timestamp prespecified hops)."
+  },
+  {
+    "flags": "-M hint",
+    "description": "Select Path MTU Discovery strategy. hint may be either do (prohibit fragmentation, even local one), want (do PMTU discovery, fragment\nlocally when packet size is large), or dont (do not set DF flag)."
+  },
+  {
+    "flags": "-U",
+    "description": "Print full user-to-user latency (the old behaviour). Normally ping prints network round trip time, which can be different f.e. due to DNS failures."
+  },
+  {
+    "flags": "-v",
+    "description": "Verbose output."
+  },
+  {
+    "flags": "-V",
+    "description": "Show version and exit."
+  },
+  {
+    "flags": "-w deadline",
+    "description": "Specify a timeout, in seconds, before ping exits regardless of how many packets have been sent or received. In this case ping does not stop\nafter count packet are sent, it waits either for deadline expire or until count probes are answered or for some error notification from\nnetwork."
+  },
+  {
+    "flags": "-W timeout",
+    "description": "Time to wait for a response, in seconds. The option affects only timeout in absense of any responses, otherwise ping waits for two RTTs."
+  }
+]

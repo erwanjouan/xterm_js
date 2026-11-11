@@ -1,0 +1,86 @@
+[
+  {
+    "flags": "-z",
+    "description": "output diff-raw with lines terminated with NUL."
+  },
+  {
+    "flags": "-p",
+    "description": "output patch format."
+  },
+  {
+    "flags": "-u",
+    "description": "synonym for -p."
+  },
+  {
+    "flags": "--patch-with-raw",
+    "description": "output both a patch and the diff-raw format."
+  },
+  {
+    "flags": "--stat",
+    "description": "show diffstat instead of patch."
+  },
+  {
+    "flags": "--numstat",
+    "description": "show numeric diffstat instead of patch."
+  },
+  {
+    "flags": "--patch-with-stat",
+    "description": "output a patch and prepend its diffstat."
+  },
+  {
+    "flags": "--name-only",
+    "description": "show only names of changed files."
+  },
+  {
+    "flags": "--name-status show names and status of changed files.",
+    "description": ""
+  },
+  {
+    "flags": "--full-index",
+    "description": "show full object name on index lines."
+  },
+  {
+    "flags": "--abbrev=<n>",
+    "description": "abbreviate object names in diff-tree header and diff-raw."
+  },
+  {
+    "flags": "-R",
+    "description": "swap input file pairs."
+  },
+  {
+    "flags": "-B",
+    "description": "detect complete rewrites."
+  },
+  {
+    "flags": "-M",
+    "description": "detect renames."
+  },
+  {
+    "flags": "-C",
+    "description": "detect copies."
+  },
+  {
+    "flags": "--find-copies-harder",
+    "description": "try unchanged files as candidate for copy detection."
+  },
+  {
+    "flags": "-l<n>",
+    "description": "limit rename attempts up to <n> paths."
+  },
+  {
+    "flags": "-O<file>",
+    "description": "reorder diffs according to the <file>."
+  },
+  {
+    "flags": "-S<string>",
+    "description": "find filepair whose only one side contains the string."
+  },
+  {
+    "flags": "--pickaxe-all",
+    "description": "show all files diff when -S is used and hit is found."
+  },
+  {
+    "flags": "-a",
+    "description": "--text    treat all files as text."
+  }
+]

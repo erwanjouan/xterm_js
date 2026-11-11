@@ -1,0 +1,78 @@
+[
+  {
+    "flags": "-n, --[no-]dry-run",
+    "description": "dry run"
+  },
+  {
+    "flags": "-v, --[no-]verbose",
+    "description": "be verbose"
+  },
+  {
+    "flags": "-i, --[no-]interactive",
+    "description": "interactive picking"
+  },
+  {
+    "flags": "-p, --[no-]patch",
+    "description": "select hunks interactively"
+  },
+  {
+    "flags": "--[no-]auto-advance",
+    "description": "auto advance to the next file when selecting hunks interactively"
+  },
+  {
+    "flags": "-U, --unified <n>",
+    "description": "generate diffs with <n> lines context"
+  },
+  {
+    "flags": "--inter-hunk-context <n>",
+    "description": "show context between diff hunks up to the specified number of lines"
+  },
+  {
+    "flags": "-e, --[no-]edit",
+    "description": "edit current diff and apply"
+  },
+  {
+    "flags": "-f, --[no-]force",
+    "description": "allow adding otherwise ignored files"
+  },
+  {
+    "flags": "-u, --[no-]update",
+    "description": "update tracked files"
+  },
+  {
+    "flags": "--[no-]renormalize",
+    "description": "renormalize EOL of tracked files (implies -u)"
+  },
+  {
+    "flags": "-N, --[no-]intent-to-add",
+    "description": "record only the fact that the path will be added later"
+  },
+  {
+    "flags": "-A, --[no-]all",
+    "description": "add changes from all tracked and untracked files"
+  },
+  {
+    "flags": "--[no-]refresh",
+    "description": "don't add, only refresh the index"
+  },
+  {
+    "flags": "--[no-]ignore-errors",
+    "description": "just skip files which cannot be added because of errors"
+  },
+  {
+    "flags": "--[no-]ignore-missing check if - even missing - files are ignored in dry run",
+    "description": ""
+  },
+  {
+    "flags": "--[no-]sparse",
+    "description": "allow updating entries outside of the sparse-checkout cone"
+  },
+  {
+    "flags": "--[no-]pathspec-from-file <file>",
+    "description": "read pathspec from file"
+  },
+  {
+    "flags": "--[no-]pathspec-file-nul",
+    "description": "with --pathspec-from-file, pathspec elements are separated with NUL character"
+  }
+]

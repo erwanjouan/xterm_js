@@ -1,0 +1,74 @@
+[
+  {
+    "flags": "-q, --[no-]quiet",
+    "description": "be quiet, only report errors"
+  },
+  {
+    "flags": "--no-refresh",
+    "description": "skip refreshing the index after reset"
+  },
+  {
+    "flags": "--refresh",
+    "description": "opposite of --no-refresh"
+  },
+  {
+    "flags": "--mixed",
+    "description": "reset HEAD and index"
+  },
+  {
+    "flags": "--soft",
+    "description": "reset only HEAD"
+  },
+  {
+    "flags": "--hard",
+    "description": "reset HEAD, index and working tree"
+  },
+  {
+    "flags": "--merge",
+    "description": "reset HEAD, index and working tree"
+  },
+  {
+    "flags": "--keep",
+    "description": "reset HEAD but keep local changes"
+  },
+  {
+    "flags": "--[no-]recurse-submodules[=<reset>]",
+    "description": "control recursive updating of submodules"
+  },
+  {
+    "flags": "-p, --[no-]patch",
+    "description": "select hunks interactively"
+  },
+  {
+    "flags": "--[no-]auto-advance",
+    "description": "auto advance to the next file when selecting hunks interactively"
+  },
+  {
+    "flags": "-U, --unified <n>",
+    "description": "generate diffs with <n> lines context"
+  },
+  {
+    "flags": "--inter-hunk-context <n>",
+    "description": "show context between diff hunks up to the specified number of lines"
+  },
+  {
+    "flags": "-N, --[no-]intent-to-add",
+    "description": "record only the fact that removed paths will be added later"
+  },
+  {
+    "flags": "--[no-]pathspec-from-file <file>",
+    "description": "read pathspec from file"
+  },
+  {
+    "flags": "--[no-]pathspec-file-nul",
+    "description": "with --pathspec-from-file, pathspec elements are separated with NUL character"
+  },
+  {
+    "flags": "-z",
+    "description": "DEPRECATED (use --pathspec-file-nul instead): paths are separated with NUL character"
+  },
+  {
+    "flags": "--[no-]stdin",
+    "description": "DEPRECATED (use --pathspec-from-file=- instead): read paths from <stdin>"
+  }
+]

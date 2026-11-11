@@ -1,0 +1,62 @@
+[
+  {
+    "flags": "-v, --[no-]verbose",
+    "description": "be verbose"
+  },
+  {
+    "flags": "-s, --[no-]short",
+    "description": "show status concisely"
+  },
+  {
+    "flags": "-b, --[no-]branch",
+    "description": "show branch information"
+  },
+  {
+    "flags": "--[no-]show-stash",
+    "description": "show stash information"
+  },
+  {
+    "flags": "--[no-]ahead-behind",
+    "description": "compute full ahead/behind values"
+  },
+  {
+    "flags": "--[no-]porcelain[=<version>]",
+    "description": "machine-readable output"
+  },
+  {
+    "flags": "--[no-]long",
+    "description": "show status in long format (default)"
+  },
+  {
+    "flags": "-z, --[no-]null",
+    "description": "terminate entries with NUL"
+  },
+  {
+    "flags": "-u, --[no-]untracked-files[=<mode>]",
+    "description": "show untracked files, optional modes: all, normal, no. (Default: all)"
+  },
+  {
+    "flags": "--[no-]ignored[=<mode>]",
+    "description": "show ignored files, optional modes: traditional, matching, no. (Default: traditional)"
+  },
+  {
+    "flags": "--[no-]ignore-submodules[=<when>]",
+    "description": "ignore changes to submodules, optional when: all, dirty, untracked. (Default: all)"
+  },
+  {
+    "flags": "--[no-]column[=<style>]",
+    "description": "list untracked files in columns"
+  },
+  {
+    "flags": "--no-renames",
+    "description": "do not detect renames"
+  },
+  {
+    "flags": "--renames",
+    "description": "opposite of --no-renames"
+  },
+  {
+    "flags": "-M, --find-renames[=<n>]",
+    "description": "detect renames, optionally set similarity index"
+  }
+]

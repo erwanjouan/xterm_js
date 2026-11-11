@@ -1,0 +1,14 @@
+[
+  {
+    "flags": "--min-batch-size <n>",
+    "description": "Minimum number of objects to request at a time"
+  },
+  {
+    "flags": "--[no-]sparse",
+    "description": "Restrict the missing objects to the current sparse-checkout"
+  },
+  {
+    "flags": "--[no-]include-edges",
+    "description": "Include blobs from boundary commits in the backfill"
+  }
+]

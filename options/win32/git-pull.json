@@ -1,0 +1,182 @@
+[
+  {
+    "flags": "-v, --[no-]verbose",
+    "description": "be more verbose"
+  },
+  {
+    "flags": "-q, --[no-]quiet",
+    "description": "be more quiet"
+  },
+  {
+    "flags": "--[no-]progress",
+    "description": "force progress reporting"
+  },
+  {
+    "flags": "--[no-]recurse-submodules[=<on-demand>]",
+    "description": "control for recursive fetching of submodules"
+  },
+  {
+    "flags": "-n",
+    "description": "do not show a diffstat at the end of the merge"
+  },
+  {
+    "flags": "--[no-]stat",
+    "description": "show a diffstat at the end of the merge"
+  },
+  {
+    "flags": "--[no-]compact-summary",
+    "description": "show a compact-summary at the end of the merge"
+  },
+  {
+    "flags": "--[no-]log[=<n>]",
+    "description": "add (at most <n>) entries from shortlog to merge commit message"
+  },
+  {
+    "flags": "--[no-]signoff[=...]",
+    "description": "add a Signed-off-by trailer"
+  },
+  {
+    "flags": "--[no-]squash",
+    "description": "create a single commit instead of doing a merge"
+  },
+  {
+    "flags": "--[no-]commit",
+    "description": "perform a commit if the merge succeeds (default)"
+  },
+  {
+    "flags": "--[no-]edit",
+    "description": "edit message before committing"
+  },
+  {
+    "flags": "--[no-]ff",
+    "description": "allow fast-forward"
+  },
+  {
+    "flags": "--ff-only",
+    "description": "abort if fast-forward is not possible"
+  },
+  {
+    "flags": "--[no-]verify",
+    "description": "control use of pre-merge-commit and commit-msg hooks"
+  },
+  {
+    "flags": "--[no-]verify-signatures",
+    "description": "verify that the named commit has a valid GPG signature"
+  },
+  {
+    "flags": "--[no-]autostash",
+    "description": "automatically stash/stash pop before and after"
+  },
+  {
+    "flags": "-s, --[no-]strategy <strategy>",
+    "description": "merge strategy to use"
+  },
+  {
+    "flags": "-X, --[no-]strategy-option <option=value>",
+    "description": "option for selected merge strategy"
+  },
+  {
+    "flags": "-S, --[no-]gpg-sign[=<key-id>]",
+    "description": "GPG sign commit"
+  },
+  {
+    "flags": "--[no-]allow-unrelated-histories",
+    "description": "allow merging unrelated histories"
+  },
+  {
+    "flags": "--[no-]all",
+    "description": "fetch from all remotes"
+  },
+  {
+    "flags": "-a, --[no-]append",
+    "description": "append to .git/FETCH_HEAD instead of overwriting"
+  },
+  {
+    "flags": "--[no-]upload-pack <path>",
+    "description": "path to upload pack on remote end"
+  },
+  {
+    "flags": "-f, --[no-]force",
+    "description": "force overwrite of local branch"
+  },
+  {
+    "flags": "-t, --[no-]tags",
+    "description": "fetch all tags and associated objects"
+  },
+  {
+    "flags": "-p, --[no-]prune",
+    "description": "prune remote-tracking branches no longer on remote"
+  },
+  {
+    "flags": "-j, --[no-]jobs[=<n>] number of submodules pulled in parallel",
+    "description": ""
+  },
+  {
+    "flags": "--[no-]dry-run",
+    "description": "dry run"
+  },
+  {
+    "flags": "-k, --[no-]keep",
+    "description": "keep downloaded pack"
+  },
+  {
+    "flags": "--[no-]depth <depth>",
+    "description": "deepen history of shallow clone"
+  },
+  {
+    "flags": "--[no-]shallow-since <time>",
+    "description": "deepen history of shallow repository based on time"
+  },
+  {
+    "flags": "--[no-]shallow-exclude <ref>",
+    "description": "deepen history of shallow clone, excluding ref"
+  },
+  {
+    "flags": "--[no-]deepen <n>",
+    "description": "deepen history of shallow clone"
+  },
+  {
+    "flags": "--unshallow",
+    "description": "convert to a complete repository"
+  },
+  {
+    "flags": "--[no-]update-shallow accept refs that update .git/shallow",
+    "description": ""
+  },
+  {
+    "flags": "--refmap <refmap>",
+    "description": "specify fetch refmap"
+  },
+  {
+    "flags": "-o, --[no-]server-option <server-specific>",
+    "description": "option to transmit"
+  },
+  {
+    "flags": "-4, --[no-]ipv4",
+    "description": "use IPv4 addresses only"
+  },
+  {
+    "flags": "-6, --[no-]ipv6",
+    "description": "use IPv6 addresses only"
+  },
+  {
+    "flags": "--[no-]negotiation-restrict <revision>",
+    "description": "report that we have only objects reachable from this object"
+  },
+  {
+    "flags": "--[no-]negotiation-tip <revision>",
+    "description": "alias of --negotiation-restrict"
+  },
+  {
+    "flags": "--[no-]negotiation-include <revision>",
+    "description": "ensure this ref is always sent as a negotiation have"
+  },
+  {
+    "flags": "--[no-]show-forced-updates",
+    "description": "check for forced-updates on all updated branches"
+  },
+  {
+    "flags": "--[no-]set-upstream",
+    "description": "set upstream for git pull/fetch"
+  }
+]

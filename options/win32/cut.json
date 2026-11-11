@@ -1,0 +1,58 @@
+[
+  {
+    "flags": "-b, --bytes=LIST",
+    "description": "select only these bytes"
+  },
+  {
+    "flags": "-c, --characters=LIST",
+    "description": "select only these characters"
+  },
+  {
+    "flags": "-d, --delimiter=DELIM",
+    "description": "use DELIM instead of TAB for field delimiter"
+  },
+  {
+    "flags": "-f, --fields=LIST",
+    "description": "select only these fields; also print any line that contains no delimiter character, unless the -s option is specified"
+  },
+  {
+    "flags": "-n",
+    "description": "with -b: don't split multibyte characters"
+  },
+  {
+    "flags": "--complement",
+    "description": "complement the set of selected bytes, characters or fields"
+  },
+  {
+    "flags": "-s, --only-delimited",
+    "description": "do not print lines not containing delimiters"
+  },
+  {
+    "flags": "--output-delimiter=STRING",
+    "description": "use STRING as the output delimiter the default is to use the input delimiter"
+  },
+  {
+    "flags": "--help",
+    "description": "display this help and exit"
+  },
+  {
+    "flags": "--version",
+    "description": "output version information and exit"
+  },
+  {
+    "flags": "N",
+    "description": "N'th byte, character or field, counted from 1"
+  },
+  {
+    "flags": "N-",
+    "description": "from N'th byte, character or field, to end of line"
+  },
+  {
+    "flags": "N-M",
+    "description": "from N'th to M'th (included) byte, character or field"
+  },
+  {
+    "flags": "-M",
+    "description": "from first to M'th (included) byte, character or field"
+  }
+]

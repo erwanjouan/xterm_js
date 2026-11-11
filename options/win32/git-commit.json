@@ -1,0 +1,154 @@
+[
+  {
+    "flags": "-q, --[no-]quiet",
+    "description": "suppress summary after successful commit"
+  },
+  {
+    "flags": "-v, --[no-]verbose",
+    "description": "show diff in commit message template"
+  },
+  {
+    "flags": "-F, --[no-]file <file>",
+    "description": "read message from file"
+  },
+  {
+    "flags": "--[no-]author <author>",
+    "description": "override author for commit"
+  },
+  {
+    "flags": "--[no-]date <date>",
+    "description": "override date for commit"
+  },
+  {
+    "flags": "-m, --[no-]message <message>",
+    "description": "commit message"
+  },
+  {
+    "flags": "-c, --[no-]reedit-message <commit>",
+    "description": "reuse and edit message from specified commit"
+  },
+  {
+    "flags": "-C, --[no-]reuse-message <commit>",
+    "description": "reuse message from specified commit"
+  },
+  {
+    "flags": "--[no-]squash <commit>",
+    "description": "use autosquash formatted message to squash specified commit"
+  },
+  {
+    "flags": "--[no-]reset-author",
+    "description": "the commit is authored by me now (used with -C/-c/--amend)"
+  },
+  {
+    "flags": "--[no-]trailer <trailer>",
+    "description": "add custom trailer(s)"
+  },
+  {
+    "flags": "-s, --[no-]signoff",
+    "description": "add a Signed-off-by trailer"
+  },
+  {
+    "flags": "-t, --[no-]template <file>",
+    "description": "use specified template file"
+  },
+  {
+    "flags": "-e, --[no-]edit",
+    "description": "force edit of commit"
+  },
+  {
+    "flags": "--[no-]status",
+    "description": "include status in commit message template"
+  },
+  {
+    "flags": "-S, --[no-]gpg-sign[=<key-id>]",
+    "description": "GPG sign commit"
+  },
+  {
+    "flags": "-a, --[no-]all",
+    "description": "commit all changed files"
+  },
+  {
+    "flags": "-i, --[no-]include",
+    "description": "add specified files to index for commit"
+  },
+  {
+    "flags": "--[no-]interactive",
+    "description": "interactively add files"
+  },
+  {
+    "flags": "-p, --[no-]patch",
+    "description": "interactively add changes"
+  },
+  {
+    "flags": "-U, --unified <n>",
+    "description": "generate diffs with <n> lines context"
+  },
+  {
+    "flags": "--inter-hunk-context <n>",
+    "description": "show context between diff hunks up to the specified number of lines"
+  },
+  {
+    "flags": "-o, --[no-]only",
+    "description": "commit only specified files"
+  },
+  {
+    "flags": "-n, --no-verify",
+    "description": "bypass pre-commit and commit-msg hooks"
+  },
+  {
+    "flags": "--verify",
+    "description": "opposite of --no-verify"
+  },
+  {
+    "flags": "--[no-]dry-run",
+    "description": "show what would be committed"
+  },
+  {
+    "flags": "--[no-]short",
+    "description": "show status concisely"
+  },
+  {
+    "flags": "--[no-]branch",
+    "description": "show branch information"
+  },
+  {
+    "flags": "--[no-]ahead-behind",
+    "description": "compute full ahead/behind values"
+  },
+  {
+    "flags": "--[no-]porcelain",
+    "description": "machine-readable output"
+  },
+  {
+    "flags": "--[no-]long",
+    "description": "show status in long format (default)"
+  },
+  {
+    "flags": "-z, --[no-]null",
+    "description": "terminate entries with NUL"
+  },
+  {
+    "flags": "--[no-]amend",
+    "description": "amend previous commit"
+  },
+  {
+    "flags": "--no-post-rewrite",
+    "description": "bypass post-rewrite hook"
+  },
+  {
+    "flags": "--post-rewrite",
+    "description": "opposite of --no-post-rewrite"
+  },
+  {
+    "flags": "-u, --[no-]untracked-files[=<mode>]",
+    "description": "show untracked files, optional modes: all, normal, no. (Default: all)"
+  },
+  {
+    "flags": "--[no-]pathspec-from-file <file>",
+    "description": "read pathspec from file"
+  },
+  {
+    "flags": "--[no-]pathspec-file-nul",
+    "description": "with --pathspec-from-file, pathspec elements are separated with NUL character"
+  }
+]

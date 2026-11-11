@@ -1,0 +1,170 @@
+[
+  {
+    "flags": "-v, --[no-]verbose",
+    "description": "be more verbose"
+  },
+  {
+    "flags": "-q, --[no-]quiet",
+    "description": "be more quiet"
+  },
+  {
+    "flags": "--[no-]all",
+    "description": "fetch from all remotes"
+  },
+  {
+    "flags": "--[no-]set-upstream",
+    "description": "set upstream for git pull/fetch"
+  },
+  {
+    "flags": "-a, --[no-]append",
+    "description": "append to .git/FETCH_HEAD instead of overwriting"
+  },
+  {
+    "flags": "--[no-]atomic",
+    "description": "use atomic transaction to update references"
+  },
+  {
+    "flags": "--[no-]upload-pack <path>",
+    "description": "path to upload pack on remote end"
+  },
+  {
+    "flags": "-f, --[no-]force",
+    "description": "force overwrite of local reference"
+  },
+  {
+    "flags": "-m, --[no-]multiple",
+    "description": "fetch from multiple remotes"
+  },
+  {
+    "flags": "-t, --[no-]tags",
+    "description": "fetch all tags and associated objects"
+  },
+  {
+    "flags": "-n",
+    "description": "do not fetch all tags (--no-tags)"
+  },
+  {
+    "flags": "-j, --[no-]jobs <n>",
+    "description": "number of submodules fetched in parallel"
+  },
+  {
+    "flags": "--[no-]prefetch",
+    "description": "modify the refspec to place all refs within refs/prefetch/"
+  },
+  {
+    "flags": "-p, --[no-]prune",
+    "description": "prune remote-tracking branches no longer on remote"
+  },
+  {
+    "flags": "-P, --[no-]prune-tags prune local tags no longer on remote and clobber changed tags",
+    "description": ""
+  },
+  {
+    "flags": "--[no-]recurse-submodules[=<on-demand>]",
+    "description": "control recursive fetching of submodules"
+  },
+  {
+    "flags": "--[no-]dry-run",
+    "description": "dry run"
+  },
+  {
+    "flags": "--[no-]porcelain",
+    "description": "machine-readable output"
+  },
+  {
+    "flags": "--[no-]write-fetch-head",
+    "description": "write fetched references to the FETCH_HEAD file"
+  },
+  {
+    "flags": "-k, --[no-]keep",
+    "description": "keep downloaded pack"
+  },
+  {
+    "flags": "-u, --[no-]update-head-ok",
+    "description": "allow updating of HEAD ref"
+  },
+  {
+    "flags": "--[no-]progress",
+    "description": "force progress reporting"
+  },
+  {
+    "flags": "--[no-]depth <depth>",
+    "description": "deepen history of shallow clone"
+  },
+  {
+    "flags": "--[no-]shallow-since <time>",
+    "description": "deepen history of shallow repository based on time"
+  },
+  {
+    "flags": "--[no-]shallow-exclude <ref>",
+    "description": "deepen history of shallow clone, excluding ref"
+  },
+  {
+    "flags": "--[no-]deepen <n>",
+    "description": "deepen history of shallow clone"
+  },
+  {
+    "flags": "--unshallow",
+    "description": "convert to a complete repository"
+  },
+  {
+    "flags": "--refetch",
+    "description": "re-fetch without negotiating common commits"
+  },
+  {
+    "flags": "--[no-]update-shallow accept refs that update .git/shallow",
+    "description": ""
+  },
+  {
+    "flags": "--refmap <refmap>",
+    "description": "specify fetch refmap"
+  },
+  {
+    "flags": "-o, --[no-]server-option <server-specific>",
+    "description": "option to transmit"
+  },
+  {
+    "flags": "-4, --ipv4",
+    "description": "use IPv4 addresses only"
+  },
+  {
+    "flags": "-6, --ipv6",
+    "description": "use IPv6 addresses only"
+  },
+  {
+    "flags": "--[no-]negotiation-restrict <revision>",
+    "description": "report that we have only objects reachable from this object"
+  },
+  {
+    "flags": "--[no-]negotiation-tip <revision>",
+    "description": "alias of --negotiation-restrict"
+  },
+  {
+    "flags": "--[no-]negotiation-include <revision>",
+    "description": "ensure this ref is always sent as a negotiation have"
+  },
+  {
+    "flags": "--[no-]filter <args>",
+    "description": "object filtering"
+  },
+  {
+    "flags": "--[no-]auto-maintenance",
+    "description": "run 'maintenance --auto' after fetching"
+  },
+  {
+    "flags": "--[no-]auto-gc",
+    "description": "run 'maintenance --auto' after fetching"
+  },
+  {
+    "flags": "--[no-]show-forced-updates",
+    "description": "check for forced-updates on all updated branches"
+  },
+  {
+    "flags": "--[no-]write-commit-graph",
+    "description": "write the commit-graph after fetching"
+  },
+  {
+    "flags": "--[no-]stdin",
+    "description": "accept refspecs from stdin"
+  }
+]

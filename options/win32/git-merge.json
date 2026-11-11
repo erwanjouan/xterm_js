@@ -1,0 +1,122 @@
+[
+  {
+    "flags": "-n",
+    "description": "do not show a diffstat at the end of the merge"
+  },
+  {
+    "flags": "--[no-]stat",
+    "description": "show a diffstat at the end of the merge"
+  },
+  {
+    "flags": "--[no-]summary",
+    "description": "(synonym to --stat)"
+  },
+  {
+    "flags": "--[no-]compact-summary",
+    "description": "show a compact-summary at the end of the merge"
+  },
+  {
+    "flags": "--[no-]log[=<n>]",
+    "description": "add (at most <n>) entries from shortlog to merge commit message"
+  },
+  {
+    "flags": "--[no-]squash",
+    "description": "create a single commit instead of doing a merge"
+  },
+  {
+    "flags": "--[no-]commit",
+    "description": "perform a commit if the merge succeeds (default)"
+  },
+  {
+    "flags": "-e, --[no-]edit",
+    "description": "edit message before committing"
+  },
+  {
+    "flags": "--[no-]ff",
+    "description": "allow fast-forward (default)"
+  },
+  {
+    "flags": "--ff-only",
+    "description": "abort if fast-forward is not possible"
+  },
+  {
+    "flags": "--[no-]rerere-autoupdate",
+    "description": "update the index with reused conflict resolution if possible"
+  },
+  {
+    "flags": "--[no-]verify-signatures",
+    "description": "verify that the named commit has a valid GPG signature"
+  },
+  {
+    "flags": "-s, --[no-]strategy <strategy>",
+    "description": "merge strategy to use"
+  },
+  {
+    "flags": "-X, --[no-]strategy-option <option=value>",
+    "description": "option for selected merge strategy"
+  },
+  {
+    "flags": "-m, --[no-]message <message>",
+    "description": "merge commit message (for a non-fast-forward merge)"
+  },
+  {
+    "flags": "-F, --file <path>",
+    "description": "read message from file"
+  },
+  {
+    "flags": "--[no-]into-name <name>",
+    "description": "use <name> instead of the real target"
+  },
+  {
+    "flags": "-v, --[no-]verbose",
+    "description": "be more verbose"
+  },
+  {
+    "flags": "-q, --[no-]quiet",
+    "description": "be more quiet"
+  },
+  {
+    "flags": "--[no-]abort",
+    "description": "abort the current in-progress merge"
+  },
+  {
+    "flags": "--[no-]quit",
+    "description": "--abort but leave index and working tree alone"
+  },
+  {
+    "flags": "--[no-]continue",
+    "description": "continue the current in-progress merge"
+  },
+  {
+    "flags": "--[no-]allow-unrelated-histories",
+    "description": "allow merging unrelated histories"
+  },
+  {
+    "flags": "--[no-]progress",
+    "description": "force progress reporting"
+  },
+  {
+    "flags": "-S, --[no-]gpg-sign[=<key-id>]",
+    "description": "GPG sign commit"
+  },
+  {
+    "flags": "--[no-]autostash",
+    "description": "automatically stash/stash pop before and after"
+  },
+  {
+    "flags": "--[no-]overwrite-ignore",
+    "description": "update ignored files (default)"
+  },
+  {
+    "flags": "--[no-]signoff",
+    "description": "add a Signed-off-by trailer"
+  },
+  {
+    "flags": "--no-verify",
+    "description": "bypass pre-merge-commit and commit-msg hooks"
+  },
+  {
+    "flags": "--verify",
+    "description": "opposite of --no-verify"
+  }
+]

@@ -1,0 +1,106 @@
+[
+  {
+    "flags": "-v, --[no-]verbose",
+    "description": "be more verbose"
+  },
+  {
+    "flags": "-q, --[no-]quiet",
+    "description": "be more quiet"
+  },
+  {
+    "flags": "--[no-]repo <repository>",
+    "description": "repository"
+  },
+  {
+    "flags": "--[no-]all",
+    "description": "push all branches"
+  },
+  {
+    "flags": "--[no-]branches",
+    "description": "alias of --all"
+  },
+  {
+    "flags": "--[no-]mirror",
+    "description": "mirror all refs"
+  },
+  {
+    "flags": "-d, --[no-]delete",
+    "description": "delete refs"
+  },
+  {
+    "flags": "--[no-]tags",
+    "description": "push tags (can't be used with --all or --branches or --mirror)"
+  },
+  {
+    "flags": "-n, --[no-]dry-run",
+    "description": "dry run"
+  },
+  {
+    "flags": "--[no-]porcelain",
+    "description": "machine-readable output"
+  },
+  {
+    "flags": "-f, --[no-]force",
+    "description": "force updates"
+  },
+  {
+    "flags": "--[no-]force-with-lease[=<refname>:<expect>]",
+    "description": "require old value of ref to be at this value"
+  },
+  {
+    "flags": "--[no-]force-if-includes",
+    "description": "require remote updates to be integrated locally"
+  },
+  {
+    "flags": "--[no-]thin",
+    "description": "use thin pack"
+  },
+  {
+    "flags": "--[no-]receive-pack <receive-pack>",
+    "description": "receive pack program"
+  },
+  {
+    "flags": "--[no-]exec <receive-pack>",
+    "description": "receive pack program"
+  },
+  {
+    "flags": "-u, --[no-]set-upstream",
+    "description": "set upstream for git pull/status"
+  },
+  {
+    "flags": "--[no-]progress",
+    "description": "force progress reporting"
+  },
+  {
+    "flags": "--[no-]prune",
+    "description": "prune locally removed refs"
+  },
+  {
+    "flags": "--no-verify",
+    "description": "bypass pre-push hook"
+  },
+  {
+    "flags": "--verify",
+    "description": "opposite of --no-verify"
+  },
+  {
+    "flags": "--[no-]follow-tags",
+    "description": "push missing but relevant tags"
+  },
+  {
+    "flags": "--[no-]atomic",
+    "description": "request atomic transaction on remote side"
+  },
+  {
+    "flags": "-o, --[no-]push-option <server-specific>",
+    "description": "option to transmit"
+  },
+  {
+    "flags": "-4, --ipv4",
+    "description": "use IPv4 addresses only"
+  },
+  {
+    "flags": "-6, --ipv6",
+    "description": "use IPv6 addresses only"
+  }
+]

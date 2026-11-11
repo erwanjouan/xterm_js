@@ -1,0 +1,34 @@
+[
+  {
+    "flags": "--[no-]template <template-directory>",
+    "description": "directory from which templates will be used"
+  },
+  {
+    "flags": "--[no-]bare",
+    "description": "create a bare repository"
+  },
+  {
+    "flags": "--shared[=<permissions>]",
+    "description": "specify that the git repository is to be shared amongst several users"
+  },
+  {
+    "flags": "-q, --[no-]quiet",
+    "description": "be quiet"
+  },
+  {
+    "flags": "--[no-]separate-git-dir <gitdir>",
+    "description": "separate git dir from working tree"
+  },
+  {
+    "flags": "-b, --[no-]initial-branch <name>",
+    "description": "override the name of the initial branch"
+  },
+  {
+    "flags": "--[no-]object-format <hash>",
+    "description": "specify the hash algorithm to use"
+  },
+  {
+    "flags": "--[no-]ref-format <format>",
+    "description": "specify the reference format to use"
+  }
+]

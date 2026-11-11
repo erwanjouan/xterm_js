@@ -1,0 +1,98 @@
+[
+  {
+    "flags": "-l, --list",
+    "description": "list tag names"
+  },
+  {
+    "flags": "-n[<n>]",
+    "description": "print <n> lines of each tag message"
+  },
+  {
+    "flags": "-d, --delete",
+    "description": "delete tags"
+  },
+  {
+    "flags": "-v, --verify",
+    "description": "verify tags"
+  },
+  {
+    "flags": "-a, --[no-]annotate",
+    "description": "annotated tag, needs a message"
+  },
+  {
+    "flags": "-m, --message <message>",
+    "description": "tag message"
+  },
+  {
+    "flags": "-F, --[no-]file <file>",
+    "description": "read message from file"
+  },
+  {
+    "flags": "--[no-]trailer <trailer>",
+    "description": "add custom trailer(s)"
+  },
+  {
+    "flags": "-e, --[no-]edit",
+    "description": "force edit of tag message"
+  },
+  {
+    "flags": "-s, --[no-]sign",
+    "description": "annotated and GPG-signed tag"
+  },
+  {
+    "flags": "-u, --[no-]local-user <key-id>",
+    "description": "use another key to sign the tag"
+  },
+  {
+    "flags": "-f, --[no-]force",
+    "description": "replace the tag if exists"
+  },
+  {
+    "flags": "--[no-]create-reflog",
+    "description": "create a reflog"
+  },
+  {
+    "flags": "--[no-]column[=<style>]",
+    "description": "show tag list in columns"
+  },
+  {
+    "flags": "--contains <commit>",
+    "description": "print only tags that contain the commit"
+  },
+  {
+    "flags": "--no-contains <commit>",
+    "description": "print only tags that don't contain the commit"
+  },
+  {
+    "flags": "--merged <commit>",
+    "description": "print only tags that are merged"
+  },
+  {
+    "flags": "--no-merged <commit>",
+    "description": "print only tags that are not merged"
+  },
+  {
+    "flags": "--[no-]omit-empty",
+    "description": "do not output a newline after empty formatted refs"
+  },
+  {
+    "flags": "--[no-]sort <key>",
+    "description": "field name to sort on"
+  },
+  {
+    "flags": "--[no-]points-at <object>",
+    "description": "print only tags of the object"
+  },
+  {
+    "flags": "--[no-]format <format>",
+    "description": "format to use for the output"
+  },
+  {
+    "flags": "--[no-]color[=<when>] respect format colors",
+    "description": ""
+  },
+  {
+    "flags": "-i, --[no-]ignore-case",
+    "description": "sorting and filtering are case insensitive"
+  }
+]

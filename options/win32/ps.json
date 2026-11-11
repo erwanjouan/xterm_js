@@ -1,0 +1,90 @@
+[
+  {
+    "flags": "To see every process on the system using BSD syntax:",
+    "description": "ps ax\nps axu"
+  },
+  {
+    "flags": "To print a process tree:",
+    "description": "ps -ejH\nps axjf"
+  },
+  {
+    "flags": "To get info about threads:",
+    "description": "ps -eLf\nps axms"
+  },
+  {
+    "flags": "To get security info:",
+    "description": "ps -eo euser,ruser,suser,fuser,f,comm,label\nps axZ\nps -eM"
+  },
+  {
+    "flags": "To see every process running as root (real & effective ID) in user format:",
+    "description": "ps -U root -u root u"
+  },
+  {
+    "flags": "To see every process with a user-defined format:",
+    "description": "ps -eo pid,tid,class,rtprio,ni,pri,psr,pcpu,stat,wchan:14,comm\nps axo stat,euid,ruid,tty,tpgid,sess,pgrp,ppid,pid,pcpu,comm\nps -eopid,tt,user,fname,tmout,f,wchan"
+  },
+  {
+    "flags": "Print only the process IDs of syslogd:",
+    "description": "ps -C syslogd -o pid="
+  },
+  {
+    "flags": "Print only the name of PID 42:",
+    "description": "ps -p 42 -o comm="
+  },
+  {
+    "flags": "COLUMNS",
+    "description": "Override default display width."
+  },
+  {
+    "flags": "LINES",
+    "description": "Override default display height."
+  },
+  {
+    "flags": "PS_PERSONALITY",
+    "description": "Set to one of posix, old, linux, bsd, sun, digital... (see section PERSONALITY below)."
+  },
+  {
+    "flags": "CMD_ENV",
+    "description": "Set to one of posix, old, linux, bsd, sun, digital... (see section PERSONALITY below)."
+  },
+  {
+    "flags": "I_WANT_A_BROKEN_PS",
+    "description": "Force obsolete command line interpretation."
+  },
+  {
+    "flags": "LC_TIME",
+    "description": "Date format."
+  },
+  {
+    "flags": "PS_COLORS",
+    "description": "Not currently supported."
+  },
+  {
+    "flags": "PS_FORMAT",
+    "description": "Default output format override. You may set this to a format string of the type used for the -o option. The DefSysV and DefBSD values\nare particularly useful."
+  },
+  {
+    "flags": "PS_SYSMAP",
+    "description": "Default namelist (System.map) location."
+  },
+  {
+    "flags": "PS_SYSTEM_MAP",
+    "description": "Default namelist (System.map) location."
+  },
+  {
+    "flags": "POSIXLY_CORRECT",
+    "description": "Don't find excuses to ignore bad \"features\"."
+  },
+  {
+    "flags": "POSIX2",
+    "description": "When set to \"on\", acts as POSIXLY_CORRECT."
+  },
+  {
+    "flags": "UNIX95",
+    "description": "Don't find excuses to ignore bad \"features\"."
+  },
+  {
+    "flags": "_XPG",
+    "description": "Cancel CMD_ENV=irix non-standard behavior."
+  }
+]

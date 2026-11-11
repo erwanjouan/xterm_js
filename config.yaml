@@ -12,6 +12,7 @@ autocomplete:
   - sed
   - git
   - grep
+  - cut 
 
 launcher:
   commands:

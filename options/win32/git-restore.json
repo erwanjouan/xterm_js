@@ -1,0 +1,74 @@
+[
+  {
+    "flags": "-s, --[no-]source <tree-ish>",
+    "description": "which tree-ish to checkout from"
+  },
+  {
+    "flags": "-S, --[no-]staged",
+    "description": "restore the index"
+  },
+  {
+    "flags": "-W, --[no-]worktree",
+    "description": "restore the working tree (default)"
+  },
+  {
+    "flags": "--[no-]ignore-unmerged",
+    "description": "ignore unmerged entries"
+  },
+  {
+    "flags": "--[no-]overlay",
+    "description": "use overlay mode"
+  },
+  {
+    "flags": "-q, --[no-]quiet",
+    "description": "suppress progress reporting"
+  },
+  {
+    "flags": "--[no-]recurse-submodules[=<checkout>]",
+    "description": "control recursive updating of submodules"
+  },
+  {
+    "flags": "--[no-]progress",
+    "description": "force progress reporting"
+  },
+  {
+    "flags": "-m, --[no-]merge",
+    "description": "perform a 3-way merge with the new branch"
+  },
+  {
+    "flags": "--[no-]conflict <style>",
+    "description": "conflict style (merge, diff3, or zdiff3)"
+  },
+  {
+    "flags": "-2, --ours",
+    "description": "checkout our version for unmerged files"
+  },
+  {
+    "flags": "-3, --theirs",
+    "description": "checkout their version for unmerged files"
+  },
+  {
+    "flags": "-p, --[no-]patch",
+    "description": "select hunks interactively"
+  },
+  {
+    "flags": "-U, --unified <n>",
+    "description": "generate diffs with <n> lines context"
+  },
+  {
+    "flags": "--inter-hunk-context <n>",
+    "description": "show context between diff hunks up to the specified number of lines"
+  },
+  {
+    "flags": "--[no-]ignore-skip-worktree-bits",
+    "description": "do not limit pathspecs to sparse entries only"
+  },
+  {
+    "flags": "--[no-]pathspec-from-file <file>",
+    "description": "read pathspec from file"
+  },
+  {
+    "flags": "--[no-]pathspec-file-nul",
+    "description": "with --pathspec-from-file, pathspec elements are separated with NUL character"
+  }
+]

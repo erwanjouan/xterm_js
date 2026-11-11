@@ -1,0 +1,22 @@
+[
+  {
+    "flags": "-v, --[no-]verbose",
+    "description": "be verbose"
+  },
+  {
+    "flags": "-n, --[no-]dry-run",
+    "description": "dry run"
+  },
+  {
+    "flags": "-f, --[no-]force",
+    "description": "force move/rename even if target exists"
+  },
+  {
+    "flags": "-k",
+    "description": "skip move/rename errors"
+  },
+  {
+    "flags": "--[no-]sparse",
+    "description": "allow updating entries outside of the sparse-checkout cone"
+  }
+]

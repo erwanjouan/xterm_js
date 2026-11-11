@@ -1,0 +1,158 @@
+[
+  {
+    "flags": "-v, --[no-]verbose",
+    "description": "be more verbose"
+  },
+  {
+    "flags": "-q, --[no-]quiet",
+    "description": "be more quiet"
+  },
+  {
+    "flags": "--[no-]progress",
+    "description": "force progress reporting"
+  },
+  {
+    "flags": "-n, --no-checkout",
+    "description": "don't create a checkout"
+  },
+  {
+    "flags": "--checkout",
+    "description": "opposite of --no-checkout"
+  },
+  {
+    "flags": "--[no-]bare",
+    "description": "create a bare repository"
+  },
+  {
+    "flags": "--[no-]mirror",
+    "description": "create a mirror repository (implies --bare)"
+  },
+  {
+    "flags": "-l, --[no-]local",
+    "description": "to clone from a local repository"
+  },
+  {
+    "flags": "--no-hardlinks",
+    "description": "don't use local hardlinks, always copy"
+  },
+  {
+    "flags": "--hardlinks",
+    "description": "opposite of --no-hardlinks"
+  },
+  {
+    "flags": "-s, --[no-]shared",
+    "description": "setup as shared repository"
+  },
+  {
+    "flags": "--[no-]recurse-submodules[=<pathspec>]",
+    "description": "initialize submodules in the clone"
+  },
+  {
+    "flags": "--[no-]recursive[=<pathspec>]",
+    "description": "alias of --recurse-submodules"
+  },
+  {
+    "flags": "-j, --[no-]jobs <n>",
+    "description": "number of submodules cloned in parallel"
+  },
+  {
+    "flags": "--[no-]template <template-directory>",
+    "description": "directory from which templates will be used"
+  },
+  {
+    "flags": "--[no-]reference <repo>",
+    "description": "reference repository"
+  },
+  {
+    "flags": "--[no-]reference-if-able <repo>",
+    "description": "reference repository"
+  },
+  {
+    "flags": "--[no-]dissociate",
+    "description": "use --reference only while cloning"
+  },
+  {
+    "flags": "-o, --[no-]origin <name>",
+    "description": "use <name> instead of 'origin' to track upstream"
+  },
+  {
+    "flags": "-b, --[no-]branch <branch>",
+    "description": "checkout <branch> instead of the remote's HEAD"
+  },
+  {
+    "flags": "--[no-]revision <rev> clone single revision <rev> and check out",
+    "description": ""
+  },
+  {
+    "flags": "-u, --[no-]upload-pack <path>",
+    "description": "path to git-upload-pack on the remote"
+  },
+  {
+    "flags": "--[no-]depth <depth>",
+    "description": "create a shallow clone of that depth"
+  },
+  {
+    "flags": "--[no-]shallow-since <time>",
+    "description": "create a shallow clone since a specific time"
+  },
+  {
+    "flags": "--[no-]shallow-exclude <ref>",
+    "description": "deepen history of shallow clone, excluding ref"
+  },
+  {
+    "flags": "--[no-]single-branch",
+    "description": "clone only one branch, HEAD or --branch"
+  },
+  {
+    "flags": "--[no-]tags",
+    "description": "clone tags, and make later fetches not to follow them"
+  },
+  {
+    "flags": "--[no-]shallow-submodules",
+    "description": "any cloned submodules will be shallow"
+  },
+  {
+    "flags": "--[no-]separate-git-dir <gitdir>",
+    "description": "separate git dir from working tree"
+  },
+  {
+    "flags": "--[no-]ref-format <format>",
+    "description": "specify the reference format to use"
+  },
+  {
+    "flags": "-c, --[no-]config <key=value>",
+    "description": "set config inside the new repository"
+  },
+  {
+    "flags": "--[no-]server-option <server-specific>",
+    "description": "option to transmit"
+  },
+  {
+    "flags": "-4, --ipv4",
+    "description": "use IPv4 addresses only"
+  },
+  {
+    "flags": "-6, --ipv6",
+    "description": "use IPv6 addresses only"
+  },
+  {
+    "flags": "--[no-]filter <args>",
+    "description": "object filtering"
+  },
+  {
+    "flags": "--[no-]also-filter-submodules",
+    "description": "apply partial clone filters to submodules"
+  },
+  {
+    "flags": "--[no-]remote-submodules",
+    "description": "any cloned submodules will use their remote-tracking branch"
+  },
+  {
+    "flags": "--[no-]sparse",
+    "description": "initialize sparse-checkout file to include only files at root"
+  },
+  {
+    "flags": "--[no-]bundle-uri <uri>",
+    "description": "a URI for downloading bundles before fetching from origin remote"
+  }
+]

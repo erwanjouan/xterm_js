@@ -1,0 +1,38 @@
+[
+  {
+    "flags": "-q, --[no-]quiet",
+    "description": "suppress diff output"
+  },
+  {
+    "flags": "--[no-]source",
+    "description": "show source"
+  },
+  {
+    "flags": "--[no-]use-mailmap",
+    "description": "use mail map file"
+  },
+  {
+    "flags": "--[no-]mailmap",
+    "description": "alias of --use-mailmap"
+  },
+  {
+    "flags": "--clear-decorations",
+    "description": "clear all previously-defined decoration filters"
+  },
+  {
+    "flags": "--[no-]decorate-refs <pattern>",
+    "description": "only decorate refs that match <pattern>"
+  },
+  {
+    "flags": "--[no-]decorate-refs-exclude <pattern>",
+    "description": "do not decorate refs that match <pattern>"
+  },
+  {
+    "flags": "--[no-]decorate[=...] decorate options",
+    "description": ""
+  },
+  {
+    "flags": "-L <range:file>",
+    "description": "trace the evolution of line range <start>,<end> or function :<funcname> in <file>"
+  }
+]

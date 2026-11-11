@@ -1,0 +1,58 @@
+[
+  {
+    "flags": "-c, --[no-]create <branch>",
+    "description": "create and switch to a new branch"
+  },
+  {
+    "flags": "-C, --[no-]force-create <branch>",
+    "description": "create/reset and switch to a branch"
+  },
+  {
+    "flags": "--[no-]guess",
+    "description": "second guess 'git switch <no-such-branch>'"
+  },
+  {
+    "flags": "--[no-]discard-changes",
+    "description": "throw away local modifications"
+  },
+  {
+    "flags": "-q, --[no-]quiet",
+    "description": "suppress progress reporting"
+  },
+  {
+    "flags": "--[no-]recurse-submodules[=<checkout>]",
+    "description": "control recursive updating of submodules"
+  },
+  {
+    "flags": "--[no-]progress",
+    "description": "force progress reporting"
+  },
+  {
+    "flags": "-m, --[no-]merge",
+    "description": "perform a 3-way merge with the new branch"
+  },
+  {
+    "flags": "--[no-]conflict <style>",
+    "description": "conflict style (merge, diff3, or zdiff3)"
+  },
+  {
+    "flags": "-d, --[no-]detach",
+    "description": "detach HEAD at named commit"
+  },
+  {
+    "flags": "-f, --[no-]force",
+    "description": "force checkout (throw away local modifications)"
+  },
+  {
+    "flags": "--[no-]orphan <new-branch>",
+    "description": "new unborn branch"
+  },
+  {
+    "flags": "--[no-]overwrite-ignore",
+    "description": "update ignored files (default)"
+  },
+  {
+    "flags": "--[no-]ignore-other-worktrees",
+    "description": "do not check if another worktree is using this branch"
+  }
+]

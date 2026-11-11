@@ -1,0 +1,46 @@
+[
+  {
+    "flags": "-f, --force",
+    "description": "ignore nonexistent files, never prompt"
+  },
+  {
+    "flags": "-i",
+    "description": "prompt before every removal"
+  },
+  {
+    "flags": "-I",
+    "description": "prompt once before removing more than three files, or when removing recursively. Less intrusive than -i, while still giving protection against most\nmistakes"
+  },
+  {
+    "flags": "--interactive[=WHEN]",
+    "description": "prompt according to WHEN: never, once (-I), or always (-i). Without WHEN, prompt always"
+  },
+  {
+    "flags": "--one-file-system",
+    "description": "when removing a hierarchy recursively, skip any directory that is on a file system different from that of the corresponding command line argument"
+  },
+  {
+    "flags": "--no-preserve-root",
+    "description": "do not treat '/' specially"
+  },
+  {
+    "flags": "--preserve-root",
+    "description": "do not remove '/' (default)"
+  },
+  {
+    "flags": "-r, -R, --recursive",
+    "description": "remove directories and their contents recursively"
+  },
+  {
+    "flags": "-v, --verbose",
+    "description": "explain what is being done"
+  },
+  {
+    "flags": "--help",
+    "description": "display this help and exit"
+  },
+  {
+    "flags": "--version",
+    "description": "output version information and exit"
+  }
+]
