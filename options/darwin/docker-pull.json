@@ -1,0 +1,14 @@
+[
+  {
+    "flags": "-a, --all-tags",
+    "description": "Download all tagged images in the repository"
+  },
+  {
+    "flags": "--platform string",
+    "description": "Set platform if server is multi-platform capable"
+  },
+  {
+    "flags": "-q, --quiet",
+    "description": "Suppress verbose output"
+  }
+]

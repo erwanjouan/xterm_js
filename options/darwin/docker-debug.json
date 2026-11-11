@@ -1,0 +1,26 @@
+[
+  {
+    "flags": "-c, --command string",
+    "description": "Evaluate the specified commands instead, passing additional positional arguments through $argv."
+  },
+  {
+    "flags": "--host string",
+    "description": "Daemon docker socket to connect to. E.g.: 'ssh://root@example.org', 'unix:///some/path/docker.sock'"
+  },
+  {
+    "flags": "--preserve-user",
+    "description": "Running containers only: Use same user as the running container. Default is root."
+  },
+  {
+    "flags": "--privileged",
+    "description": "Running containers only: Give privileges to the shell (all capabilities)."
+  },
+  {
+    "flags": "--shell shell",
+    "description": "Select a shell. Supported: \"bash\", \"fish\", \"zsh\", \"auto\". (default auto)"
+  },
+  {
+    "flags": "--version",
+    "description": "Display version of the docker-debug plugin"
+  }
+]

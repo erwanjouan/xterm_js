@@ -1,0 +1,90 @@
+[
+  {
+    "flags": "-c, --check, -C, --check=silent|quiet",
+    "description": "Check that the single input file is sorted.  If the file is not sorted, sort produces the appropriate error messages and exits with code 1, otherwise returns 0.  If -C or --check=silent is specified, sort produces no output.  This is a \"silent\" version of -c."
+  },
+  {
+    "flags": "-m, --merge",
+    "description": "Merge only.  The input files are assumed to be pre-sorted.  If they are not sorted the output order is undefined."
+  },
+  {
+    "flags": "-o output, --output=output",
+    "description": "Print the output to the output file instead of the standard output."
+  },
+  {
+    "flags": "-S size, --buffer-size=size",
+    "description": "Use size for the maximum size of the memory buffer.  Size modifiers %,b,K,M,G,T,P,E,Z,Y can be used.  If a memory limit is not explicitly specified, sort takes up to about 90% of available memory.  If the file size is too big to fit into the memory buffer, the temporary disk files are used to perform the sorting."
+  },
+  {
+    "flags": "-T dir, --temporary-directory=dir",
+    "description": "Store temporary files in the directory dir.  The default path is the value of the environment variable TMPDIR or /var/tmp if TMPDIR is not defined."
+  },
+  {
+    "flags": "-u, --unique",
+    "description": "Unique keys.  Suppress all lines that have a key that is equal to an already processed one.  This option, similarly to -s, implies a stable sort.  If used with -c or -C, sort also checks that there are no lines with duplicate keys."
+  },
+  {
+    "flags": "-s",
+    "description": "Stable sort.  This option maintains the original record order of records that have an equal key.  This is a non-standard feature, but it is widely accepted and used."
+  },
+  {
+    "flags": "-b, --ignore-leading-blanks",
+    "description": "Ignore leading blank characters when comparing lines."
+  },
+  {
+    "flags": "-d, --dictionary-order",
+    "description": "Consider only blank spaces and alphanumeric characters in comparisons."
+  },
+  {
+    "flags": "-f, --ignore-case",
+    "description": "Convert all lowercase characters to their uppercase equivalent before comparison, that is, perform case-independent sorting."
+  },
+  {
+    "flags": "-g, --general-numeric-sort, --sort=general-numeric",
+    "description": "Sort by general numerical value.  As opposed to -n, this option handles general floating points.  It has a more permissive format than that allowed by -n but it has a significant performance drawback."
+  },
+  {
+    "flags": "-h, --human-numeric-sort, --sort=human-numeric",
+    "description": "Sort by numerical value, but take into account the SI suffix, if present.  Sort first by numeric sign (negative, zero, or positive); then by SI suffix (either empty, or `k' or `K', or one of `MGTPEZY', in that order); and finally by numeric value.  The SI suffix must immediately follow the number.  For example, '12345K' sorts before '1M', because M is \"larger\" than K.  This sort option is useful for sorting the output of a single invocation of 'df' command with -h or -H options (human- readable)."
+  },
+  {
+    "flags": "-i, --ignore-nonprinting",
+    "description": "Ignore all non-printable characters."
+  },
+  {
+    "flags": "-M, --month-sort, --sort=month",
+    "description": "Sort by month abbreviations.  Unknown strings are considered smaller than the month names."
+  },
+  {
+    "flags": "-n, --numeric-sort, --sort=numeric",
+    "description": "Sort fields numerically by arithmetic value.  Fields are supposed to have optional blanks in the beginning, an optional minus sign, zero or more digits (including decimal point and possible thousand separators)."
+  },
+  {
+    "flags": "-R, --random-sort, --sort=random",
+    "description": "Sort by a random order.  This is a random permutation of the inputs except that the equal keys sort together.  It is implemented by hashing the input keys and sorting the hash values.  The hash function is chosen randomly.  The hash function is randomized by /dev/random content, or by file content if it is specified by --random-source.  Even if multiple sort fields are specified, the same random hash function is used for all of them."
+  },
+  {
+    "flags": "-r, --reverse",
+    "description": "Sort in reverse order."
+  },
+  {
+    "flags": "-V, --version-sort",
+    "description": "Sort version numbers.  The input lines are treated as file names in form PREFIX VERSION SUFFIX, where SUFFIX matches the regular expression \"(.([A-Za-z~][A-Za-z0-9~]*)?)*\".  The files are compared by their prefixes and versions (leading zeros are ignored in version numbers, see example below).  If an input string does not match the pattern, then it is compared using the byte compare function.  All string comparisons are performed in C locale, the locale environment setting is ignored."
+  },
+  {
+    "flags": "-b, --ignore-leading-blanks",
+    "description": "Ignore leading blank space when determining the start and end of a restricted sort key (see -k).  If -b is specified before the first -k option, it applies globally to all key specifications. Otherwise, -b can be attached independently to each field argument of the key specifications.  Note that sort keys specified with the -k option may have a variable number of leading whitespace characters that will affect the result, as described below in the -t option description."
+  },
+  {
+    "flags": "-k field1[,field2], --key=field1[,field2]",
+    "description": "Define a restricted sort key that has the starting position field1, and optional ending position field2 of a key field.  The -k option may be specified multiple times, in which case subsequent keys are compared when earlier keys compare equal. The -k option replaces the obsolete options +pos1 and -pos2, but the old notation is also supported."
+  },
+  {
+    "flags": "-t char, --field-separator=char",
+    "description": "Use char as a field separator character.  The initial char is not considered to be part of a field when determining key offsets. Each occurrence of char is significant (for example, “charchar” delimits an empty field).  If -t is not specified, the default field separator is a sequence of blank space characters, and consecutive blank spaces do not delimit an empty field, however, the initial blank space is considered part of a field when determining key offsets.  To use NUL as field separator, use -t ´\\0´."
+  },
+  {
+    "flags": "-z, --zero-terminated",
+    "description": "Use NUL as record separator.  By default, records in the files are supposed to be separated by the newline characters.  With this option, NUL (´\\0´) is used as a record separator character."
+  }
+]

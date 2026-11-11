@@ -1,0 +1,162 @@
+[
+  {
+    "flags": "-v, --verbose",
+    "description": "be more verbose"
+  },
+  {
+    "flags": "-q, --quiet",
+    "description": "be more quiet"
+  },
+  {
+    "flags": "--all",
+    "description": "fetch from all remotes"
+  },
+  {
+    "flags": "--set-upstream",
+    "description": "set upstream for git pull/fetch"
+  },
+  {
+    "flags": "-a, --append",
+    "description": "append to .git/FETCH_HEAD instead of overwriting"
+  },
+  {
+    "flags": "--atomic",
+    "description": "use atomic transaction to update references"
+  },
+  {
+    "flags": "--upload-pack <path>",
+    "description": "path to upload pack on remote end"
+  },
+  {
+    "flags": "-f, --force",
+    "description": "force overwrite of local reference"
+  },
+  {
+    "flags": "-m, --multiple",
+    "description": "fetch from multiple remotes"
+  },
+  {
+    "flags": "-t, --tags",
+    "description": "fetch all tags and associated objects"
+  },
+  {
+    "flags": "-n",
+    "description": "do not fetch all tags (--no-tags)"
+  },
+  {
+    "flags": "-j, --jobs <n>",
+    "description": "number of submodules fetched in parallel"
+  },
+  {
+    "flags": "--prefetch",
+    "description": "modify the refspec to place all refs within refs/prefetch/"
+  },
+  {
+    "flags": "-p, --prune",
+    "description": "prune remote-tracking branches no longer on remote"
+  },
+  {
+    "flags": "-P, --prune-tags",
+    "description": "prune local tags no longer on remote and clobber changed tags"
+  },
+  {
+    "flags": "--recurse-submodules[=<on-demand>]",
+    "description": "control recursive fetching of submodules"
+  },
+  {
+    "flags": "--dry-run",
+    "description": "dry run"
+  },
+  {
+    "flags": "--write-fetch-head",
+    "description": "write fetched references to the FETCH_HEAD file"
+  },
+  {
+    "flags": "-k, --keep",
+    "description": "keep downloaded pack"
+  },
+  {
+    "flags": "-u, --update-head-ok",
+    "description": "allow updating of HEAD ref"
+  },
+  {
+    "flags": "--progress",
+    "description": "force progress reporting"
+  },
+  {
+    "flags": "--depth <depth>",
+    "description": "deepen history of shallow clone"
+  },
+  {
+    "flags": "--shallow-since <time>",
+    "description": "deepen history of shallow repository based on time"
+  },
+  {
+    "flags": "--shallow-exclude <revision>",
+    "description": "deepen history of shallow clone, excluding rev"
+  },
+  {
+    "flags": "--deepen <n>",
+    "description": "deepen history of shallow clone"
+  },
+  {
+    "flags": "--unshallow",
+    "description": "convert to a complete repository"
+  },
+  {
+    "flags": "--refetch",
+    "description": "re-fetch without negotiating common commits"
+  },
+  {
+    "flags": "--update-shallow",
+    "description": "accept refs that update .git/shallow"
+  },
+  {
+    "flags": "--refmap <refmap>",
+    "description": "specify fetch refmap"
+  },
+  {
+    "flags": "-o, --server-option <server-specific>",
+    "description": "option to transmit"
+  },
+  {
+    "flags": "-4, --ipv4",
+    "description": "use IPv4 addresses only"
+  },
+  {
+    "flags": "-6, --ipv6",
+    "description": "use IPv6 addresses only"
+  },
+  {
+    "flags": "--negotiation-tip <revision>",
+    "description": "report that we have only objects reachable from this object"
+  },
+  {
+    "flags": "--negotiate-only",
+    "description": "do not fetch a packfile; instead, print ancestors of negotiation tips"
+  },
+  {
+    "flags": "--filter <args>",
+    "description": "object filtering"
+  },
+  {
+    "flags": "--auto-maintenance",
+    "description": "run 'maintenance --auto' after fetching"
+  },
+  {
+    "flags": "--auto-gc",
+    "description": "run 'maintenance --auto' after fetching"
+  },
+  {
+    "flags": "--show-forced-updates",
+    "description": "check for forced-updates on all updated branches"
+  },
+  {
+    "flags": "--write-commit-graph",
+    "description": "write the commit-graph after fetching"
+  },
+  {
+    "flags": "--stdin",
+    "description": "accept refspecs from stdin"
+  }
+]

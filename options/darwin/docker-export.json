@@ -1,0 +1,6 @@
+[
+  {
+    "flags": "-o, --output string",
+    "description": "Write to a file, instead of STDOUT"
+  }
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "flags": "-f, --format string",
+    "description": "Format output using a custom template: 'json':             Print in JSON format 'TEMPLATE':         Print output using the given Go template. Refer to https://docs.docker.com/go/formatting/ for more information about formatting output with templates"
+  },
+  {
+    "flags": "-s, --size",
+    "description": "Display total file sizes if the type is container"
+  },
+  {
+    "flags": "--type string",
+    "description": "Only inspect objects of the given type"
+  }
+]

@@ -1,0 +1,66 @@
+[
+  {
+    "flags": "-s, --source <tree-ish>",
+    "description": "which tree-ish to checkout from"
+  },
+  {
+    "flags": "-S, --staged",
+    "description": "restore the index"
+  },
+  {
+    "flags": "-W, --worktree",
+    "description": "restore the working tree (default)"
+  },
+  {
+    "flags": "--ignore-unmerged",
+    "description": "ignore unmerged entries"
+  },
+  {
+    "flags": "--overlay",
+    "description": "use overlay mode"
+  },
+  {
+    "flags": "-q, --quiet",
+    "description": "suppress progress reporting"
+  },
+  {
+    "flags": "--recurse-submodules[=<checkout>]",
+    "description": "control recursive updating of submodules"
+  },
+  {
+    "flags": "--progress",
+    "description": "force progress reporting"
+  },
+  {
+    "flags": "-m, --merge",
+    "description": "perform a 3-way merge with the new branch"
+  },
+  {
+    "flags": "--conflict <style>",
+    "description": "conflict style (merge, diff3, or zdiff3)"
+  },
+  {
+    "flags": "-2, --ours",
+    "description": "checkout our version for unmerged files"
+  },
+  {
+    "flags": "-3, --theirs",
+    "description": "checkout their version for unmerged files"
+  },
+  {
+    "flags": "-p, --patch",
+    "description": "select hunks interactively"
+  },
+  {
+    "flags": "--ignore-skip-worktree-bits",
+    "description": "do not limit pathspecs to sparse entries only"
+  },
+  {
+    "flags": "--pathspec-from-file <file>",
+    "description": "read pathspec from file"
+  },
+  {
+    "flags": "--pathspec-file-nul",
+    "description": "with --pathspec-from-file, pathspec elements are separated with NUL character"
+  }
+]

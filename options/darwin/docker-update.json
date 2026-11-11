@@ -1,0 +1,58 @@
+[
+  {
+    "flags": "--blkio-weight uint16",
+    "description": "Block IO (relative weight), between 10 and 1000, or 0 to disable (default 0)"
+  },
+  {
+    "flags": "--cpu-period int",
+    "description": "Limit CPU CFS (Completely Fair Scheduler) period"
+  },
+  {
+    "flags": "--cpu-quota int",
+    "description": "Limit CPU CFS (Completely Fair Scheduler) quota"
+  },
+  {
+    "flags": "--cpu-rt-period int",
+    "description": "Limit the CPU real-time period in microseconds"
+  },
+  {
+    "flags": "--cpu-rt-runtime int",
+    "description": "Limit the CPU real-time runtime in microseconds"
+  },
+  {
+    "flags": "-c, --cpu-shares int",
+    "description": "CPU shares (relative weight)"
+  },
+  {
+    "flags": "--cpus decimal",
+    "description": "Number of CPUs"
+  },
+  {
+    "flags": "--cpuset-cpus string",
+    "description": "CPUs in which to allow execution (0-3, 0,1)"
+  },
+  {
+    "flags": "--cpuset-mems string",
+    "description": "MEMs in which to allow execution (0-3, 0,1)"
+  },
+  {
+    "flags": "-m, --memory bytes",
+    "description": "Memory limit"
+  },
+  {
+    "flags": "--memory-reservation bytes",
+    "description": "Memory soft limit"
+  },
+  {
+    "flags": "--memory-swap bytes",
+    "description": "Swap limit equal to memory plus swap: -1 to enable unlimited swap"
+  },
+  {
+    "flags": "--pids-limit int",
+    "description": "Tune container pids limit (set -1 for unlimited)"
+  },
+  {
+    "flags": "--restart string",
+    "description": "Restart policy to apply when a container exits"
+  }
+]

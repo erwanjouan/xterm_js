@@ -1,0 +1,58 @@
+[
+  {
+    "flags": "--allow-missing-template-keys=true",
+    "description": "If true, ignore any errors in templates when a field or map key is missing in the template. Only applies to golang and jsonpath output formats."
+  },
+  {
+    "flags": "--dry-run='none'",
+    "description": "Must be \"none\", \"server\", or \"client\". If client strategy, only print the object that would be sent, without sending it. If server strategy, submit server-side request without persisting the resource."
+  },
+  {
+    "flags": "--field-manager='kubectl-patch'",
+    "description": "Name of the manager used to track field ownership."
+  },
+  {
+    "flags": "-f, --filename=[]",
+    "description": "Filename, directory, or URL to files identifying the resource to update"
+  },
+  {
+    "flags": "-k, --kustomize=''",
+    "description": "Process the kustomization directory. This flag can't be used together with -f or -R."
+  },
+  {
+    "flags": "--local=false",
+    "description": "If true, patch will operate on the content of the file, not the server-side resource."
+  },
+  {
+    "flags": "-o, --output=''",
+    "description": "Output format. One of: (json, yaml, kyaml, name, go-template, go-template-file, template, templatefile, jsonpath, jsonpath-as-json, jsonpath-file)."
+  },
+  {
+    "flags": "-p, --patch=''",
+    "description": "The patch to be applied to the resource JSON file."
+  },
+  {
+    "flags": "--patch-file=''",
+    "description": "A file containing a patch to be applied to the resource."
+  },
+  {
+    "flags": "-R, --recursive=false",
+    "description": "Process the directory used in -f, --filename recursively. Useful when you want to manage related manifests organized within the same directory."
+  },
+  {
+    "flags": "--show-managed-fields=false",
+    "description": "If true, keep the managedFields when printing objects in JSON or YAML format."
+  },
+  {
+    "flags": "--subresource=''",
+    "description": "If specified, patch will operate on the subresource of the requested object."
+  },
+  {
+    "flags": "--template=''",
+    "description": "Template string or path to template file to use when -o=go-template, -o=go-template-file. The template format is golang templates [http://golang.org/pkg/text/template/#pkg-overview]."
+  },
+  {
+    "flags": "--type='strategic'",
+    "description": "The type of patch being provided; one of [json merge strategic]"
+  }
+]

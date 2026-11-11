@@ -1,0 +1,78 @@
+[
+  {
+    "flags": "--allow stringArray",
+    "description": "Allow build to access specified resources"
+  },
+  {
+    "flags": "--builder string",
+    "description": "Override the configured builder instance (default \"desktop-linux\")"
+  },
+  {
+    "flags": "--call string",
+    "description": "Set method for evaluating build (\"check\", \"outline\", \"targets\") (default \"build\")"
+  },
+  {
+    "flags": "--check",
+    "description": "Shorthand for \"--call=check\""
+  },
+  {
+    "flags": "-D, --debug",
+    "description": "Enable debug logging"
+  },
+  {
+    "flags": "-f, --file stringArray",
+    "description": "Build definition file"
+  },
+  {
+    "flags": "--list string",
+    "description": "List targets or variables"
+  },
+  {
+    "flags": "--load",
+    "description": "Shorthand for \"--set=*.output=type=docker\". Conditional."
+  },
+  {
+    "flags": "--metadata-file string",
+    "description": "Write build result metadata to a file"
+  },
+  {
+    "flags": "--no-cache",
+    "description": "Do not use cache when building the image"
+  },
+  {
+    "flags": "--policy stringArray",
+    "description": "Global policy evaluation options (format: \"[disabled=true|false][,strict=true|false][,log-level=level]\")"
+  },
+  {
+    "flags": "--print",
+    "description": "Print the options without building"
+  },
+  {
+    "flags": "--progress string",
+    "description": "Set type of progress output (\"auto\", \"none\",  \"plain\", \"quiet\", \"rawjson\", \"tty\"). Use plain to show container output (default \"auto\")"
+  },
+  {
+    "flags": "--provenance string",
+    "description": "Shorthand for \"--set=*.attest=type=provenance\""
+  },
+  {
+    "flags": "--pull",
+    "description": "Always attempt to pull all referenced images"
+  },
+  {
+    "flags": "--push",
+    "description": "Shorthand for \"--set=*.output=type=registry\". Conditional."
+  },
+  {
+    "flags": "--sbom string",
+    "description": "Shorthand for \"--set=*.attest=type=sbom\""
+  },
+  {
+    "flags": "--set stringArray",
+    "description": "Override target value (e.g., \"targetpattern.key=value\")"
+  },
+  {
+    "flags": "--var stringArray",
+    "description": "Set a variable value (e.g., \"name=value\")"
+  }
+]

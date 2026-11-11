@@ -1,0 +1,14 @@
+[
+  {
+    "flags": "-f, --force",
+    "description": "Force removal of the image"
+  },
+  {
+    "flags": "--no-prune",
+    "description": "Do not delete untagged parents"
+  },
+  {
+    "flags": "--platform strings",
+    "description": "Remove only the given platform variant. Formatted as \"os[/arch[/variant]]\" (e.g., \"linux/amd64\")"
+  }
+]

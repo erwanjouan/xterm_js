@@ -1,0 +1,70 @@
+[
+  {
+    "flags": "-H",
+    "description": "If the -R option is specified, symbolic links on the command line are followed.  (Symbolic links encountered in the tree traversal are not followed.)"
+  },
+  {
+    "flags": "-L",
+    "description": "If the -R option is specified, all symbolic links are followed."
+  },
+  {
+    "flags": "-P",
+    "description": "No symbolic links are followed.  This is the default if the -R option is specified."
+  },
+  {
+    "flags": "-R",
+    "description": "If source_file designates a directory, cp copies the directory and the entire subtree connected at that point.  If the source_file ends in a /, the contents of the directory are copied rather than the directory itself.  This option also causes symbolic links to be copied, rather than indirected through, and for cp to create special files rather than copying them as normal files.  Created directories have the same mode as the corresponding source directory, unmodified by the process' umask."
+  },
+  {
+    "flags": "-a",
+    "description": "Archive mode.  Same as -RpP.  Preserves structure and attributes of files but not directory structure."
+  },
+  {
+    "flags": "-c",
+    "description": "copy files using clonefile(2).  Note that if clonefile(2) is not supported for the target filesystem, then cp will fallback to using copyfile(2) instead to ensure the copy still succeeds."
+  },
+  {
+    "flags": "-f",
+    "description": "For each existing destination pathname, remove it and create a new file, without prompting for confirmation regardless of its permissions.  (The -f option overrides any previous -i or -n options.)"
+  },
+  {
+    "flags": "-i",
+    "description": "Cause cp to write a prompt to the standard error output before copying a file that would overwrite an existing file.  If the response from the standard input begins with the character ‘y’ or ‘Y’, the file copy is attempted.  (The -i option overrides any previous -f or -n options.)"
+  },
+  {
+    "flags": "-l",
+    "description": "Create hard links to regular files in a hierarchy instead of copying."
+  },
+  {
+    "flags": "-N",
+    "description": "When used with -p, suppress copying file flags."
+  },
+  {
+    "flags": "-n",
+    "description": "Do not overwrite an existing file.  (The -n option overrides any previous -f or -i options.)"
+  },
+  {
+    "flags": "-p",
+    "description": "Cause cp to preserve the following attributes of each source file in the copy: modification time, access time, file flags, file mode, user ID, and group ID, as allowed by permissions.  Access Control Lists (ACLs) and Extended Attributes (EAs), including resource forks, will also be preserved."
+  },
+  {
+    "flags": "-S",
+    "description": "Do not attempt to preserve holes in sparse files."
+  },
+  {
+    "flags": "-s",
+    "description": "Create symbolic links to regular files in a hierarchy instead of copying."
+  },
+  {
+    "flags": "-v",
+    "description": "Cause cp to be verbose, showing files as they are copied."
+  },
+  {
+    "flags": "-X",
+    "description": "Do not copy Extended Attributes (EAs) or resource forks."
+  },
+  {
+    "flags": "-x",
+    "description": "File system mount points are not traversed."
+  }
+]

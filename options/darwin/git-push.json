@@ -1,0 +1,98 @@
+[
+  {
+    "flags": "-v, --verbose",
+    "description": "be more verbose"
+  },
+  {
+    "flags": "-q, --quiet",
+    "description": "be more quiet"
+  },
+  {
+    "flags": "--repo <repository>",
+    "description": "repository"
+  },
+  {
+    "flags": "--all",
+    "description": "push all refs"
+  },
+  {
+    "flags": "--mirror",
+    "description": "mirror all refs"
+  },
+  {
+    "flags": "-d, --delete",
+    "description": "delete refs"
+  },
+  {
+    "flags": "--tags",
+    "description": "push tags (can't be used with --all or --mirror)"
+  },
+  {
+    "flags": "-n, --dry-run",
+    "description": "dry run"
+  },
+  {
+    "flags": "--porcelain",
+    "description": "machine-readable output"
+  },
+  {
+    "flags": "-f, --force",
+    "description": "force updates"
+  },
+  {
+    "flags": "--force-with-lease[=<refname>:<expect>]",
+    "description": "require old value of ref to be at this value"
+  },
+  {
+    "flags": "--force-if-includes",
+    "description": "require remote updates to be integrated locally"
+  },
+  {
+    "flags": "--thin",
+    "description": "use thin pack"
+  },
+  {
+    "flags": "--receive-pack <receive-pack>",
+    "description": "receive pack program"
+  },
+  {
+    "flags": "--exec <receive-pack>",
+    "description": "receive pack program"
+  },
+  {
+    "flags": "-u, --set-upstream",
+    "description": "set upstream for git pull/status"
+  },
+  {
+    "flags": "--progress",
+    "description": "force progress reporting"
+  },
+  {
+    "flags": "--prune",
+    "description": "prune locally removed refs"
+  },
+  {
+    "flags": "--no-verify",
+    "description": "bypass pre-push hook"
+  },
+  {
+    "flags": "--follow-tags",
+    "description": "push missing but relevant tags"
+  },
+  {
+    "flags": "--atomic",
+    "description": "request atomic transaction on remote side"
+  },
+  {
+    "flags": "-o, --push-option <server-specific>",
+    "description": "option to transmit"
+  },
+  {
+    "flags": "-4, --ipv4",
+    "description": "use IPv4 addresses only"
+  },
+  {
+    "flags": "-6, --ipv6",
+    "description": "use IPv6 addresses only"
+  }
+]

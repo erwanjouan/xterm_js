@@ -1,0 +1,46 @@
+[
+  {
+    "flags": "-E",
+    "description": "Interpret regular expressions as extended (modern) regular expressions rather than basic regular expressions (BRE's).  The re_format(7) manual page fully describes both formats."
+  },
+  {
+    "flags": "-a",
+    "description": "The files listed as parameters for the “w” functions are created (or truncated) before any processing begins, by default.  The -a option causes sed to delay opening each file until a command containing the related “w” function is applied to a line of input."
+  },
+  {
+    "flags": "-e command",
+    "description": "Append the editing commands specified by the command argument to the list of commands."
+  },
+  {
+    "flags": "-f command_file",
+    "description": "Append the editing commands found in the file command_file to the list of commands.  The editing commands should each be listed on a separate line.  The commands are read from the standard input if command_file is “-”."
+  },
+  {
+    "flags": "-H",
+    "description": "Enable enhanced features in the regular expression syntax.  Note that this option is independent of the -E option.  See re_format(7) for details."
+  },
+  {
+    "flags": "-I extension",
+    "description": "Edit files in-place, saving backups with the specified extension. If a zero-length extension is given, no backup will be saved.  It is not recommended to give a zero-length extension when in-place editing files, as you risk corruption or partial content in situations where disk space is exhausted, etc."
+  },
+  {
+    "flags": "-i extension",
+    "description": "Edit files in-place similarly to -I, but treat each file independently from other files.  In particular, line numbers in each file start at 1, the “$” address matches the last line of the current file, and address ranges are limited to the current file.  (See Sed Addresses.) The net result is as though each file were edited by a separate sed instance."
+  },
+  {
+    "flags": "-l",
+    "description": "Make output line buffered."
+  },
+  {
+    "flags": "-n",
+    "description": "By default, each line of input is echoed to the standard output after all of the commands have been applied to it.  The -n option suppresses this behavior."
+  },
+  {
+    "flags": "-r",
+    "description": "Same as -E for compatibility with GNU sed."
+  },
+  {
+    "flags": "-u",
+    "description": "Make output unbuffered."
+  }
+]

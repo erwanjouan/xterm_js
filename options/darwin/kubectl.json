@@ -1,0 +1,174 @@
+[
+  {
+    "flags": "create",
+    "description": "Create a resource from a file or from stdin"
+  },
+  {
+    "flags": "expose",
+    "description": "Take a replication controller, service, deployment or pod and expose it as a new Kubernetes service"
+  },
+  {
+    "flags": "run",
+    "description": "Run a particular image on the cluster"
+  },
+  {
+    "flags": "set",
+    "description": "Set specific features on objects"
+  },
+  {
+    "flags": "explain",
+    "description": "Get documentation for a resource"
+  },
+  {
+    "flags": "get",
+    "description": "Display one or many resources"
+  },
+  {
+    "flags": "edit",
+    "description": "Edit a resource on the server"
+  },
+  {
+    "flags": "delete",
+    "description": "Delete resources by file names, stdin, resources and names, or by resources and label selector"
+  },
+  {
+    "flags": "rollout",
+    "description": "Manage the rollout of a resource"
+  },
+  {
+    "flags": "scale",
+    "description": "Set a new size for a deployment, replica set, or replication controller"
+  },
+  {
+    "flags": "autoscale",
+    "description": "Auto-scale a deployment, replica set, stateful set, or replication controller"
+  },
+  {
+    "flags": "certificate",
+    "description": "Modify certificate resources"
+  },
+  {
+    "flags": "cluster-info",
+    "description": "Display cluster information"
+  },
+  {
+    "flags": "top",
+    "description": "Display resource (CPU/memory) usage"
+  },
+  {
+    "flags": "cordon",
+    "description": "Mark node as unschedulable"
+  },
+  {
+    "flags": "uncordon",
+    "description": "Mark node as schedulable"
+  },
+  {
+    "flags": "drain",
+    "description": "Drain node in preparation for maintenance"
+  },
+  {
+    "flags": "taint",
+    "description": "Update the taints on one or more nodes"
+  },
+  {
+    "flags": "describe",
+    "description": "Show details of a specific resource or group of resources"
+  },
+  {
+    "flags": "logs",
+    "description": "Print the logs for a container in a pod"
+  },
+  {
+    "flags": "attach",
+    "description": "Attach to a running container"
+  },
+  {
+    "flags": "exec",
+    "description": "Execute a command in a container"
+  },
+  {
+    "flags": "port-forward",
+    "description": "Forward one or more local ports to a pod"
+  },
+  {
+    "flags": "proxy",
+    "description": "Run a proxy to the Kubernetes API server"
+  },
+  {
+    "flags": "cp",
+    "description": "Copy files and directories to and from containers"
+  },
+  {
+    "flags": "auth",
+    "description": "Inspect authorization"
+  },
+  {
+    "flags": "debug",
+    "description": "Create debugging sessions for troubleshooting workloads and nodes"
+  },
+  {
+    "flags": "events",
+    "description": "List events"
+  },
+  {
+    "flags": "diff",
+    "description": "Diff the live version against a would-be applied version"
+  },
+  {
+    "flags": "apply",
+    "description": "Apply a configuration to a resource by file name or stdin"
+  },
+  {
+    "flags": "patch",
+    "description": "Update fields of a resource"
+  },
+  {
+    "flags": "replace",
+    "description": "Replace a resource by file name or stdin"
+  },
+  {
+    "flags": "wait",
+    "description": "Wait for a specific condition on one or many resources"
+  },
+  {
+    "flags": "kustomize",
+    "description": "Build a kustomization target from a directory or URL"
+  },
+  {
+    "flags": "label",
+    "description": "Update the labels on a resource"
+  },
+  {
+    "flags": "annotate",
+    "description": "Mettre à jour les annotations d'une ressource"
+  },
+  {
+    "flags": "completion",
+    "description": "Output shell completion code for the specified shell (bash, zsh, fish, or powershell)"
+  },
+  {
+    "flags": "api-resources",
+    "description": "Print the supported API resources on the server"
+  },
+  {
+    "flags": "api-versions",
+    "description": "Print the supported API versions on the server, in the form of \"group/version\""
+  },
+  {
+    "flags": "config",
+    "description": "Modifier des fichiers kubeconfig"
+  },
+  {
+    "flags": "kuberc",
+    "description": "Manage kuberc configuration files"
+  },
+  {
+    "flags": "plugin",
+    "description": "Provides utilities for interacting with plugins"
+  },
+  {
+    "flags": "version",
+    "description": "Print the client and server version information"
+  }
+]

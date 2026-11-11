@@ -1,0 +1,6 @@
+[
+  {
+    "flags": "-s, --signal string",
+    "description": "Signal to send to the container"
+  }
+]

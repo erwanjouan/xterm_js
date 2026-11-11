@@ -1,0 +1,146 @@
+[
+  {
+    "flags": "-v, --verbose",
+    "description": "be more verbose"
+  },
+  {
+    "flags": "-q, --quiet",
+    "description": "be more quiet"
+  },
+  {
+    "flags": "--progress",
+    "description": "force progress reporting"
+  },
+  {
+    "flags": "--reject-shallow",
+    "description": "don't clone shallow repository"
+  },
+  {
+    "flags": "-n, --no-checkout",
+    "description": "don't create a checkout"
+  },
+  {
+    "flags": "--bare",
+    "description": "create a bare repository"
+  },
+  {
+    "flags": "--mirror",
+    "description": "create a mirror repository (implies bare)"
+  },
+  {
+    "flags": "-l, --local",
+    "description": "to clone from a local repository"
+  },
+  {
+    "flags": "--no-hardlinks",
+    "description": "don't use local hardlinks, always copy"
+  },
+  {
+    "flags": "-s, --shared",
+    "description": "setup as shared repository"
+  },
+  {
+    "flags": "--recurse-submodules[=<pathspec>]",
+    "description": "initialize submodules in the clone"
+  },
+  {
+    "flags": "--recursive[=<pathspec>]",
+    "description": "alias of --recurse-submodules"
+  },
+  {
+    "flags": "-j, --jobs <n>",
+    "description": "number of submodules cloned in parallel"
+  },
+  {
+    "flags": "--template <template-directory>",
+    "description": "directory from which templates will be used"
+  },
+  {
+    "flags": "--reference <repo>",
+    "description": "reference repository"
+  },
+  {
+    "flags": "--reference-if-able <repo>",
+    "description": "reference repository"
+  },
+  {
+    "flags": "--dissociate",
+    "description": "use --reference only while cloning"
+  },
+  {
+    "flags": "-o, --origin <name>",
+    "description": "use <name> instead of 'origin' to track upstream"
+  },
+  {
+    "flags": "-b, --branch <branch>",
+    "description": "checkout <branch> instead of the remote's HEAD"
+  },
+  {
+    "flags": "-u, --upload-pack <path>",
+    "description": "path to git-upload-pack on the remote"
+  },
+  {
+    "flags": "--depth <depth>",
+    "description": "create a shallow clone of that depth"
+  },
+  {
+    "flags": "--shallow-since <time>",
+    "description": "create a shallow clone since a specific time"
+  },
+  {
+    "flags": "--shallow-exclude <revision>",
+    "description": "deepen history of shallow clone, excluding rev"
+  },
+  {
+    "flags": "--single-branch",
+    "description": "clone only one branch, HEAD or --branch"
+  },
+  {
+    "flags": "--no-tags",
+    "description": "don't clone any tags, and make later fetches not to follow them"
+  },
+  {
+    "flags": "--shallow-submodules",
+    "description": "any cloned submodules will be shallow"
+  },
+  {
+    "flags": "--separate-git-dir <gitdir>",
+    "description": "separate git dir from working tree"
+  },
+  {
+    "flags": "-c, --config <key=value>",
+    "description": "set config inside the new repository"
+  },
+  {
+    "flags": "--server-option <server-specific>",
+    "description": "option to transmit"
+  },
+  {
+    "flags": "-4, --ipv4",
+    "description": "use IPv4 addresses only"
+  },
+  {
+    "flags": "-6, --ipv6",
+    "description": "use IPv6 addresses only"
+  },
+  {
+    "flags": "--filter <args>",
+    "description": "object filtering"
+  },
+  {
+    "flags": "--also-filter-submodules",
+    "description": "apply partial clone filters to submodules"
+  },
+  {
+    "flags": "--remote-submodules",
+    "description": "any cloned submodules will use their remote-tracking branch"
+  },
+  {
+    "flags": "--sparse",
+    "description": "initialize sparse-checkout file to include only files at root"
+  },
+  {
+    "flags": "--bundle-uri <uri>",
+    "description": "a URI for downloading bundles before fetching from origin remote"
+  }
+]

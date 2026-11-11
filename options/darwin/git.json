@@ -1,0 +1,90 @@
+[
+  {
+    "flags": "clone",
+    "description": "Clone a repository into a new directory"
+  },
+  {
+    "flags": "init",
+    "description": "Create an empty Git repository or reinitialize an existing one"
+  },
+  {
+    "flags": "add",
+    "description": "Add file contents to the index"
+  },
+  {
+    "flags": "mv",
+    "description": "Move or rename a file, a directory, or a symlink"
+  },
+  {
+    "flags": "restore",
+    "description": "Restore working tree files"
+  },
+  {
+    "flags": "rm",
+    "description": "Remove files from the working tree and from the index"
+  },
+  {
+    "flags": "bisect",
+    "description": "Use binary search to find the commit that introduced a bug"
+  },
+  {
+    "flags": "diff",
+    "description": "Show changes between commits, commit and working tree, etc"
+  },
+  {
+    "flags": "grep",
+    "description": "Print lines matching a pattern"
+  },
+  {
+    "flags": "log",
+    "description": "Show commit logs"
+  },
+  {
+    "flags": "show",
+    "description": "Show various types of objects"
+  },
+  {
+    "flags": "status",
+    "description": "Show the working tree status"
+  },
+  {
+    "flags": "branch",
+    "description": "List, create, or delete branches"
+  },
+  {
+    "flags": "commit",
+    "description": "Record changes to the repository"
+  },
+  {
+    "flags": "merge",
+    "description": "Join two or more development histories together"
+  },
+  {
+    "flags": "rebase",
+    "description": "Reapply commits on top of another base tip"
+  },
+  {
+    "flags": "reset",
+    "description": "Reset current HEAD to the specified state"
+  },
+  {
+    "flags": "switch",
+    "description": "Switch branches"
+  },
+  {
+    "flags": "tag",
+    "description": "Create, list, delete or verify a tag object signed with GPG"
+  },
+  {
+    "flags": "fetch",
+    "description": "Download objects and refs from another repository"
+  },
+  {
+    "flags": "pull",
+    "description": "Fetch from and integrate with another repository or a local branch"
+  },
+  {
+    "flags": "push",
+    "description": "Update remote refs along with associated objects"
+  }
+]

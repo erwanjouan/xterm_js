@@ -1,0 +1,10 @@
+[
+  {
+    "flags": "--client=false",
+    "description": "If true, shows client version only (no server required)."
+  },
+  {
+    "flags": "-o, --output=''",
+    "description": "One of 'yaml' or 'json'."
+  }
+]

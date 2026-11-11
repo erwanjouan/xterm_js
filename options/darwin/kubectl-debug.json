@@ -1,0 +1,98 @@
+[
+  {
+    "flags": "--arguments-only=false",
+    "description": "If specified, everything after -- will be passed to the new container as Args instead of Command."
+  },
+  {
+    "flags": "--attach=false",
+    "description": "If true, wait for the container to start running, and then attach as if 'kubectl attach ...' were called.  Default false, unless '-i/--stdin' is set, in which case the default is true."
+  },
+  {
+    "flags": "-c, --container=''",
+    "description": "Container name to use for debug container."
+  },
+  {
+    "flags": "--copy-to=''",
+    "description": "Create a copy of the target Pod with this name."
+  },
+  {
+    "flags": "--custom=''",
+    "description": "Path to a JSON or YAML file containing a partial container spec to customize built-in debug profiles."
+  },
+  {
+    "flags": "--env=[]",
+    "description": "Environment variables to set in the container."
+  },
+  {
+    "flags": "-f, --filename=[]",
+    "description": "identifying the resource to debug"
+  },
+  {
+    "flags": "--image=''",
+    "description": "Container image to use for debug container."
+  },
+  {
+    "flags": "--image-pull-policy=''",
+    "description": "The image pull policy for the container. If left empty, this value will not be specified by the client and defaulted by the server."
+  },
+  {
+    "flags": "--keep-annotations=false",
+    "description": "If true, keep the original pod annotations.(This flag only works when used with '--copy-to')"
+  },
+  {
+    "flags": "--keep-init-containers=true",
+    "description": "Run the init containers for the pod. Defaults to true.(This flag only works when used with '--copy-to')"
+  },
+  {
+    "flags": "--keep-labels=false",
+    "description": "If true, keep the original pod labels.(This flag only works when used with '--copy-to')"
+  },
+  {
+    "flags": "--keep-liveness=false",
+    "description": "If true, keep the original pod liveness probes.(This flag only works when used with '--copy-to')"
+  },
+  {
+    "flags": "--keep-readiness=false",
+    "description": "If true, keep the original pod readiness probes.(This flag only works when used with '--copy-to')"
+  },
+  {
+    "flags": "--keep-startup=false",
+    "description": "If true, keep the original startup probes.(This flag only works when used with '--copy-to')"
+  },
+  {
+    "flags": "--profile='general'",
+    "description": "Options are \"general\", \"baseline\", \"restricted\", \"netadmin\" or \"sysadmin\". Defaults to \"general\""
+  },
+  {
+    "flags": "-q, --quiet=false",
+    "description": "If true, suppress informational messages."
+  },
+  {
+    "flags": "--replace=false",
+    "description": "When used with '--copy-to', delete the original Pod."
+  },
+  {
+    "flags": "--same-node=false",
+    "description": "When used with '--copy-to', schedule the copy of target Pod on the same node."
+  },
+  {
+    "flags": "--set-image=[]",
+    "description": "When used with '--copy-to', a list of name=image pairs for changing container images, similar to how 'kubectl set image' works."
+  },
+  {
+    "flags": "--share-processes=true",
+    "description": "When used with '--copy-to', enable process namespace sharing in the copy."
+  },
+  {
+    "flags": "-i, --stdin=false",
+    "description": "Keep stdin open on the container(s) in the pod, even if nothing is attached."
+  },
+  {
+    "flags": "--target=''",
+    "description": "When using an ephemeral container, target processes in this container name."
+  },
+  {
+    "flags": "-t, --tty=false",
+    "description": "Allocate a TTY for the debugging container."
+  }
+]

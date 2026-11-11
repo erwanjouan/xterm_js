@@ -1,0 +1,14 @@
+[
+  {
+    "flags": "--api-version=''",
+    "description": "Get different explanations for particular API version (API group/version)"
+  },
+  {
+    "flags": "-o, --output='plaintext'",
+    "description": "Format in which to render the schema (plaintext, plaintext-openapiv2)"
+  },
+  {
+    "flags": "-R, --recursive=false",
+    "description": "Print the fields of fields (Currently only 1 level deep)"
+  }
+]

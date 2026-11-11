@@ -1,0 +1,14 @@
+[
+  {
+    "flags": "--detach-keys string",
+    "description": "Override the key sequence for detaching a container"
+  },
+  {
+    "flags": "--no-stdin",
+    "description": "Do not attach STDIN"
+  },
+  {
+    "flags": "--sig-proxy",
+    "description": "Proxy all received signals to the process (default true)"
+  }
+]

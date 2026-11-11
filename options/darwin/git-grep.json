@@ -1,0 +1,194 @@
+[
+  {
+    "flags": "--cached",
+    "description": "search in index instead of in the work tree"
+  },
+  {
+    "flags": "--no-index",
+    "description": "find in contents not managed by git"
+  },
+  {
+    "flags": "--untracked",
+    "description": "search in both tracked and untracked files"
+  },
+  {
+    "flags": "--exclude-standard",
+    "description": "ignore files specified via '.gitignore'"
+  },
+  {
+    "flags": "--recurse-submodules",
+    "description": "recursively search in each submodule"
+  },
+  {
+    "flags": "-v, --invert-match",
+    "description": "show non-matching lines"
+  },
+  {
+    "flags": "-i, --ignore-case",
+    "description": "case insensitive matching"
+  },
+  {
+    "flags": "-w, --word-regexp",
+    "description": "match patterns only at word boundaries"
+  },
+  {
+    "flags": "-a, --text",
+    "description": "process binary files as text"
+  },
+  {
+    "flags": "-I",
+    "description": "don't match patterns in binary files"
+  },
+  {
+    "flags": "--textconv",
+    "description": "process binary files with textconv filters"
+  },
+  {
+    "flags": "-r, --recursive",
+    "description": "search in subdirectories (default)"
+  },
+  {
+    "flags": "--max-depth <depth>",
+    "description": "descend at most <depth> levels"
+  },
+  {
+    "flags": "-E, --extended-regexp",
+    "description": "use extended POSIX regular expressions"
+  },
+  {
+    "flags": "-G, --basic-regexp",
+    "description": "use basic POSIX regular expressions (default)"
+  },
+  {
+    "flags": "-F, --fixed-strings",
+    "description": "interpret patterns as fixed strings"
+  },
+  {
+    "flags": "-P, --perl-regexp",
+    "description": "use Perl-compatible regular expressions"
+  },
+  {
+    "flags": "-n, --line-number",
+    "description": "show line numbers"
+  },
+  {
+    "flags": "--column",
+    "description": "show column number of first match"
+  },
+  {
+    "flags": "-h",
+    "description": "don't show filenames"
+  },
+  {
+    "flags": "-H",
+    "description": "show filenames"
+  },
+  {
+    "flags": "--full-name",
+    "description": "show filenames relative to top directory"
+  },
+  {
+    "flags": "-l, --files-with-matches",
+    "description": "show only filenames instead of matching lines"
+  },
+  {
+    "flags": "--name-only",
+    "description": "synonym for --files-with-matches"
+  },
+  {
+    "flags": "-L, --files-without-match",
+    "description": "show only the names of files without match"
+  },
+  {
+    "flags": "-z, --null",
+    "description": "print NUL after filenames"
+  },
+  {
+    "flags": "-o, --only-matching",
+    "description": "show only matching parts of a line"
+  },
+  {
+    "flags": "-c, --count",
+    "description": "show the number of matches instead of matching lines"
+  },
+  {
+    "flags": "--color[=<when>]",
+    "description": "highlight matches"
+  },
+  {
+    "flags": "--break",
+    "description": "print empty line between matches from different files"
+  },
+  {
+    "flags": "--heading",
+    "description": "show filename only once above matches from same file"
+  },
+  {
+    "flags": "-C, --context <n>",
+    "description": "show <n> context lines before and after matches"
+  },
+  {
+    "flags": "-B, --before-context <n>",
+    "description": "show <n> context lines before matches"
+  },
+  {
+    "flags": "-A, --after-context <n>",
+    "description": "show <n> context lines after matches"
+  },
+  {
+    "flags": "--threads <n>",
+    "description": "use <n> worker threads"
+  },
+  {
+    "flags": "-NUM",
+    "description": "shortcut for -C NUM"
+  },
+  {
+    "flags": "-p, --show-function",
+    "description": "show a line with the function name before matches"
+  },
+  {
+    "flags": "-W, --function-context",
+    "description": "show the surrounding function"
+  },
+  {
+    "flags": "-f <file>",
+    "description": "read patterns from file"
+  },
+  {
+    "flags": "-e <pattern>",
+    "description": "match <pattern>"
+  },
+  {
+    "flags": "--and",
+    "description": "combine patterns specified with -e"
+  },
+  {
+    "flags": "--or",
+    "description": ""
+  },
+  {
+    "flags": "--not",
+    "description": ""
+  },
+  {
+    "flags": "-q, --quiet",
+    "description": "indicate hit with exit status without output"
+  },
+  {
+    "flags": "--all-match",
+    "description": "show only matches from files that match all patterns"
+  },
+  {
+    "flags": "-O, --open-files-in-pager[=<pager>]",
+    "description": "show matching files in the pager"
+  },
+  {
+    "flags": "--ext-grep",
+    "description": "allow calling of grep(1) (ignored by this build)"
+  },
+  {
+    "flags": "-m, --max-count <n>",
+    "description": "maximum number of results per file"
+  }
+]

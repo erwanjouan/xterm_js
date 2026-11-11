@@ -1,0 +1,10 @@
+[
+  {
+    "flags": "--dry-run='none'",
+    "description": "Must be \"none\", \"server\", or \"client\". If client strategy, only print the object that would be sent, without sending it. If server strategy, submit server-side request without persisting the resource."
+  },
+  {
+    "flags": "-l, --selector=''",
+    "description": "Selector (label query) to filter on, supports '=', '==', '!=', 'in', 'notin'.(e.g. -l key1=value1,key2=value2,key3 in (value3)). Matching objects must satisfy all of the specified label constraints."
+  }
+]

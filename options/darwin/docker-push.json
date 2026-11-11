@@ -1,0 +1,14 @@
+[
+  {
+    "flags": "-a, --all-tags",
+    "description": "Push all tags of an image to the repository"
+  },
+  {
+    "flags": "--platform string",
+    "description": "Push a platform-specific manifest as a single-platform image to the registry. Image index won't be pushed, meaning that other manifests, including attestations won't be preserved. 'os[/arch[/variant]]': Explicit platform (eg. linux/amd64)"
+  },
+  {
+    "flags": "-q, --quiet",
+    "description": "Suppress verbose output"
+  }
+]

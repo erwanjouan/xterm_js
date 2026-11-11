@@ -1,0 +1,94 @@
+[
+  {
+    "flags": "-l, --list",
+    "description": "list tag names"
+  },
+  {
+    "flags": "-n[<n>]",
+    "description": "print <n> lines of each tag message"
+  },
+  {
+    "flags": "-d, --delete",
+    "description": "delete tags"
+  },
+  {
+    "flags": "-v, --verify",
+    "description": "verify tags"
+  },
+  {
+    "flags": "-a, --annotate",
+    "description": "annotated tag, needs a message"
+  },
+  {
+    "flags": "-m, --message <message>",
+    "description": "tag message"
+  },
+  {
+    "flags": "-F, --file <file>",
+    "description": "read message from file"
+  },
+  {
+    "flags": "-e, --edit",
+    "description": "force edit of tag message"
+  },
+  {
+    "flags": "-s, --sign",
+    "description": "annotated and GPG-signed tag"
+  },
+  {
+    "flags": "--cleanup <mode>",
+    "description": "how to strip spaces and #comments from message"
+  },
+  {
+    "flags": "-u, --local-user <key-id>",
+    "description": "use another key to sign the tag"
+  },
+  {
+    "flags": "-f, --force",
+    "description": "replace the tag if exists"
+  },
+  {
+    "flags": "--create-reflog",
+    "description": "create a reflog"
+  },
+  {
+    "flags": "--column[=<style>]",
+    "description": "show tag list in columns"
+  },
+  {
+    "flags": "--contains <commit>",
+    "description": "print only tags that contain the commit"
+  },
+  {
+    "flags": "--no-contains <commit>",
+    "description": "print only tags that don't contain the commit"
+  },
+  {
+    "flags": "--merged <commit>",
+    "description": "print only tags that are merged"
+  },
+  {
+    "flags": "--no-merged <commit>",
+    "description": "print only tags that are not merged"
+  },
+  {
+    "flags": "--sort <key>",
+    "description": "field name to sort on"
+  },
+  {
+    "flags": "--points-at <object>",
+    "description": "print only tags of the object"
+  },
+  {
+    "flags": "--format <format>",
+    "description": "format to use for the output"
+  },
+  {
+    "flags": "--color[=<when>]",
+    "description": "respect format colors"
+  },
+  {
+    "flags": "-i, --ignore-case",
+    "description": "sorting and filtering are case insensitive"
+  }
+]

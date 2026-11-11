@@ -5,6 +5,7 @@ import * as pty from 'node-pty';
 import path from 'path';
 import fs from 'fs';
 import yaml from 'js-yaml';
+import { CommandOption } from './man-parser';
 
 interface CommandConfig {
   label: string;
@@ -12,22 +13,50 @@ interface CommandConfig {
   steps?: string[];
 }
 
-interface AppConfig {
+interface LauncherConfig {
   commands: CommandConfig[];
   links: { label: string; url: string; symbol?: string }[];
 }
+
+interface AppConfig {
+  autocomplete: string[];
+  launcher: LauncherConfig;
+}
+
+const configPath = path.join(__dirname, '../config.yaml');
+const config = yaml.load(fs.readFileSync(configPath, 'utf8')) as AppConfig;
 
 const app = express();
 const server = createServer(app);
 const wss = new WebSocketServer({ server });
 
-const configPath = path.join(__dirname, '../config.yaml');
-const config = yaml.load(fs.readFileSync(configPath, 'utf8')) as AppConfig;
+// ----- Man-page options -------------------------------------------------------
+const optionsCache = new Map<string, CommandOption[]>();
+
+const optionsDir = path.join(__dirname, '../options', process.platform);
+if (fs.existsSync(optionsDir)) {
+  for (const file of fs.readdirSync(optionsDir).filter(f => f.endsWith('.json'))) {
+    const key = file.slice(0, -5);
+    try {
+      optionsCache.set(key, JSON.parse(fs.readFileSync(path.join(optionsDir, file), 'utf8')) as CommandOption[]);
+    } catch {
+      console.warn(`[options] Failed to parse ${file}`);
+    }
+  }
+  console.log(`Options loaded for: ${[...optionsCache.keys()].sort().join(', ')}`);
+} else {
+  console.warn(`[options] ${optionsDir} not found — run 'make options' to generate.`);
+}
+// -----------------------------------------------------------------------------
 
 app.use(express.static(path.join(__dirname, '../public')));
 
 app.get('/api/config', (_req, res) => {
   res.json(config);
+});
+
+app.get('/api/options/:cmd', (req, res) => {
+  res.json(optionsCache.get(req.params.cmd) ?? []);
 });
 
 function resolveShell(): { shell: string; args: string[]; env: Record<string, string> } {
@@ -110,7 +139,7 @@ wss.on('connection', (ws: WebSocket) => {
       if (msg.type === 'input') {
         writeToTty(ptyProcess, msg.data);
       } else if (msg.type === 'command') {
-        const command = config.commands.find(c => c.label === msg.name);
+        const command = config.launcher.commands.find(c => c.label === msg.name);
         if (!command) return;
         const steps = command.steps ?? [command.label];
         for (const step of steps) {

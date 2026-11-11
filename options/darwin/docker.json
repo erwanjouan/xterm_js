@@ -1,0 +1,258 @@
+[
+  {
+    "flags": "run",
+    "description": "Create and run a new container from an image"
+  },
+  {
+    "flags": "exec",
+    "description": "Execute a command in a running container"
+  },
+  {
+    "flags": "ps",
+    "description": "List containers"
+  },
+  {
+    "flags": "build",
+    "description": "Build an image from a Dockerfile"
+  },
+  {
+    "flags": "bake",
+    "description": "Build from a file"
+  },
+  {
+    "flags": "pull",
+    "description": "Download an image from a registry"
+  },
+  {
+    "flags": "push",
+    "description": "Upload an image to a registry"
+  },
+  {
+    "flags": "images",
+    "description": "List images"
+  },
+  {
+    "flags": "login",
+    "description": "Authenticate to a registry"
+  },
+  {
+    "flags": "logout",
+    "description": "Log out from a registry"
+  },
+  {
+    "flags": "search",
+    "description": "Search Docker Hub for images"
+  },
+  {
+    "flags": "version",
+    "description": "Show the Docker version information"
+  },
+  {
+    "flags": "info",
+    "description": "Display system-wide information"
+  },
+  {
+    "flags": "agent",
+    "description": "Docker AI Agent Runner"
+  },
+  {
+    "flags": "ai",
+    "description": "Docker AI Agent - Ask Gordon"
+  },
+  {
+    "flags": "builder",
+    "description": "Manage builds"
+  },
+  {
+    "flags": "buildx",
+    "description": "Docker Buildx"
+  },
+  {
+    "flags": "compose",
+    "description": "Docker Compose"
+  },
+  {
+    "flags": "container",
+    "description": "Manage containers"
+  },
+  {
+    "flags": "context",
+    "description": "Manage contexts"
+  },
+  {
+    "flags": "debug",
+    "description": "Get a shell into any image or container"
+  },
+  {
+    "flags": "desktop",
+    "description": "Docker Desktop commands"
+  },
+  {
+    "flags": "dhi",
+    "description": "CLI for managing Docker Hardened Images"
+  },
+  {
+    "flags": "extension",
+    "description": "Manages Docker extensions"
+  },
+  {
+    "flags": "image",
+    "description": "Manage images"
+  },
+  {
+    "flags": "init",
+    "description": "Creates Docker-related starter files for your project"
+  },
+  {
+    "flags": "manifest",
+    "description": "Manage Docker image manifests and manifest lists"
+  },
+  {
+    "flags": "mcp",
+    "description": "Docker MCP Plugin"
+  },
+  {
+    "flags": "model",
+    "description": "Docker Model Runner"
+  },
+  {
+    "flags": "network",
+    "description": "Manage networks"
+  },
+  {
+    "flags": "offload",
+    "description": "Docker Offload"
+  },
+  {
+    "flags": "pass",
+    "description": "Docker Pass Secrets Manager Plugin (beta)"
+  },
+  {
+    "flags": "plugin",
+    "description": "Manage plugins"
+  },
+  {
+    "flags": "scout",
+    "description": "Docker Scout"
+  },
+  {
+    "flags": "system",
+    "description": "Manage Docker"
+  },
+  {
+    "flags": "volume",
+    "description": "Manage volumes"
+  },
+  {
+    "flags": "attach",
+    "description": "Attach local standard input, output, and error streams to a running container"
+  },
+  {
+    "flags": "commit",
+    "description": "Create a new image from a container's changes"
+  },
+  {
+    "flags": "cp",
+    "description": "Copy files/folders between a container and the local filesystem"
+  },
+  {
+    "flags": "create",
+    "description": "Create a new container"
+  },
+  {
+    "flags": "diff",
+    "description": "Inspect changes to files or directories on a container's filesystem"
+  },
+  {
+    "flags": "events",
+    "description": "Get real time events from the server"
+  },
+  {
+    "flags": "export",
+    "description": "Export a container's filesystem as a tar archive"
+  },
+  {
+    "flags": "history",
+    "description": "Show the history of an image"
+  },
+  {
+    "flags": "import",
+    "description": "Import the contents from a tarball to create a filesystem image"
+  },
+  {
+    "flags": "inspect",
+    "description": "Return low-level information on Docker objects"
+  },
+  {
+    "flags": "kill",
+    "description": "Kill one or more running containers"
+  },
+  {
+    "flags": "load",
+    "description": "Load an image from a tar archive or STDIN"
+  },
+  {
+    "flags": "logs",
+    "description": "Fetch the logs of a container"
+  },
+  {
+    "flags": "pause",
+    "description": "Pause all processes within one or more containers"
+  },
+  {
+    "flags": "port",
+    "description": "List port mappings or a specific mapping for the container"
+  },
+  {
+    "flags": "rename",
+    "description": "Rename a container"
+  },
+  {
+    "flags": "restart",
+    "description": "Restart one or more containers"
+  },
+  {
+    "flags": "rm",
+    "description": "Remove one or more containers"
+  },
+  {
+    "flags": "rmi",
+    "description": "Remove one or more images"
+  },
+  {
+    "flags": "save",
+    "description": "Save one or more images to a tar archive (streamed to STDOUT by default)"
+  },
+  {
+    "flags": "start",
+    "description": "Start one or more stopped containers"
+  },
+  {
+    "flags": "stats",
+    "description": "Display a live stream of container(s) resource usage statistics"
+  },
+  {
+    "flags": "stop",
+    "description": "Stop one or more running containers"
+  },
+  {
+    "flags": "tag",
+    "description": "Create a tag TARGET_IMAGE that refers to SOURCE_IMAGE"
+  },
+  {
+    "flags": "top",
+    "description": "Display the running processes of a container"
+  },
+  {
+    "flags": "unpause",
+    "description": "Unpause all processes within one or more containers"
+  },
+  {
+    "flags": "update",
+    "description": "Update configuration of one or more containers"
+  },
+  {
+    "flags": "wait",
+    "description": "Block until one or more containers stop, then print their exit codes"
+  }
+]

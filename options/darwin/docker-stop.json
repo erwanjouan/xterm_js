@@ -1,0 +1,10 @@
+[
+  {
+    "flags": "-s, --signal string",
+    "description": "Signal to send to the container"
+  },
+  {
+    "flags": "-t, --timeout int",
+    "description": "Seconds to wait before killing the container"
+  }
+]

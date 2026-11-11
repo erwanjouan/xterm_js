@@ -1,0 +1,142 @@
+[
+  {
+    "flags": "--allow-missing-template-keys=true",
+    "description": "If true, ignore any errors in templates when a field or map key is missing in the template. Only applies to golang and jsonpath output formats."
+  },
+  {
+    "flags": "--annotations=[]",
+    "description": "Annotations to apply to the pod."
+  },
+  {
+    "flags": "--attach=false",
+    "description": "If true, wait for the Pod to start running, and then attach to the Pod as if 'kubectl attach ...' were called.  Default false, unless '-i/--stdin' is set, in which case the default is true. With '--restart=Never' the exit code of the container process is returned."
+  },
+  {
+    "flags": "--cascade='background'",
+    "description": "Must be \"background\", \"orphan\", or \"foreground\". Selects the deletion cascading strategy for the dependents (e.g. Pods created by a ReplicationController). Defaults to background."
+  },
+  {
+    "flags": "--command=false",
+    "description": "If true and extra arguments are present, use them as the 'command' field in the container, rather than the 'args' field which is the default."
+  },
+  {
+    "flags": "--detach-keys='ctrl-p,ctrl-q'",
+    "description": "Override the key sequence for detaching a container."
+  },
+  {
+    "flags": "--dry-run='none'",
+    "description": "Must be \"none\", \"server\", or \"client\". If client strategy, only print the object that would be sent, without sending it. If server strategy, submit server-side request without persisting the resource."
+  },
+  {
+    "flags": "--env=[]",
+    "description": "Environment variables to set in the container."
+  },
+  {
+    "flags": "--expose=false",
+    "description": "If true, create a ClusterIP service associated with the pod.  Requires `--port`."
+  },
+  {
+    "flags": "--field-manager='kubectl-run'",
+    "description": "Name of the manager used to track field ownership."
+  },
+  {
+    "flags": "-f, --filename=[]",
+    "description": "to use to replace the resource."
+  },
+  {
+    "flags": "--force=false",
+    "description": "If true, immediately remove resources from API and bypass graceful deletion. Note that immediate deletion of some resources may result in inconsistency or data loss and requires confirmation."
+  },
+  {
+    "flags": "--grace-period=-1",
+    "description": "Period of time in seconds given to the resource to terminate gracefully. Ignored if negative. Set to 1 for immediate shutdown. Can only be set to 0 when --force is true (force deletion)."
+  },
+  {
+    "flags": "--image=''",
+    "description": "The image for the container to run."
+  },
+  {
+    "flags": "--image-pull-policy=''",
+    "description": "The image pull policy for the container.  If left empty, this value will not be specified by the client and defaulted by the server."
+  },
+  {
+    "flags": "-k, --kustomize=''",
+    "description": "Process a kustomization directory. This flag can't be used together with -f or -R."
+  },
+  {
+    "flags": "-l, --labels=''",
+    "description": "Comma separated labels to apply to the pod. Will override previous values."
+  },
+  {
+    "flags": "--leave-stdin-open=false",
+    "description": "If the pod is started in interactive mode or with stdin, leave stdin open after the first attach completes. By default, stdin will be closed after the first attach completes."
+  },
+  {
+    "flags": "-o, --output=''",
+    "description": "Output format. One of: (json, yaml, kyaml, name, go-template, go-template-file, template, templatefile, jsonpath, jsonpath-as-json, jsonpath-file)."
+  },
+  {
+    "flags": "--override-type='merge'",
+    "description": "The method used to override the generated object: json, merge, or strategic."
+  },
+  {
+    "flags": "--overrides=''",
+    "description": "An inline JSON override for the generated object. If this is non-empty, it is used to override the generated object. Requires that the object supply a valid apiVersion field."
+  },
+  {
+    "flags": "--pod-running-timeout=1m0s",
+    "description": "The length of time (like 5s, 2m, or 3h, higher than zero) to wait until at least one pod is running"
+  },
+  {
+    "flags": "--port=''",
+    "description": "The port that this container exposes."
+  },
+  {
+    "flags": "--privileged=false",
+    "description": "If true, run the container in privileged mode."
+  },
+  {
+    "flags": "-q, --quiet=false",
+    "description": "If true, suppress prompt messages."
+  },
+  {
+    "flags": "-R, --recursive=false",
+    "description": "Process the directory used in -f, --filename recursively. Useful when you want to manage related manifests organized within the same directory."
+  },
+  {
+    "flags": "--restart='Always'",
+    "description": "The restart policy for this Pod.  Legal values [Always, OnFailure, Never]."
+  },
+  {
+    "flags": "--rm=false",
+    "description": "If true, delete the pod after it exits.  Only valid when attaching to the container, e.g. with '--attach' or with '-i/--stdin'."
+  },
+  {
+    "flags": "--save-config=false",
+    "description": "If true, the configuration of current object will be saved in its annotation. Otherwise, the annotation will be unchanged. This flag is useful when you want to perform kubectl apply on this object in the future."
+  },
+  {
+    "flags": "--show-managed-fields=false",
+    "description": "If true, keep the managedFields when printing objects in JSON or YAML format."
+  },
+  {
+    "flags": "-i, --stdin=false",
+    "description": "Keep stdin open on the container in the pod, even if nothing is attached."
+  },
+  {
+    "flags": "--template=''",
+    "description": "Template string or path to template file to use when -o=go-template, -o=go-template-file. The template format is golang templates [http://golang.org/pkg/text/template/#pkg-overview]."
+  },
+  {
+    "flags": "--timeout=0s",
+    "description": "The length of time to wait before giving up on a delete, zero means determine a timeout from the size of the object"
+  },
+  {
+    "flags": "-t, --tty=false",
+    "description": "Allocate a TTY for the container in the pod."
+  },
+  {
+    "flags": "--wait=false",
+    "description": "If true, wait for resources to be gone before returning. This waits for finalizers."
+  }
+]

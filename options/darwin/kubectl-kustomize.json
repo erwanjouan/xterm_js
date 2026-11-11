@@ -1,0 +1,54 @@
+[
+  {
+    "flags": "--as-current-user=false",
+    "description": "use the uid and gid of the command executor to run the function in the container"
+  },
+  {
+    "flags": "--enable-alpha-plugins=false",
+    "description": "enable kustomize plugins"
+  },
+  {
+    "flags": "--enable-helm=false",
+    "description": "Enable use of the Helm chart inflator generator."
+  },
+  {
+    "flags": "-e, --env=[]",
+    "description": "a list of environment variables to be used by functions"
+  },
+  {
+    "flags": "--helm-api-versions=[]",
+    "description": "Kubernetes api versions used by Helm for Capabilities.APIVersions"
+  },
+  {
+    "flags": "--helm-command='helm'",
+    "description": "helm command (path to executable)"
+  },
+  {
+    "flags": "--helm-debug=false",
+    "description": "Enable debug output from the Helm chart inflator generator."
+  },
+  {
+    "flags": "--helm-kube-version=''",
+    "description": "Kubernetes version used by Helm for Capabilities.KubeVersion"
+  },
+  {
+    "flags": "--load-restrictor='LoadRestrictionsRootOnly'",
+    "description": "if set to 'LoadRestrictionsNone', local kustomizations may load files from outside their root. This does, however, break the relocatability of the kustomization."
+  },
+  {
+    "flags": "--mount=[]",
+    "description": "a list of storage options read from the filesystem"
+  },
+  {
+    "flags": "--network=false",
+    "description": "enable network access for functions that declare it"
+  },
+  {
+    "flags": "--network-name='bridge'",
+    "description": "the docker network to run the container in"
+  },
+  {
+    "flags": "-o, --output=''",
+    "description": "If specified, write output to this path."
+  }
+]

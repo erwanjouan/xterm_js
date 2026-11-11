@@ -1,0 +1,70 @@
+[
+  {
+    "flags": "--all=false",
+    "description": "Select all resources, in the namespace of the specified resource types"
+  },
+  {
+    "flags": "-A, --all-namespaces=false",
+    "description": "If true, check the specified action in all namespaces."
+  },
+  {
+    "flags": "--allow-missing-template-keys=true",
+    "description": "If true, ignore any errors in templates when a field or map key is missing in the template. Only applies to golang and jsonpath output formats."
+  },
+  {
+    "flags": "--dry-run='none'",
+    "description": "Must be \"none\", \"server\", or \"client\". If client strategy, only print the object that would be sent, without sending it. If server strategy, submit server-side request without persisting the resource."
+  },
+  {
+    "flags": "--field-manager='kubectl-label'",
+    "description": "Name of the manager used to track field ownership."
+  },
+  {
+    "flags": "--field-selector=''",
+    "description": "Selector (field query) to filter on, supports '=', '==', and '!='.(e.g. --field-selector key1=value1,key2=value2). The server only supports a limited number of field queries per type."
+  },
+  {
+    "flags": "-f, --filename=[]",
+    "description": "Filename, directory, or URL to files identifying the resource to update the labels"
+  },
+  {
+    "flags": "-k, --kustomize=''",
+    "description": "Process the kustomization directory. This flag can't be used together with -f or -R."
+  },
+  {
+    "flags": "--list=false",
+    "description": "If true, display the labels for a given resource."
+  },
+  {
+    "flags": "--local=false",
+    "description": "If true, label will NOT contact api-server but run locally."
+  },
+  {
+    "flags": "-o, --output=''",
+    "description": "Output format. One of: (json, yaml, kyaml, name, go-template, go-template-file, template, templatefile, jsonpath, jsonpath-as-json, jsonpath-file)."
+  },
+  {
+    "flags": "--overwrite=false",
+    "description": "If true, allow labels to be overwritten, otherwise reject label updates that overwrite existing labels."
+  },
+  {
+    "flags": "-R, --recursive=false",
+    "description": "Process the directory used in -f, --filename recursively. Useful when you want to manage related manifests organized within the same directory."
+  },
+  {
+    "flags": "--resource-version=''",
+    "description": "If non-empty, the labels update will only succeed if this is the current resource-version for the object. Only valid when specifying a single resource."
+  },
+  {
+    "flags": "-l, --selector=''",
+    "description": "Selector (label query) to filter on, supports '=', '==', '!=', 'in', 'notin'.(e.g. -l key1=value1,key2=value2,key3 in (value3)). Matching objects must satisfy all of the specified label constraints."
+  },
+  {
+    "flags": "--show-managed-fields=false",
+    "description": "If true, keep the managedFields when printing objects in JSON or YAML format."
+  },
+  {
+    "flags": "--template=''",
+    "description": "Template string or path to template file to use when -o=go-template, -o=go-template-file. The template format is golang templates [http://golang.org/pkg/text/template/#pkg-overview]."
+  }
+]

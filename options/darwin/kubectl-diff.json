@@ -1,0 +1,50 @@
+[
+  {
+    "flags": "--concurrency=1",
+    "description": "Number of objects to process in parallel when diffing against the live version. Larger number = faster, but more memory, I/O and CPU over that shorter period of time."
+  },
+  {
+    "flags": "--field-manager='kubectl-client-side-apply'",
+    "description": "Name of the manager used to track field ownership."
+  },
+  {
+    "flags": "-f, --filename=[]",
+    "description": "Filename, directory, or URL to files contains the configuration to diff"
+  },
+  {
+    "flags": "--force-conflicts=false",
+    "description": "If true, server-side apply will force the changes against conflicts."
+  },
+  {
+    "flags": "-k, --kustomize=''",
+    "description": "Process the kustomization directory. This flag can't be used together with -f or -R."
+  },
+  {
+    "flags": "--prune=false",
+    "description": "Include resources that would be deleted by pruning. Can be used with -l and default shows all resources would be pruned"
+  },
+  {
+    "flags": "--prune-allowlist=[]",
+    "description": "Overwrite the default allowlist with <group/version/kind> for --prune"
+  },
+  {
+    "flags": "-R, --recursive=false",
+    "description": "Process the directory used in -f, --filename recursively. Useful when you want to manage related manifests organized within the same directory."
+  },
+  {
+    "flags": "-l, --selector=''",
+    "description": "Selector (label query) to filter on, supports '=', '==', '!=', 'in', 'notin'.(e.g. -l key1=value1,key2=value2,key3 in (value3)). Matching objects must satisfy all of the specified label constraints."
+  },
+  {
+    "flags": "--server-side=false",
+    "description": "If true, apply runs in the server instead of the client."
+  },
+  {
+    "flags": "--show-managed-fields=false",
+    "description": "If true, include managed fields in the diff."
+  },
+  {
+    "flags": "--show-secrets=false",
+    "description": "If true, do not mask secret values in the diff."
+  }
+]

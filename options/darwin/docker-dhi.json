@@ -1,0 +1,6 @@
+[
+  {
+    "flags": "-v, --version",
+    "description": "version for dhi"
+  }
+]

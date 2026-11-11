@@ -1,0 +1,58 @@
+[
+  {
+    "flags": "--all=false",
+    "description": "Select all resources in the namespace of the specified resource types"
+  },
+  {
+    "flags": "--allow-missing-template-keys=true",
+    "description": "If true, ignore any errors in templates when a field or map key is missing in the template. Only applies to golang and jsonpath output formats."
+  },
+  {
+    "flags": "--current-replicas=-1",
+    "description": "Precondition for current size. Requires that the current size of the resource match this value in order to scale. -1 (default) for no condition."
+  },
+  {
+    "flags": "--dry-run='none'",
+    "description": "Must be \"none\", \"server\", or \"client\". If client strategy, only print the object that would be sent, without sending it. If server strategy, submit server-side request without persisting the resource."
+  },
+  {
+    "flags": "-f, --filename=[]",
+    "description": "Filename, directory, or URL to files identifying the resource to set a new size"
+  },
+  {
+    "flags": "-k, --kustomize=''",
+    "description": "Process the kustomization directory. This flag can't be used together with -f or -R."
+  },
+  {
+    "flags": "-o, --output=''",
+    "description": "Output format. One of: (json, yaml, kyaml, name, go-template, go-template-file, template, templatefile, jsonpath, jsonpath-as-json, jsonpath-file)."
+  },
+  {
+    "flags": "-R, --recursive=false",
+    "description": "Process the directory used in -f, --filename recursively. Useful when you want to manage related manifests organized within the same directory."
+  },
+  {
+    "flags": "--replicas=0",
+    "description": "The new desired number of replicas. Required."
+  },
+  {
+    "flags": "--resource-version=''",
+    "description": "Precondition for resource version. Requires that the current resource version match this value in order to scale."
+  },
+  {
+    "flags": "-l, --selector=''",
+    "description": "Selector (label query) to filter on, supports '=', '==', '!=', 'in', 'notin'.(e.g. -l key1=value1,key2=value2,key3 in (value3)). Matching objects must satisfy all of the specified label constraints."
+  },
+  {
+    "flags": "--show-managed-fields=false",
+    "description": "If true, keep the managedFields when printing objects in JSON or YAML format."
+  },
+  {
+    "flags": "--template=''",
+    "description": "Template string or path to template file to use when -o=go-template, -o=go-template-file. The template format is golang templates [http://golang.org/pkg/text/template/#pkg-overview]."
+  },
+  {
+    "flags": "--timeout=0s",
+    "description": "The length of time to wait before giving up on a scale operation, zero means don't wait. Any other values should contain a corresponding time unit (e.g. 1s, 2m, 3h)."
+  }
+]

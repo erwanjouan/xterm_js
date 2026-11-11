@@ -1,0 +1,6 @@
+[
+  {
+    "flags": "--socket string",
+    "description": "The Desktop extension manager socket"
+  }
+]

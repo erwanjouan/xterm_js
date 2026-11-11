@@ -1,0 +1,6 @@
+[
+  {
+    "flags": "--version",
+    "description": "Display version of the init plugin"
+  }
+]

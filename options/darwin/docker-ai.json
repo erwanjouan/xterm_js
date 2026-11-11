@@ -1,0 +1,6 @@
+[
+  {
+    "flags": "-C, --working-dir string",
+    "description": "Sets the working directory for the command"
+  }
+]

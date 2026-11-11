@@ -1,0 +1,70 @@
+[
+  {
+    "flags": "-n, --dry-run",
+    "description": "dry run"
+  },
+  {
+    "flags": "-v, --verbose",
+    "description": "be verbose"
+  },
+  {
+    "flags": "-i, --interactive",
+    "description": "interactive picking"
+  },
+  {
+    "flags": "-p, --patch",
+    "description": "select hunks interactively"
+  },
+  {
+    "flags": "-e, --edit",
+    "description": "edit current diff and apply"
+  },
+  {
+    "flags": "-f, --force",
+    "description": "allow adding otherwise ignored files"
+  },
+  {
+    "flags": "-u, --update",
+    "description": "update tracked files"
+  },
+  {
+    "flags": "--renormalize",
+    "description": "renormalize EOL of tracked files (implies -u)"
+  },
+  {
+    "flags": "-N, --intent-to-add",
+    "description": "record only the fact that the path will be added later"
+  },
+  {
+    "flags": "-A, --all",
+    "description": "add changes from all tracked and untracked files"
+  },
+  {
+    "flags": "--ignore-removal",
+    "description": "ignore paths removed in the working tree (same as --no-all)"
+  },
+  {
+    "flags": "--refresh",
+    "description": "don't add, only refresh the index"
+  },
+  {
+    "flags": "--ignore-errors",
+    "description": "just skip files which cannot be added because of errors"
+  },
+  {
+    "flags": "--ignore-missing",
+    "description": "check if - even missing - files are ignored in dry run"
+  },
+  {
+    "flags": "--sparse",
+    "description": "allow updating entries outside of the sparse-checkout cone"
+  },
+  {
+    "flags": "--pathspec-from-file <file>",
+    "description": "read pathspec from file"
+  },
+  {
+    "flags": "--pathspec-file-nul",
+    "description": "with --pathspec-from-file, pathspec elements are separated with NUL character"
+  }
+]

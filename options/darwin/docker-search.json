@@ -1,0 +1,18 @@
+[
+  {
+    "flags": "-f, --filter filter",
+    "description": "Filter output based on conditions provided"
+  },
+  {
+    "flags": "--format string",
+    "description": "Pretty-print search using a Go template"
+  },
+  {
+    "flags": "--limit int",
+    "description": "Max number of search results"
+  },
+  {
+    "flags": "--no-trunc",
+    "description": "Don't truncate output"
+  }
+]

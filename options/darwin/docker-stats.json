@@ -1,0 +1,18 @@
+[
+  {
+    "flags": "-a, --all",
+    "description": "Show all containers (default shows just running)"
+  },
+  {
+    "flags": "--format string",
+    "description": "Format output using a custom template: 'table':            Print output in table format with column headers (default) 'table TEMPLATE':   Print output in table format using the given Go template 'json':             Print in JSON format 'TEMPLATE':         Print output using the given Go template. Refer to https://docs.docker.com/go/formatting/ for more information about formatting output with templates"
+  },
+  {
+    "flags": "--no-stream",
+    "description": "Disable streaming stats and only pull the first result"
+  },
+  {
+    "flags": "--no-trunc",
+    "description": "Do not truncate output"
+  }
+]

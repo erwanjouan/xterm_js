@@ -1,0 +1,118 @@
+[
+  {
+    "flags": "-A",
+    "description": "Display information about other users' processes, including those without controlling terminals."
+  },
+  {
+    "flags": "-a",
+    "description": "Display information about other users' processes as well as your own.  This will skip any processes which do not have a controlling terminal, unless the -x option is also specified."
+  },
+  {
+    "flags": "-C",
+    "description": "Change the way the CPU percentage is calculated by using a “raw” CPU calculation that ignores “resident” time (this normally has no effect)."
+  },
+  {
+    "flags": "-c",
+    "description": "Change the “command” column output to just contain the executable name, rather than the full command line."
+  },
+  {
+    "flags": "-d",
+    "description": "Like -A, but excludes session leaders."
+  },
+  {
+    "flags": "-E",
+    "description": "Display the environment as well.  This does not reflect changes in the environment after process launch."
+  },
+  {
+    "flags": "-e",
+    "description": "Identical to -A."
+  },
+  {
+    "flags": "-f",
+    "description": "Display the uid, pid, parent pid, recent CPU usage, process start time, controlling tty, elapsed CPU usage, and the associated command.  If the -u option is also used, display the user name rather then the numeric uid.  When -o or -O is used to add to the display following -f, the command field is not truncated as severely as it is in other formats."
+  },
+  {
+    "flags": "-G",
+    "description": "Display information about processes which are running with the specified real group IDs."
+  },
+  {
+    "flags": "-g",
+    "description": "Display information about processes with the specified process group leaders."
+  },
+  {
+    "flags": "-h",
+    "description": "Repeat the information header as often as necessary to guarantee one header per page of information."
+  },
+  {
+    "flags": "-j",
+    "description": "Print information associated with the following keywords: user, pid, ppid, pgid, sess, jobc, state, tt, time, and command."
+  },
+  {
+    "flags": "-L",
+    "description": "List the set of keywords available for the -O and -o options."
+  },
+  {
+    "flags": "-l",
+    "description": "Display information associated with the following keywords: uid, pid, ppid, flags, cpu, pri, nice, vsz=SZ, rss, wchan, state=S, paddr=ADDR, tty, time, and command=CMD."
+  },
+  {
+    "flags": "-M",
+    "description": "Print the threads corresponding to each task."
+  },
+  {
+    "flags": "-m",
+    "description": "Sort by memory usage, instead of the combination of controlling terminal and process ID."
+  },
+  {
+    "flags": "-O",
+    "description": "Add the information associated with the space or comma separated list of keywords specified, after the process ID, in the default information display.  Keywords may be appended with an equals (‘=’) sign and a string.  This causes the printed header to use the specified string instead of the standard header."
+  },
+  {
+    "flags": "-o",
+    "description": "Display information associated with the space or comma separated list of keywords specified.  Multiple keywords may also be given in the form of more than one -o option.  Keywords may be appended with an equals (‘=’) sign and a string.  This causes the printed header to use the specified string instead of the standard header.  If all keywords have empty header texts, no header line is written."
+  },
+  {
+    "flags": "-p",
+    "description": "Display information about processes which match the specified process IDs."
+  },
+  {
+    "flags": "-r",
+    "description": "Sort by current CPU usage, instead of the combination of controlling terminal and process ID."
+  },
+  {
+    "flags": "-S",
+    "description": "Change the way the process time is calculated by summing all exited children to their parent process."
+  },
+  {
+    "flags": "-T",
+    "description": "Display information about processes attached to the device associated with the standard input."
+  },
+  {
+    "flags": "-t",
+    "description": "Display information about processes attached to the specified terminal devices."
+  },
+  {
+    "flags": "-U",
+    "description": "Display the processes belonging to the specified real user IDs."
+  },
+  {
+    "flags": "-u",
+    "description": "Display the processes belonging to the specified usernames."
+  },
+  {
+    "flags": "-v",
+    "description": "Display information associated with the following keywords: pid, state, time, sl, re, pagein, vsz, rss, lim, tsiz, %cpu, %mem, and command.  The -v option implies the -m option."
+  },
+  {
+    "flags": "-w",
+    "description": "Use 132 columns to display information, instead of the default which is your window size.  If the -w option is specified more than once, ps will use as many columns as necessary without regard for your window size.  When output is not to a terminal, an unlimited number of columns are always used."
+  },
+  {
+    "flags": "-X",
+    "description": "When displaying processes matched by other options, skip any processes which do not have a controlling terminal."
+  },
+  {
+    "flags": "-x",
+    "description": "When displaying processes matched by other options, include processes which do not have a controlling terminal.  This is the opposite of the -X option.  If both -X and -x are specified in the same command, then ps will use the one which was specified last."
+  }
+]

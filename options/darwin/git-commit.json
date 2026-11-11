@@ -1,0 +1,142 @@
+[
+  {
+    "flags": "-q, --quiet",
+    "description": "suppress summary after successful commit"
+  },
+  {
+    "flags": "-v, --verbose",
+    "description": "show diff in commit message template"
+  },
+  {
+    "flags": "-F, --file <file>",
+    "description": "read message from file"
+  },
+  {
+    "flags": "--author <author>",
+    "description": "override author for commit"
+  },
+  {
+    "flags": "--date <date>",
+    "description": "override date for commit"
+  },
+  {
+    "flags": "-m, --message <message>",
+    "description": "commit message"
+  },
+  {
+    "flags": "-c, --reedit-message <commit>",
+    "description": "reuse and edit message from specified commit"
+  },
+  {
+    "flags": "-C, --reuse-message <commit>",
+    "description": "reuse message from specified commit"
+  },
+  {
+    "flags": "--squash <commit>",
+    "description": "use autosquash formatted message to squash specified commit"
+  },
+  {
+    "flags": "--reset-author",
+    "description": "the commit is authored by me now (used with -C/-c/--amend)"
+  },
+  {
+    "flags": "--trailer <trailer>",
+    "description": "add custom trailer(s)"
+  },
+  {
+    "flags": "-s, --signoff",
+    "description": "add a Signed-off-by trailer"
+  },
+  {
+    "flags": "-t, --template <file>",
+    "description": "use specified template file"
+  },
+  {
+    "flags": "-e, --edit",
+    "description": "force edit of commit"
+  },
+  {
+    "flags": "--cleanup <mode>",
+    "description": "how to strip spaces and #comments from message"
+  },
+  {
+    "flags": "--status",
+    "description": "include status in commit message template"
+  },
+  {
+    "flags": "-S, --gpg-sign[=<key-id>]",
+    "description": "GPG sign commit"
+  },
+  {
+    "flags": "-a, --all",
+    "description": "commit all changed files"
+  },
+  {
+    "flags": "-i, --include",
+    "description": "add specified files to index for commit"
+  },
+  {
+    "flags": "--interactive",
+    "description": "interactively add files"
+  },
+  {
+    "flags": "-p, --patch",
+    "description": "interactively add changes"
+  },
+  {
+    "flags": "-o, --only",
+    "description": "commit only specified files"
+  },
+  {
+    "flags": "-n, --no-verify",
+    "description": "bypass pre-commit and commit-msg hooks"
+  },
+  {
+    "flags": "--dry-run",
+    "description": "show what would be committed"
+  },
+  {
+    "flags": "--short",
+    "description": "show status concisely"
+  },
+  {
+    "flags": "--branch",
+    "description": "show branch information"
+  },
+  {
+    "flags": "--ahead-behind",
+    "description": "compute full ahead/behind values"
+  },
+  {
+    "flags": "--porcelain",
+    "description": "machine-readable output"
+  },
+  {
+    "flags": "--long",
+    "description": "show status in long format (default)"
+  },
+  {
+    "flags": "-z, --null",
+    "description": "terminate entries with NUL"
+  },
+  {
+    "flags": "--amend",
+    "description": "amend previous commit"
+  },
+  {
+    "flags": "--no-post-rewrite",
+    "description": "bypass post-rewrite hook"
+  },
+  {
+    "flags": "-u, --untracked-files[=<mode>]",
+    "description": "show untracked files, optional modes: all, normal, no. (Default: all)"
+  },
+  {
+    "flags": "--pathspec-from-file <file>",
+    "description": "read pathspec from file"
+  },
+  {
+    "flags": "--pathspec-file-nul",
+    "description": "with --pathspec-from-file, pathspec elements are separated with NUL character"
+  }
+]

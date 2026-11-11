@@ -1,0 +1,146 @@
+[
+  {
+    "flags": "--onto <revision>",
+    "description": "rebase onto given branch instead of upstream"
+  },
+  {
+    "flags": "--keep-base",
+    "description": "use the merge-base of upstream and branch as the current base"
+  },
+  {
+    "flags": "--no-verify",
+    "description": "allow pre-rebase hook to run"
+  },
+  {
+    "flags": "-q, --quiet",
+    "description": "be quiet. implies --no-stat"
+  },
+  {
+    "flags": "-v, --verbose",
+    "description": "display a diffstat of what changed upstream"
+  },
+  {
+    "flags": "-n, --no-stat",
+    "description": "do not show diffstat of what changed upstream"
+  },
+  {
+    "flags": "--signoff",
+    "description": "add a Signed-off-by trailer to each commit"
+  },
+  {
+    "flags": "--committer-date-is-author-date",
+    "description": "make committer date match author date"
+  },
+  {
+    "flags": "--reset-author-date",
+    "description": "ignore author date and use current date"
+  },
+  {
+    "flags": "-C <n>",
+    "description": "passed to 'git apply'"
+  },
+  {
+    "flags": "--ignore-whitespace",
+    "description": "ignore changes in whitespace"
+  },
+  {
+    "flags": "--whitespace <action>",
+    "description": "passed to 'git apply'"
+  },
+  {
+    "flags": "-f, --force-rebase",
+    "description": "cherry-pick all commits, even if unchanged"
+  },
+  {
+    "flags": "--no-ff",
+    "description": "cherry-pick all commits, even if unchanged"
+  },
+  {
+    "flags": "--continue",
+    "description": "continue"
+  },
+  {
+    "flags": "--skip",
+    "description": "skip current patch and continue"
+  },
+  {
+    "flags": "--abort",
+    "description": "abort and check out the original branch"
+  },
+  {
+    "flags": "--quit",
+    "description": "abort but keep HEAD where it is"
+  },
+  {
+    "flags": "--edit-todo",
+    "description": "edit the todo list during an interactive rebase"
+  },
+  {
+    "flags": "--show-current-patch",
+    "description": "show the patch file being applied or merged"
+  },
+  {
+    "flags": "--apply",
+    "description": "use apply strategies to rebase"
+  },
+  {
+    "flags": "-m, --merge",
+    "description": "use merging strategies to rebase"
+  },
+  {
+    "flags": "-i, --interactive",
+    "description": "let the user edit the list of commits to rebase"
+  },
+  {
+    "flags": "--rerere-autoupdate",
+    "description": "update the index with reused conflict resolution if possible"
+  },
+  {
+    "flags": "--autosquash",
+    "description": "move commits that begin with squash!/fixup! under -i"
+  },
+  {
+    "flags": "--update-refs",
+    "description": "update branches that point to commits that are being rebased"
+  },
+  {
+    "flags": "-S, --gpg-sign[=<key-id>]",
+    "description": "GPG-sign commits"
+  },
+  {
+    "flags": "--autostash",
+    "description": "automatically stash/stash pop before and after"
+  },
+  {
+    "flags": "-x, --exec <exec>",
+    "description": "add exec lines after each commit of the editable list"
+  },
+  {
+    "flags": "-r, --rebase-merges[=<mode>]",
+    "description": "try to rebase merges instead of skipping them"
+  },
+  {
+    "flags": "--fork-point",
+    "description": "use 'merge-base --fork-point' to refine upstream"
+  },
+  {
+    "flags": "-s, --strategy <strategy>",
+    "description": "use the given merge strategy"
+  },
+  {
+    "flags": "-X, --strategy-option <option>",
+    "description": "pass the argument through to the merge strategy"
+  },
+  {
+    "flags": "--root",
+    "description": "rebase all reachable commits up to the root(s)"
+  },
+  {
+    "flags": "--reschedule-failed-exec",
+    "description": "automatically re-schedule any `exec` that fails"
+  },
+  {
+    "flags": "--reapply-cherry-picks",
+    "description": "apply all changes, even those already present upstream"
+  }
+]

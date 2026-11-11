@@ -1,0 +1,14 @@
+[
+  {
+    "flags": "-f, --force",
+    "description": "Force the removal of a running container (uses SIGKILL)"
+  },
+  {
+    "flags": "-l, --link",
+    "description": "Remove the specified link"
+  },
+  {
+    "flags": "-v, --volumes",
+    "description": "Remove anonymous volumes associated with the container"
+  }
+]

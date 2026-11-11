@@ -1,0 +1,14 @@
+[
+  {
+    "flags": "-p, --password string",
+    "description": "Password or Personal Access Token (PAT)"
+  },
+  {
+    "flags": "--password-stdin",
+    "description": "Take the Password or Personal Access Token (PAT) from stdin"
+  },
+  {
+    "flags": "-u, --username string",
+    "description": "Username"
+  }
+]

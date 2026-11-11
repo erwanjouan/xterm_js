@@ -1,0 +1,42 @@
+[
+  {
+    "flags": "-A, --all-namespaces=false",
+    "description": "If present, list the requested object(s) across all namespaces. Namespace in current context is ignored even if specified with --namespace."
+  },
+  {
+    "flags": "--allow-missing-template-keys=true",
+    "description": "If true, ignore any errors in templates when a field or map key is missing in the template. Only applies to golang and jsonpath output formats."
+  },
+  {
+    "flags": "--chunk-size=500",
+    "description": "Return large lists in chunks rather than all at once. Pass 0 to disable."
+  },
+  {
+    "flags": "--for=''",
+    "description": "Filter events to only those pertaining to the specified resource."
+  },
+  {
+    "flags": "--no-headers=false",
+    "description": "When using the default output format, don't print headers."
+  },
+  {
+    "flags": "-o, --output=''",
+    "description": "Output format. One of: (json, yaml, kyaml, name, go-template, go-template-file, template, templatefile, jsonpath, jsonpath-as-json, jsonpath-file)."
+  },
+  {
+    "flags": "--show-managed-fields=false",
+    "description": "If true, keep the managedFields when printing objects in JSON or YAML format."
+  },
+  {
+    "flags": "--template=''",
+    "description": "Template string or path to template file to use when -o=go-template, -o=go-template-file. The template format is golang templates [http://golang.org/pkg/text/template/#pkg-overview]."
+  },
+  {
+    "flags": "--types=[]",
+    "description": "Output only events of given types."
+  },
+  {
+    "flags": "-w, --watch=false",
+    "description": "After listing the requested events, watch for more events."
+  }
+]

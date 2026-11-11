@@ -1,0 +1,14 @@
+[
+  {
+    "flags": "-a, --archive",
+    "description": "Archive mode (copy all uid/gid information)"
+  },
+  {
+    "flags": "-L, --follow-link",
+    "description": "Always follow symbol link in SRC_PATH"
+  },
+  {
+    "flags": "-q, --quiet",
+    "description": "Suppress progress output during copy. Progress output is automatically suppressed if no terminal is attached"
+  }
+]

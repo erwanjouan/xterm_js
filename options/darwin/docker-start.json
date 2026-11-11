@@ -1,0 +1,14 @@
+[
+  {
+    "flags": "-a, --attach",
+    "description": "Attach STDOUT/STDERR and forward signals"
+  },
+  {
+    "flags": "--detach-keys string",
+    "description": "Override the key sequence for detaching a container"
+  },
+  {
+    "flags": "-i, --interactive",
+    "description": "Attach container's STDIN"
+  }
+]

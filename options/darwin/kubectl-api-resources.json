@@ -1,0 +1,38 @@
+[
+  {
+    "flags": "--api-group=''",
+    "description": "Limit to resources in the specified API group."
+  },
+  {
+    "flags": "--cached=false",
+    "description": "Use the cached list of resources if available."
+  },
+  {
+    "flags": "--categories=[]",
+    "description": "Limit to resources that belong to the specified categories."
+  },
+  {
+    "flags": "--namespaced=true",
+    "description": "If false, non-namespaced resources will be returned, otherwise returning namespaced resources by default."
+  },
+  {
+    "flags": "--no-headers=false",
+    "description": "When using the default or custom-column output format, don't print headers (default print headers)."
+  },
+  {
+    "flags": "-o, --output=''",
+    "description": "Output format. One of: (json, yaml, kyaml, name, wide)."
+  },
+  {
+    "flags": "--show-managed-fields=false",
+    "description": "If true, keep the managedFields when printing objects in JSON or YAML format."
+  },
+  {
+    "flags": "--sort-by=''",
+    "description": "If non-empty, sort list of resources using specified field. The field can be either 'name' or 'kind'."
+  },
+  {
+    "flags": "--verbs=[]",
+    "description": "Limit to resources that support the specified verbs."
+  }
+]

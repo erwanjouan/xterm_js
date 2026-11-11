@@ -1,32 +1,48 @@
-commands:
-  - symbol: "🐍"
-    label: "docus-perso"
-    steps:
-      - "cd ~/Development/mkdocs/DocusPerso"
-      - "pycharm . > /dev/null 2>&1 &"
-  - symbol: "🐍"
-    label: "indep"
-    steps:
-      - "cd ~/Development/mkdocs/indep"
-      - "pycharm . > /dev/null 2>&1 &"
-  - symbol: "🐍"
-    label: "tech-notes"
-    steps:
-      - "cd ~/Development/mkdocs/tech-notes"
-      - "pycharm . > /dev/null 2>&1 &"
-  - symbol: "☕"
-    label: "ma-petite-entreprise"
-    steps:
-      - "cd ~/Development/java/ma-petite-entreprise"
-      - "idea pom.xml > /dev/null 2>&1 &"
+autocomplete:
+  - cp
+  - rm
+  - find
+  - ps
+  - sort
+  - ping
+  - ssh
+  - netstat
+  - docker
+  - kubectl
+  - sed
+  - git
+  - grep
 
-links:
-  - symbol: "🐙"
-    label: "GitHub"
-    url: "https://github.com"
-  - symbol: "📦"
-    label: "npm"
-    url: "https://npmjs.com"
-  - symbol: "📖"
-    label: "MDN"
-    url: "https://developer.mozilla.org"
+launcher:
+  commands:
+    - symbol: "🐍"
+      label: "docus-perso"
+      steps:
+        - "cd ~/Development/mkdocs/DocusPerso"
+        - "pycharm . > /dev/null 2>&1 &"
+    - symbol: "🐍"
+      label: "indep"
+      steps:
+        - "cd ~/Development/mkdocs/indep"
+        - "pycharm . > /dev/null 2>&1 &"
+    - symbol: "🐍"
+      label: "tech-notes"
+      steps:
+        - "cd ~/Development/mkdocs/tech-notes"
+        - "pycharm . > /dev/null 2>&1 &"
+    - symbol: "☕"
+      label: "ma-petite-entreprise"
+      steps:
+        - "cd ~/Development/java/ma-petite-entreprise"
+        - "idea pom.xml > /dev/null 2>&1 &"
+
+  links:
+    - symbol: "🐙"
+      label: "GitHub repos perso"
+      url: "https://github.com/erwanjouan"
+    - symbol: "📦"
+      label: "meteo60"
+      url: "https://www.meteo60.fr"
+    - symbol: "📖"
+      label: "Gitea"
+      url: "http://nas.local:3000"

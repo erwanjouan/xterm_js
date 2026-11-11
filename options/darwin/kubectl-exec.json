@@ -1,0 +1,26 @@
+[
+  {
+    "flags": "-c, --container=''",
+    "description": "Container name. If omitted, use the kubectl.kubernetes.io/default-container annotation for selecting the container to be attached or the first container in the pod will be chosen"
+  },
+  {
+    "flags": "-f, --filename=[]",
+    "description": "to use to exec into the resource"
+  },
+  {
+    "flags": "--pod-running-timeout=1m0s",
+    "description": "The length of time (like 5s, 2m, or 3h, higher than zero) to wait until at least one pod is running"
+  },
+  {
+    "flags": "-q, --quiet=false",
+    "description": "Only print output from the remote session"
+  },
+  {
+    "flags": "-i, --stdin=false",
+    "description": "Pass stdin to the container"
+  },
+  {
+    "flags": "-t, --tty=false",
+    "description": "Stdin is a TTY"
+  }
+]

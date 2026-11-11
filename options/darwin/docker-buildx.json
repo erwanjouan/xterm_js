@@ -1,0 +1,10 @@
+[
+  {
+    "flags": "--builder string",
+    "description": "Override the configured builder instance"
+  },
+  {
+    "flags": "-D, --debug",
+    "description": "Enable debug logging"
+  }
+]

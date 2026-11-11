@@ -1,0 +1,118 @@
+[
+  {
+    "flags": "-v, --verbose",
+    "description": "show hash and subject, give twice for upstream branch"
+  },
+  {
+    "flags": "-q, --quiet",
+    "description": "suppress informational messages"
+  },
+  {
+    "flags": "-u, --set-upstream-to <upstream>",
+    "description": "change the upstream info"
+  },
+  {
+    "flags": "--unset-upstream",
+    "description": "unset the upstream info"
+  },
+  {
+    "flags": "--color[=<when>]",
+    "description": "use colored output"
+  },
+  {
+    "flags": "-r, --remotes",
+    "description": "act on remote-tracking branches"
+  },
+  {
+    "flags": "--contains <commit>",
+    "description": "print only branches that contain the commit"
+  },
+  {
+    "flags": "--no-contains <commit>",
+    "description": "print only branches that don't contain the commit"
+  },
+  {
+    "flags": "--abbrev[=<n>]",
+    "description": "use <n> digits to display object names"
+  },
+  {
+    "flags": "-a, --all",
+    "description": "list both remote-tracking and local branches"
+  },
+  {
+    "flags": "-d, --delete",
+    "description": "delete fully merged branch"
+  },
+  {
+    "flags": "-D",
+    "description": "delete branch (even if not merged)"
+  },
+  {
+    "flags": "-m, --move",
+    "description": "move/rename a branch and its reflog"
+  },
+  {
+    "flags": "-M",
+    "description": "move/rename a branch, even if target exists"
+  },
+  {
+    "flags": "-c, --copy",
+    "description": "copy a branch and its reflog"
+  },
+  {
+    "flags": "-C",
+    "description": "copy a branch, even if target exists"
+  },
+  {
+    "flags": "-l, --list",
+    "description": "list branch names"
+  },
+  {
+    "flags": "--show-current",
+    "description": "show current branch name"
+  },
+  {
+    "flags": "--create-reflog",
+    "description": "create the branch's reflog"
+  },
+  {
+    "flags": "--edit-description",
+    "description": "edit the description for the branch"
+  },
+  {
+    "flags": "-f, --force",
+    "description": "force creation, move/rename, deletion"
+  },
+  {
+    "flags": "--merged <commit>",
+    "description": "print only branches that are merged"
+  },
+  {
+    "flags": "--no-merged <commit>",
+    "description": "print only branches that are not merged"
+  },
+  {
+    "flags": "--column[=<style>]",
+    "description": "list branches in columns"
+  },
+  {
+    "flags": "--sort <key>",
+    "description": "field name to sort on"
+  },
+  {
+    "flags": "--points-at <object>",
+    "description": "print only branches of the object"
+  },
+  {
+    "flags": "-i, --ignore-case",
+    "description": "sorting and filtering are case insensitive"
+  },
+  {
+    "flags": "--recurse-submodules",
+    "description": "recurse through submodules"
+  },
+  {
+    "flags": "--format <format>",
+    "description": "format to use for the output"
+  }
+]

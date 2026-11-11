@@ -96,6 +96,84 @@
       font-family: Menlo, Monaco, "Courier New", monospace;
       border-top: 1px solid #3c3c3c;
     }
+
+    /* Options overlay — right 50% panel, full height */
+    #opt-panel {
+      display: none;
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 50vw;
+      flex-direction: column;
+      background: #1e1e2e;
+      border-left: 1px solid #3c3c3c;
+      box-shadow: -4px 0 20px rgba(0, 0, 0, 0.6);
+      overflow: hidden;
+      z-index: 50;
+      /* pointer-events: auto so the list can scroll; mousedown is cancelled
+         in JS to prevent stealing focus from the terminal */
+      pointer-events: auto;
+    }
+    #opt-header {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      padding: 4px 14px;
+      background: #252545;
+      border-bottom: 1px solid #3c3c3c;
+      flex-shrink: 0;
+    }
+    #opt-title {
+      font-family: Menlo, Monaco, "Courier New", monospace;
+      font-size: 12px;
+      font-weight: bold;
+      color: #569cd6;
+    }
+    #opt-hint {
+      font-family: Menlo, Monaco, "Courier New", monospace;
+      font-size: 10px;
+      color: #555;
+    }
+    #opt-list {
+      overflow-y: auto;
+      flex: 1;
+      padding: 4px 0;
+    }
+    .opt-row {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 8px;
+      padding: 2px 14px;
+      border-radius: 3px;
+      min-width: 0;
+    }
+    .opt-row-match { background: rgba(86, 156, 214, 0.1); }
+    .opt-flag {
+      font-family: Menlo, Monaco, "Courier New", monospace;
+      font-size: 11px;
+      color: #4ec9b0;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      align-self: start;
+      min-width: 0;
+    }
+    .opt-row-match .opt-flag { color: #dcdcaa; }
+    .opt-desc {
+      font-family: Menlo, Monaco, "Courier New", monospace;
+      font-size: 11px;
+      color: #9cdcfe;
+      /* truncated in list mode, wrapping in match mode */
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .opt-row-match .opt-desc {
+      white-space: normal;
+      overflow: visible;
+      text-overflow: unset;
+    }
   </style>
 </head>
 <body>
@@ -107,6 +185,14 @@
       <ul id="cp-list"></ul>
       <div id="cp-hint">↑↓ navigate &nbsp;·&nbsp; Tab fill &nbsp;·&nbsp; Enter run &nbsp;·&nbsp; Esc close</div>
     </div>
+  </div>
+
+  <div id="opt-panel">
+    <div id="opt-header">
+      <span id="opt-title"></span>
+      <span id="opt-hint">options</span>
+    </div>
+    <div id="opt-list"></div>
   </div>
 
   <script src="/client.js"></script>

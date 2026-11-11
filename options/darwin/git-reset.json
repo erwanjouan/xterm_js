@@ -1,0 +1,50 @@
+[
+  {
+    "flags": "-q, --quiet",
+    "description": "be quiet, only report errors"
+  },
+  {
+    "flags": "--no-refresh",
+    "description": "skip refreshing the index after reset"
+  },
+  {
+    "flags": "--mixed",
+    "description": "reset HEAD and index"
+  },
+  {
+    "flags": "--soft",
+    "description": "reset only HEAD"
+  },
+  {
+    "flags": "--hard",
+    "description": "reset HEAD, index and working tree"
+  },
+  {
+    "flags": "--merge",
+    "description": "reset HEAD, index and working tree"
+  },
+  {
+    "flags": "--keep",
+    "description": "reset HEAD but keep local changes"
+  },
+  {
+    "flags": "--recurse-submodules[=<reset>]",
+    "description": "control recursive updating of submodules"
+  },
+  {
+    "flags": "-p, --patch",
+    "description": "select hunks interactively"
+  },
+  {
+    "flags": "-N, --intent-to-add",
+    "description": "record only the fact that removed paths will be added later"
+  },
+  {
+    "flags": "--pathspec-from-file <file>",
+    "description": "read pathspec from file"
+  },
+  {
+    "flags": "--pathspec-file-nul",
+    "description": "with --pathspec-from-file, pathspec elements are separated with NUL character"
+  }
+]

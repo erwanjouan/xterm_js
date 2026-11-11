@@ -1,0 +1,38 @@
+[
+  {
+    "flags": "-d, --detach",
+    "description": "Detached mode: run command in the background"
+  },
+  {
+    "flags": "--detach-keys string",
+    "description": "Override the key sequence for detaching a container"
+  },
+  {
+    "flags": "-e, --env list",
+    "description": "Set environment variables"
+  },
+  {
+    "flags": "--env-file list",
+    "description": "Read in a file of environment variables"
+  },
+  {
+    "flags": "-i, --interactive",
+    "description": "Keep STDIN open even if not attached"
+  },
+  {
+    "flags": "--privileged",
+    "description": "Give extended privileges to the command"
+  },
+  {
+    "flags": "-t, --tty",
+    "description": "Allocate a pseudo-TTY"
+  },
+  {
+    "flags": "-u, --user string",
+    "description": "Username or UID (format: \"<name|uid>[:<group|gid>]\")"
+  },
+  {
+    "flags": "-w, --workdir string",
+    "description": "Working directory inside the container"
+  }
+]

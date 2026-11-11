@@ -1,0 +1,18 @@
+[
+  {
+    "flags": "-a, --author string",
+    "description": "Author (e.g., \"John Hannibal Smith <hannibal@a-team.com>\")"
+  },
+  {
+    "flags": "-c, --change list",
+    "description": "Apply Dockerfile instruction to the created image"
+  },
+  {
+    "flags": "-m, --message string",
+    "description": "Commit message"
+  },
+  {
+    "flags": "--no-pause",
+    "description": "Disable pausing container during commit"
+  }
+]

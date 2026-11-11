@@ -1,0 +1,14 @@
+[
+  {
+    "flags": "-c, --change list",
+    "description": "Apply Dockerfile instruction to the created image"
+  },
+  {
+    "flags": "-m, --message string",
+    "description": "Set commit message for imported image"
+  },
+  {
+    "flags": "--platform string",
+    "description": "Set platform if server is multi-platform capable"
+  }
+]
