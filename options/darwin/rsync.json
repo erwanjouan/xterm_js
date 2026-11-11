@@ -1,0 +1,166 @@
+[
+  {
+    "flags": "-v, --verbose",
+    "description": "This option increases the amount of information you are given during the transfer.  By default, rsync works silently. A single -v will give you information about what files are being transferred and a brief summary at the end. Two -v flags will give you information on what files are being skipped and slightly more information at the end. More than two -v flags should only be used if you are debugging rsync."
+  },
+  {
+    "flags": "-q, --quiet",
+    "description": "This option decreases the amount of information you are given during the transfer, notably suppressing information messages from the remote server. This flag is useful when invoking rsync from cron."
+  },
+  {
+    "flags": "-I, --ignore-times",
+    "description": "Normally rsync will skip any files that are already the same size and have the same modification time-stamp.  This option turns off this \"quick check\" behavior, causing all files to be updated."
+  },
+  {
+    "flags": "-c, --checksum",
+    "description": "This forces the sender to checksum every regular file using a 128-bit MD4 checksum.  It does this during the initial file- system scan as it builds the list of all available files. The receiver then checksums its version of each file (if it exists and it has the same size as its sender-side counterpart) in order to decide which files need to be updated: files with either a changed size or a changed checksum are selected for transfer.  Since this whole-file checksumming of all files on both sides of the connection occurs in addition to the automatic checksum verifications that occur during a file's transfer, this option can be quite slow."
+  },
+  {
+    "flags": "-a, --archive",
+    "description": "This is equivalent to -rlptgoD. It is a quick way of saying you want recursion and want to preserve almost everything (with -H being a notable omission).  The only exception to the above equivalence is when --files-from is specified, in which case -r is not implied."
+  },
+  {
+    "flags": "-r, --recursive",
+    "description": "This tells rsync to copy directories recursively.  See also --dirs (-d)."
+  },
+  {
+    "flags": "-R, --relative",
+    "description": "Use relative paths. This means that the full path names specified on the command line are sent to the server rather than just the last parts of the filenames. This is particularly useful when you want to send several different directories at the same time. For example, if you used this command: rsync -av /foo/bar/baz.c remote:/tmp/"
+  },
+  {
+    "flags": "-b, --backup",
+    "description": "With this option, preexisting destination files are renamed as each file is transferred or deleted.  You can control where the backup file goes and what (if any) suffix gets appended using the --backup-dir and --suffix options."
+  },
+  {
+    "flags": "-u, --update",
+    "description": "This forces rsync to skip any files which exist on the destination and have a modified time that is newer than the source file.  (If an existing destination file has a modify time equal to the source file's, it will be updated if the sizes are different.)"
+  },
+  {
+    "flags": "-d, --dirs",
+    "description": "Tell the sending side to include any directories that are encountered.  Unlike --recursive, a directory's contents are not copied unless the directory name specified is \".\" or ends with a trailing slash (e.g. \".\", \"dir/.\", \"dir/\", etc.).  Without this option or the --recursive option, rsync will skip all directories it encounters (and output a message to that effect for each one).  If you specify both --dirs and --recursive, --recursive takes precedence."
+  },
+  {
+    "flags": "-l, --links",
+    "description": "When symlinks are encountered, recreate the symlink on the destination."
+  },
+  {
+    "flags": "-L, --copy-links",
+    "description": "When symlinks are encountered, the item that they point to (the referent) is copied, rather than the symlink.  In older versions of rsync, this option also had the side-effect of telling the receiving side to follow symlinks, such as symlinks to directories.  In a modern rsync such as this one, you'll need to specify --keep-dirlinks (-K) to get this extra behavior.  The only exception is when sending files to an rsync that is too old to understand -K -- in that case, the -L option will still have the side-effect of -K on that older receiving rsync."
+  },
+  {
+    "flags": "-K, --copy-dirlinks",
+    "description": "This option causes the sending side to treat a symlink to a directory as though it were a real directory.  This is useful if you don't want symlinks to non-directories to be affected, as they would be using --copy-links."
+  },
+  {
+    "flags": "-K, --keep-dirlinks",
+    "description": "This option causes the receiving side to treat a symlink to a directory as though it were a real directory, but only if it matches a real directory from the sender.  Without this option, the receiver's symlink would be deleted and replaced with a real directory."
+  },
+  {
+    "flags": "-H, --hard-links",
+    "description": "This tells rsync to look for hard-linked files in the transfer and link together the corresponding files on the receiving side. Without this option, hard-linked files in the transfer are treated as though they were separate files."
+  },
+  {
+    "flags": "-p, --perms",
+    "description": "This option causes the receiving rsync to set the destination permissions to be the same as the source permissions.  (See also the --chmod option for a way to modify what rsync considers to be the source permissions.)"
+  },
+  {
+    "flags": "-o, --owner",
+    "description": "This option causes rsync to set the owner of the destination file to be the same as the source file, but only if the receiving rsync is being run as the super-user (see also the --super option to force rsync to attempt super-user activities). Without this option, the owner is set to the invoking user on the receiving side."
+  },
+  {
+    "flags": "-g, --group",
+    "description": "This option causes rsync to set the group of the destination file to be the same as the source file.  If the receiving program is not running as the super-user (or if --no-super was specified), only groups that the invoking user on the receiving side is a member of will be preserved.  Without this option, the group is set to the default group of the invoking user on the receiving side."
+  },
+  {
+    "flags": "-D",
+    "description": "The -D option is equivalent to --devices --specials."
+  },
+  {
+    "flags": "-t, --times",
+    "description": "This tells rsync to transfer modification times along with the files and update them on the remote system.  Note that if this option is not used, the optimization that excludes files that have not been modified cannot be effective; in other words, a missing -t or -a will cause the next transfer to behave as if it used -I, causing all files to be updated (though the rsync algorithm will make the update fairly efficient if the files haven't actually changed, you're much better off using -t)."
+  },
+  {
+    "flags": "-O, --omit-dir-times",
+    "description": "This tells rsync to omit directories when it is preserving modification times (see --times).  If NFS is sharing the directories on the receiving side, it is a good idea to use -O. This option is inferred if you use --backup without --backup-dir."
+  },
+  {
+    "flags": "-S, --sparse",
+    "description": "Try to handle sparse files efficiently so they take up less space on the destination.  Conflicts with --inplace because it's not possible to overwrite data in a sparse fashion."
+  },
+  {
+    "flags": "-n, --dry-run",
+    "description": "This tells rsync to not do any file transfers, instead it will just report the actions it would have taken."
+  },
+  {
+    "flags": "-W, --whole-file",
+    "description": "With this option the incremental rsync algorithm is not used and the whole file is sent as-is instead.  The transfer may be faster if this option is used when the bandwidth between the source and destination machines is higher than the bandwidth to disk (especially when the \"disk\" is actually a networked filesystem).  This is the default when both the source and destination are specified as local paths."
+  },
+  {
+    "flags": "-x, --one-file-system",
+    "description": "This tells rsync to avoid crossing a filesystem boundary when recursing.  This does not limit the user's ability to specify items to copy from multiple filesystems, just rsync's recursion through the hierarchy of each directory that the user specified, and also the analogous recursion on the receiving side during deletion.  Also keep in mind that rsync treats a \"bind\" mount to the same device as being on the same filesystem."
+  },
+  {
+    "flags": "-B, --block-size=BLOCKSIZE",
+    "description": "This forces the block size used in the rsync algorithm to a fixed value.  It is normally selected based on the size of each file being updated.  See the technical report for details."
+  },
+  {
+    "flags": "-e, --rsh=COMMAND",
+    "description": "This option allows you to choose an alternative remote shell program to use for communication between the local and remote copies of rsync. Typically, rsync is configured to use ssh by default, but you may prefer to use rsh on a local network."
+  },
+  {
+    "flags": "-C, --cvs-exclude",
+    "description": "This is a useful shorthand for excluding a broad range of files that you often don't want to transfer between systems. It uses the same algorithm that CVS uses to determine if a file should be ignored."
+  },
+  {
+    "flags": "-f, --filter=RULE",
+    "description": "This option allows you to add rules to selectively exclude certain files from the list of files to be transferred. This is most useful in combination with a recursive transfer."
+  },
+  {
+    "flags": "-F",
+    "description": "The -F option is a shorthand for adding two --filter rules to your command.  The first time it is used is a shorthand for this rule: --filter='dir-merge /.rsync-filter'"
+  },
+  {
+    "flags": "-0, --from0",
+    "description": "This tells rsync that the rules/filenames it reads from a file are terminated by a null ('\\0') character, not a NL, CR, or CR+LF.  This affects --exclude-from, --include-from, --files-from, and any merged files specified in a --filter rule. It does not affect --cvs-exclude (since all names read from a .cvsignore file are split on whitespace)."
+  },
+  {
+    "flags": "-T, --temp-dir=DIR",
+    "description": "This option instructs rsync to use DIR as a scratch directory when creating temporary copies of the files transferred on the receiving side.  The default behavior is to create each temporary file in the same directory as the associated destination file."
+  },
+  {
+    "flags": "-y, --fuzzy",
+    "description": "This option tells rsync that it should look for a basis file for any destination file that is missing.  The current algorithm looks in the same directory as the destination file for either a file that has an identical size and modified-time, or a similarly-named file.  If found, rsync uses the fuzzy basis file to try to speed up the transfer."
+  },
+  {
+    "flags": "-z, --compress",
+    "description": "With this option, rsync compresses the file data as it is sent to the destination machine, which reduces the amount of data being transmitted -- something that is useful over a slow connection."
+  },
+  {
+    "flags": "-i, --itemize-changes",
+    "description": "Requests a simple itemized list of the changes that are being made to each file, including attribute changes.  This is exactly the same as specifying --out-format='%i %n%L'.  If you repeat the option, unchanged files will also be output, but only if the receiving rsync is at least version 2.6.7 (you can use -vv with older versions of rsync, but that also turns on the output of other verbose messages)."
+  },
+  {
+    "flags": "-8, --8-bit-output",
+    "description": "This tells rsync to leave all high-bit characters unescaped in the output instead of trying to test them to see if they're valid in the current locale and escaping the invalid ones.  All control characters (but never tabs) are always escaped, regardless of this option's setting."
+  },
+  {
+    "flags": "-h, --human-readable",
+    "description": "Output numbers in a more human-readable format.  This makes big numbers output using larger units, with a K, M, or G suffix.  If this option was specified once, these units are K (1000), M (1000*1000), and G (1000*1000*1000); if the option is repeated, the units are powers of 1024 instead of 1000."
+  },
+  {
+    "flags": "-m, --prune-empty-dirs",
+    "description": "This option tells the receiving rsync to get rid of empty directories from the file-list, including nested directories that have no non-directory children.  This is useful for avoiding the creation of a bunch of useless directories when the sending rsync is recursively scanning a hierarchy of files using include/exclude/filter rules."
+  },
+  {
+    "flags": "-P",
+    "description": "The -P option is equivalent to --partial --progress.  Its purpose is to make it much easier to specify these two options for a long transfer that may be interrupted."
+  },
+  {
+    "flags": "-4, --ipv4 or -6, --ipv6",
+    "description": "Tells rsync to prefer IPv4/IPv6 when creating sockets.  This only affects sockets that rsync has direct control over, such as the outgoing socket when directly contacting an rsync daemon. See also these options in the --daemon mode section."
+  },
+  {
+    "flags": "-E, --extended-attributes",
+    "description": "Apple specific option to copy extended attributes, resource forks, and ACLs.  Requires at least Mac OS X 10.4 or suitably patched rsync."
+  }
+]
