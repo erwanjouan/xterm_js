@@ -1,0 +1,46 @@
+[
+  {
+    "flags": "--json",
+    "description": "Whether or not to output JSON data, rather than the normal output."
+  },
+  {
+    "flags": "--color, --no-color, --color",
+    "description": "If false, never shows colors. If \"always\" then always shows colors. If"
+  },
+  {
+    "flags": "-p, --parseable",
+    "description": "Output parseable results from commands that write to standard output."
+  },
+  {
+    "flags": "--no-description",
+    "description": ""
+  },
+  {
+    "flags": "--searchlimit",
+    "description": "Number of items to limit search results to. Will not apply at all to"
+  },
+  {
+    "flags": "--searchopts",
+    "description": "Space-separated options that are always passed to search."
+  },
+  {
+    "flags": "--searchexclude",
+    "description": "Space-separated options that limit the results from search."
+  },
+  {
+    "flags": "--registry",
+    "description": "The base URL of the npm registry."
+  },
+  {
+    "flags": "--prefer-online",
+    "description": "If true, staleness checks for cached data will be forced, making the"
+  },
+  {
+    "flags": "--prefer-offline",
+    "description": "If true, staleness checks for cached data will be bypassed, but missing"
+  },
+  {
+    "flags": "--offline",
+    "description": "Force offline mode: no network requests will be done during install. To"
+  }
+]

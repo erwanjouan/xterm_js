@@ -1,0 +1,30 @@
+[
+  {
+    "flags": "-a, --all",
+    "description": "When running npm outdated and npm ls, setting --all will show all"
+  },
+  {
+    "flags": "--json",
+    "description": "Whether or not to output JSON data, rather than the normal output."
+  },
+  {
+    "flags": "-l, --long",
+    "description": "Show extended information in ls, search, and help-search."
+  },
+  {
+    "flags": "-p, --parseable",
+    "description": "Output parseable results from commands that write to standard output."
+  },
+  {
+    "flags": "-g, --global",
+    "description": "Operates in \"global\" mode, so that packages are installed into the"
+  },
+  {
+    "flags": "-w, --workspace",
+    "description": "Enable running a command in the context of the configured workspaces of"
+  },
+  {
+    "flags": "--before",
+    "description": "If passed to npm install, will rebuild the npm tree such that only"
+  }
+]

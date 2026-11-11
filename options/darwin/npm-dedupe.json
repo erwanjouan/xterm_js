@@ -1,0 +1,66 @@
+[
+  {
+    "flags": "--install-strategy",
+    "description": "Sets the strategy for installing packages in node_modules. hoisted"
+  },
+  {
+    "flags": "--legacy-bundling",
+    "description": "Instead of hoisting package installs in node_modules, install packages"
+  },
+  {
+    "flags": "--global-style",
+    "description": "Only install direct dependencies in the top level node_modules, but"
+  },
+  {
+    "flags": "--strict-peer-deps",
+    "description": "If set to true, and --legacy-peer-deps is not set, then any conflicting"
+  },
+  {
+    "flags": "--no-package-lock",
+    "description": ""
+  },
+  {
+    "flags": "--omit",
+    "description": "Dependency types to omit from the installation tree on disk."
+  },
+  {
+    "flags": "--include",
+    "description": "Option that allows for defining which types of dependencies to install."
+  },
+  {
+    "flags": "--ignore-scripts",
+    "description": "If true, npm does not run scripts specified in package.json files."
+  },
+  {
+    "flags": "--no-audit",
+    "description": ""
+  },
+  {
+    "flags": "--no-bin-links",
+    "description": ""
+  },
+  {
+    "flags": "--no-fund",
+    "description": ""
+  },
+  {
+    "flags": "--dry-run",
+    "description": "Indicates that you don't want npm to make any changes and that it"
+  },
+  {
+    "flags": "-w, --workspace",
+    "description": "Enable running a command in the context of the configured workspaces of"
+  },
+  {
+    "flags": "--workspaces",
+    "description": "Set to true to run the command in the context of all configured"
+  },
+  {
+    "flags": "--include-workspace-root",
+    "description": "Include the workspace root when workspaces are enabled for a command."
+  },
+  {
+    "flags": "--install-links",
+    "description": "When set file: protocol dependencies will be packed and installed as"
+  }
+]

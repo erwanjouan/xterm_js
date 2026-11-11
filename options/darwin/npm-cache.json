@@ -1,0 +1,6 @@
+[
+  {
+    "flags": "--cache",
+    "description": "The location of npm's cache directory."
+  }
+]

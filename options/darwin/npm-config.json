@@ -1,0 +1,22 @@
+[
+  {
+    "flags": "--json",
+    "description": "Whether or not to output JSON data, rather than the normal output."
+  },
+  {
+    "flags": "-g, --global",
+    "description": "Operates in \"global\" mode, so that packages are installed into the"
+  },
+  {
+    "flags": "--editor",
+    "description": "The command to run for npm edit and npm config edit."
+  },
+  {
+    "flags": "-L, --location",
+    "description": "When passed to npm config this refers to which config file to use."
+  },
+  {
+    "flags": "-l, --long",
+    "description": "Show extended information in ls, search, and help-search."
+  }
+]

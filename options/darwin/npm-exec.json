@@ -1,0 +1,22 @@
+[
+  {
+    "flags": "--package",
+    "description": "The package or packages to install for npm help exec"
+  },
+  {
+    "flags": "-c, --call",
+    "description": "Optional companion option for npm exec, npx that allows for specifying"
+  },
+  {
+    "flags": "-w, --workspace",
+    "description": "Enable running a command in the context of the configured workspaces of"
+  },
+  {
+    "flags": "--workspaces",
+    "description": "Set to true to run the command in the context of all configured"
+  },
+  {
+    "flags": "--include-workspace-root",
+    "description": "Include the workspace root when workspaces are enabled for a command."
+  }
+]

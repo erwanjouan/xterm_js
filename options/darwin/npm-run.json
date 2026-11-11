@@ -1,0 +1,30 @@
+[
+  {
+    "flags": "-w, --workspace",
+    "description": "Enable running a command in the context of the configured workspaces of"
+  },
+  {
+    "flags": "--workspaces",
+    "description": "Set to true to run the command in the context of all configured"
+  },
+  {
+    "flags": "--include-workspace-root",
+    "description": "Include the workspace root when workspaces are enabled for a command."
+  },
+  {
+    "flags": "--if-present",
+    "description": "If true, npm will not exit with an error code when run is invoked for a"
+  },
+  {
+    "flags": "--ignore-scripts",
+    "description": "If true, npm does not run scripts specified in package.json files."
+  },
+  {
+    "flags": "--foreground-scripts",
+    "description": "Run all build scripts (ie, preinstall, install, and postinstall)"
+  },
+  {
+    "flags": "--script-shell",
+    "description": "The shell to use for scripts run with the npm exec, npm run and npm"
+  }
+]

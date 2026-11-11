@@ -1,0 +1,82 @@
+[
+  {
+    "flags": "--project",
+    "description": "The name of the project where the component should be added. If not specified, the CLI will determine the project from the current directory."
+  },
+  {
+    "flags": "--name",
+    "description": "The name for the new component. This will be used to create the component's class, template, and stylesheet files. For example, if you provide `my-component`, the files will be named `my-component.component.ts`, `my-component.component.html`, and `my-component.component.css`."
+  },
+  {
+    "flags": "-b, --display-block",
+    "description": "Adds `:host { display: block; }` to the component's stylesheet, ensuring the component renders as a block-level element. This is useful for layout purposes."
+  },
+  {
+    "flags": "-s, --inline-style",
+    "description": "Include the component's styles directly in the `component.ts` file. By default, a separate stylesheet file (e.g., `my-component.component.css`) is created."
+  },
+  {
+    "flags": "-t, --inline-template",
+    "description": "Include the component's HTML template directly in the `component.ts` file. By default, a separate template file (e.g., `my-component.component.html`) is created."
+  },
+  {
+    "flags": "--standalone",
+    "description": "Generate a standalone component. Standalone components are self-contained and don't need to be declared in an NgModule. They can be used independently or imported directly into other standalone components."
+  },
+  {
+    "flags": "-v, --view-encapsulation",
+    "description": "Sets the view encapsulation mode for the component. This determines how the component's styles are scoped and applied."
+  },
+  {
+    "flags": "-c, --change-detection",
+    "description": "Configures the change detection strategy for the component."
+  },
+  {
+    "flags": "-p, --prefix",
+    "description": "A prefix to be added to the component's selector. For example, if the prefix is `app` and the component name is `my-component`, the selector will be `app-my-component`."
+  },
+  {
+    "flags": "--style",
+    "description": "Specify the type of stylesheet to be created for the component, or `none` to skip creating a stylesheet."
+  },
+  {
+    "flags": "--type",
+    "description": "Append a custom type to the component's filename. For example, if you set the type to `container`, the file will be named `my-component.container.ts`."
+  },
+  {
+    "flags": "--skip-tests",
+    "description": "Skip the generation of unit test files `spec.ts`."
+  },
+  {
+    "flags": "--flat",
+    "description": "Create the component files directly in the project's `src/app` directory instead of creating a new folder for them."
+  },
+  {
+    "flags": "--skip-import",
+    "description": "Do not automatically import the new component into its closest NgModule."
+  },
+  {
+    "flags": "--selector",
+    "description": "The HTML selector to use for this component. If not provided, a selector will be generated based on the component name (e.g., `app-my-component`)."
+  },
+  {
+    "flags": "--skip-selector",
+    "description": "Skip the generation of an HTML selector for the component."
+  },
+  {
+    "flags": "-m, --module",
+    "description": "Specify the NgModule where the component should be declared. If not provided, the CLI will attempt to find the closest NgModule in the component's path."
+  },
+  {
+    "flags": "--export",
+    "description": "Automatically export the component from the specified NgModule, making it accessible to other modules in the application."
+  },
+  {
+    "flags": "--export-default",
+    "description": "Use a default export for the component in its TypeScript file instead of a named export."
+  },
+  {
+    "flags": "--ng-html",
+    "description": "Generate component template files with an '.ng.html' file extension instead of '.html'."
+  }
+]

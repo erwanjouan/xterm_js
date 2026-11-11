@@ -1,0 +1,62 @@
+[
+  {
+    "flags": "-a, --all",
+    "description": ""
+  },
+  {
+    "flags": "--json",
+    "description": ""
+  },
+  {
+    "flags": "-l, --long",
+    "description": ""
+  },
+  {
+    "flags": "-p, --parseable",
+    "description": ""
+  },
+  {
+    "flags": "-g, --global",
+    "description": ""
+  },
+  {
+    "flags": "--depth",
+    "description": ""
+  },
+  {
+    "flags": "--omit",
+    "description": ""
+  },
+  {
+    "flags": "--include",
+    "description": ""
+  },
+  {
+    "flags": "--link",
+    "description": ""
+  },
+  {
+    "flags": "--package-lock-only",
+    "description": ""
+  },
+  {
+    "flags": "--no-unicode",
+    "description": ""
+  },
+  {
+    "flags": "-w, --workspace",
+    "description": ""
+  },
+  {
+    "flags": "--workspaces",
+    "description": ""
+  },
+  {
+    "flags": "--include-workspace-root",
+    "description": ""
+  },
+  {
+    "flags": "--install-links",
+    "description": ""
+  }
+]

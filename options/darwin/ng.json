@@ -1,0 +1,70 @@
+[
+  {
+    "flags": "add",
+    "description": "Adds support for an external library to your project."
+  },
+  {
+    "flags": "analytics",
+    "description": "Configures the gathering of Angular CLI usage metrics."
+  },
+  {
+    "flags": "build",
+    "description": "Compiles an Angular application or library into an output directory named dist/ at the given output path."
+  },
+  {
+    "flags": "cache",
+    "description": "Configure persistent disk cache and retrieve cache statistics."
+  },
+  {
+    "flags": "completion",
+    "description": "Set up Angular CLI autocompletion for your terminal."
+  },
+  {
+    "flags": "config",
+    "description": "Retrieves or sets Angular configuration values in the angular.json file for the workspace."
+  },
+  {
+    "flags": "deploy",
+    "description": "Invokes the deploy builder for a specified project or for the default project in the workspace."
+  },
+  {
+    "flags": "e2e",
+    "description": "Builds and serves an Angular application, then runs end-to-end tests."
+  },
+  {
+    "flags": "extract-i18n",
+    "description": "Extracts i18n messages from source code."
+  },
+  {
+    "flags": "generate",
+    "description": "Generates and/or modifies files based on a schematic."
+  },
+  {
+    "flags": "lint",
+    "description": "Runs linting tools on Angular application code in a given project folder."
+  },
+  {
+    "flags": "new",
+    "description": "Creates a new Angular workspace."
+  },
+  {
+    "flags": "run",
+    "description": "Runs an Architect target with an optional custom builder configuration defined in your project."
+  },
+  {
+    "flags": "serve",
+    "description": "Builds and serves your application, rebuilding on file changes."
+  },
+  {
+    "flags": "test",
+    "description": "Runs unit tests in a project."
+  },
+  {
+    "flags": "update",
+    "description": "Updates your workspace and its dependencies. See https://update.angular.dev/."
+  },
+  {
+    "flags": "version",
+    "description": "Outputs Angular CLI version."
+  }
+]

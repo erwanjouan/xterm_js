@@ -1,0 +1,6 @@
+[
+  {
+    "flags": "--shell",
+    "description": "The shell to run for the npm explore command."
+  }
+]

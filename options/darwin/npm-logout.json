@@ -1,0 +1,10 @@
+[
+  {
+    "flags": "--registry",
+    "description": "The base URL of the npm registry."
+  },
+  {
+    "flags": "--scope",
+    "description": "Associate an operation with a scope for a scoped registry."
+  }
+]

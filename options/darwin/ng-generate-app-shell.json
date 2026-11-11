@@ -1,0 +1,6 @@
+[
+  {
+    "flags": "--project",
+    "description": "The name of the project where the app-shell should be generated."
+  }
+]

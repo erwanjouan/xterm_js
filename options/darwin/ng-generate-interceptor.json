@@ -1,0 +1,26 @@
+[
+  {
+    "flags": "--name",
+    "description": "The name for the new interceptor. This will be used to create the interceptor's class and spec files (e.g., `my-interceptor.interceptor.ts` and `my-interceptor.interceptor.spec.ts`)."
+  },
+  {
+    "flags": "--project",
+    "description": "The name of the project where the interceptor should be created. If not specified, the CLI will determine the project from the current directory."
+  },
+  {
+    "flags": "--flat",
+    "description": "Creates the new interceptor files at the top level of the current project. If set to false, a new folder with the interceptor's name will be created to contain the files."
+  },
+  {
+    "flags": "--skip-tests",
+    "description": "Skip the generation of a unit test file `spec.ts` for the new interceptor."
+  },
+  {
+    "flags": "--functional",
+    "description": "Creates the interceptor as a function `HttpInterceptorFn` instead of a class. Functional interceptors can be simpler for basic scenarios."
+  },
+  {
+    "flags": "--type-separator",
+    "description": "The separator character to use before the type within the generated file's name. For example, if you set the option to `.`, the file will be named `example.interceptor.ts`."
+  }
+]

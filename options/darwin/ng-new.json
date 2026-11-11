@@ -1,0 +1,102 @@
+[
+  {
+    "flags": "--help",
+    "description": "Shows a help message for this command in the console."
+  },
+  {
+    "flags": "--interactive",
+    "description": "Enable interactive input prompts."
+  },
+  {
+    "flags": "-d, --dry-run",
+    "description": "Run through and reports activity without writing out results."
+  },
+  {
+    "flags": "--defaults",
+    "description": "Disable interactive input prompts for options with a default."
+  },
+  {
+    "flags": "--force",
+    "description": "Force overwriting of existing files."
+  },
+  {
+    "flags": "-c, --collection",
+    "description": "A collection of schematics to use in generating the initial application."
+  },
+  {
+    "flags": "--commit",
+    "description": "Configure the initial Git commit for the new repository."
+  },
+  {
+    "flags": "--create-application",
+    "description": "Create a new initial application project in the new workspace. When false, creates an empty workspace with no initial application. You can then use the `ng generate application` command to create applications in the `projects` directory."
+  },
+  {
+    "flags": "--directory",
+    "description": "The directory where the new workspace and project should be created. If not specified, the workspace will be created in the current directory."
+  },
+  {
+    "flags": "-s, --inline-style",
+    "description": "Include the styles for the initial application's root component directly within the `app.component.ts` file. By default, a separate stylesheet file (e.g., `app.component.css`) is created."
+  },
+  {
+    "flags": "-t, --inline-template",
+    "description": "Include the HTML template for the initial application's root component directly within the `app.component.ts` file. By default, a separate template file (e.g., `app.component.html`) is created."
+  },
+  {
+    "flags": "--minimal",
+    "description": "Generate a minimal Angular workspace without any testing frameworks. This is intended for learning purposes and simple experimentation, not for production applications."
+  },
+  {
+    "flags": "--new-project-root",
+    "description": "The path where new projects will be created within the workspace, relative to the workspace root. By default, new projects are created in the `projects` directory."
+  },
+  {
+    "flags": "--package-manager",
+    "description": "The package manager used to install dependencies."
+  },
+  {
+    "flags": "-p, --prefix",
+    "description": "The prefix to apply to generated selectors for the initial project. For example, if the prefix is `my-app` and you generate a component named `my-component`, the selector will be `my-app-my-component`."
+  },
+  {
+    "flags": "--routing",
+    "description": "Enable routing in the initial application project. This sets up the necessary files and modules for managing navigation between different views in your application."
+  },
+  {
+    "flags": "-g, --skip-git",
+    "description": "Do not initialize a Git repository in the new workspace. By default, a Git repository is initialized to help you track changes to your project."
+  },
+  {
+    "flags": "--skip-install",
+    "description": "Skip the automatic installation of packages. You will need to manually install the dependencies later."
+  },
+  {
+    "flags": "-S, --skip-tests",
+    "description": "Skip the generation of unit test files `spec.ts`."
+  },
+  {
+    "flags": "--ssr",
+    "description": "Configure the initial application for Server-Side Rendering (SSR) and Static Site Generation (SSG/Prerendering)."
+  },
+  {
+    "flags": "--standalone",
+    "description": "Creates an application based upon the standalone API, without NgModules."
+  },
+  {
+    "flags": "--strict",
+    "description": "Enable stricter type checking and stricter bundle budgets settings. This setting helps improve maintainability and catch bugs ahead of time. For more information, see https://angular.dev/tools/cli/template-typecheck#strict-mode"
+  },
+  {
+    "flags": "--style",
+    "description": "The type of stylesheet files to be created for components in the initial project."
+  },
+  {
+    "flags": "--view-encapsulation",
+    "description": "Sets the view encapsulation mode for components in the initial project. This determines how component styles are scoped and applied. Options include: `Emulated` (default, styles are scoped to the component), `None` (styles are global), and `ShadowDom` (styles are encapsulated using Shadow DOM)."
+  },
+  {
+    "flags": "--zoneless",
+    "description": "Create an initial application that does not utilize `zone.js`."
+  }
+]

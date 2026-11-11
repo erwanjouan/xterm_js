@@ -1,0 +1,6 @@
+[
+  {
+    "flags": "-l, --long",
+    "description": "Show extended information in ls, search, and help-search."
+  }
+]

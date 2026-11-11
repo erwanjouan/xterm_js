@@ -1,0 +1,22 @@
+[
+  {
+    "flags": "--no-browser, --browser",
+    "description": "The browser that is called by npm commands to open websites."
+  },
+  {
+    "flags": "--registry",
+    "description": "The base URL of the npm registry."
+  },
+  {
+    "flags": "-w, --workspace",
+    "description": "Enable running a command in the context of the configured workspaces of"
+  },
+  {
+    "flags": "--workspaces",
+    "description": "Set to true to run the command in the context of all configured"
+  },
+  {
+    "flags": "--include-workspace-root",
+    "description": "Include the workspace root when workspaces are enabled for a command."
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "flags": "--registry",
+    "description": "The base URL of the npm registry."
+  },
+  {
+    "flags": "--otp",
+    "description": "This is a one-time password from a two-factor authenticator. It's"
+  },
+  {
+    "flags": "-p, --parseable",
+    "description": "Output parseable results from commands that write to standard output."
+  },
+  {
+    "flags": "--json",
+    "description": "Whether or not to output JSON data, rather than the normal output."
+  }
+]

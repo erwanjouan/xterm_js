@@ -1,0 +1,58 @@
+[
+  {
+    "flags": "--init-author-name",
+    "description": "The value npm init should use by default for the package author's name."
+  },
+  {
+    "flags": "--init-author-url",
+    "description": "The value npm init should use by default for the package author's"
+  },
+  {
+    "flags": "--init-license",
+    "description": "The value npm init should use by default for the package license."
+  },
+  {
+    "flags": "--init-module",
+    "description": "A module that will be loaded by the npm init command. See the"
+  },
+  {
+    "flags": "--init-type",
+    "description": "The value that npm init should use by default for the package.json type"
+  },
+  {
+    "flags": "--init-version",
+    "description": "The value that npm init should use by default for the package version"
+  },
+  {
+    "flags": "--init-private",
+    "description": "The value npm init should use by default for the package's private"
+  },
+  {
+    "flags": "-y, --yes",
+    "description": "Automatically answer \"yes\" to any prompts that npm might print on the"
+  },
+  {
+    "flags": "-f, --force",
+    "description": "Removes various protections against unfortunate side effects, common"
+  },
+  {
+    "flags": "--scope",
+    "description": "Associate an operation with a scope for a scoped registry."
+  },
+  {
+    "flags": "-w, --workspace",
+    "description": "Enable running a command in the context of the configured workspaces of"
+  },
+  {
+    "flags": "--workspaces",
+    "description": "Set to true to run the command in the context of all configured"
+  },
+  {
+    "flags": "--no-workspaces-update",
+    "description": ""
+  },
+  {
+    "flags": "--include-workspace-root",
+    "description": "Include the workspace root when workspaces are enabled for a command."
+  }
+]

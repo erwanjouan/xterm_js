@@ -1,0 +1,14 @@
+[
+  {
+    "flags": "--name",
+    "description": "The name for the new enum. This will be used to create the enum file (e.g., `my-enum.enum.ts`)."
+  },
+  {
+    "flags": "--project",
+    "description": "The name of the project where the enum should be created. If not specified, the CLI will determine the project from the current directory."
+  },
+  {
+    "flags": "--type",
+    "description": "Adds a custom type to the filename, allowing you to create more descriptive enum names. For example, if you set the type to `status`, the filename will be `my-enum.status.ts`."
+  }
+]

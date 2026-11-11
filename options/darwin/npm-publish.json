@@ -1,0 +1,34 @@
+[
+  {
+    "flags": "--tag",
+    "description": "If you ask npm to install a package and don't tell it a specific"
+  },
+  {
+    "flags": "--access",
+    "description": "If you do not want your scoped package to be publicly viewable (and"
+  },
+  {
+    "flags": "--dry-run",
+    "description": "Indicates that you don't want npm to make any changes and that it"
+  },
+  {
+    "flags": "--otp",
+    "description": "This is a one-time password from a two-factor authenticator. It's"
+  },
+  {
+    "flags": "-w, --workspace",
+    "description": "Enable running a command in the context of the configured workspaces of"
+  },
+  {
+    "flags": "--workspaces",
+    "description": "Set to true to run the command in the context of all configured"
+  },
+  {
+    "flags": "--include-workspace-root",
+    "description": "Include the workspace root when workspaces are enabled for a command."
+  },
+  {
+    "flags": "--provenance, --provenance-file",
+    "description": "When publishing from a supported cloud CI/CD system, the package will"
+  }
+]

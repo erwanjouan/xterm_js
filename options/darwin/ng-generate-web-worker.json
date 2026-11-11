@@ -1,0 +1,14 @@
+[
+  {
+    "flags": "--project",
+    "description": "The name of the project where the web worker should be created. If not specified, the CLI will determine the project from the current directory."
+  },
+  {
+    "flags": "--name",
+    "description": "The name for the new web worker. This will be used to create the worker file (e.g., `my-worker.worker.ts`)."
+  },
+  {
+    "flags": "--snippet",
+    "description": "Generate a code snippet that demonstrates how to create and use the new web worker."
+  }
+]

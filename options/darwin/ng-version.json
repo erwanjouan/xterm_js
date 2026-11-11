@@ -1,0 +1,6 @@
+[
+  {
+    "flags": "--help",
+    "description": "Shows a help message for this command in the console."
+  }
+]

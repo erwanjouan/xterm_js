@@ -1,0 +1,18 @@
+[
+  {
+    "flags": "--registry",
+    "description": "The base URL of the npm registry."
+  },
+  {
+    "flags": "--otp",
+    "description": "This is a one-time password from a two-factor authenticator. It's"
+  },
+  {
+    "flags": "-w, --workspace",
+    "description": "Enable running a command in the context of the configured workspaces of"
+  },
+  {
+    "flags": "--workspaces",
+    "description": "Set to true to run the command in the context of all configured"
+  }
+]

@@ -1,0 +1,74 @@
+[
+  {
+    "flags": "service-worker",
+    "description": "Initializes a service worker setup."
+  },
+  {
+    "flags": "application",
+    "description": "Create an Angular application."
+  },
+  {
+    "flags": "class",
+    "description": "Create a class."
+  },
+  {
+    "flags": "component",
+    "description": "Create an Angular component."
+  },
+  {
+    "flags": "directive",
+    "description": "Create an Angular directive."
+  },
+  {
+    "flags": "enum",
+    "description": "Create an enumeration."
+  },
+  {
+    "flags": "guard",
+    "description": "Create a guard."
+  },
+  {
+    "flags": "resolver",
+    "description": "Create a resolver."
+  },
+  {
+    "flags": "interceptor",
+    "description": "Create an interceptor."
+  },
+  {
+    "flags": "interface",
+    "description": "Create an interface."
+  },
+  {
+    "flags": "module",
+    "description": "Create an Angular module."
+  },
+  {
+    "flags": "pipe",
+    "description": "Create an Angular pipe."
+  },
+  {
+    "flags": "service",
+    "description": "Create an Angular service."
+  },
+  {
+    "flags": "app-shell",
+    "description": "Create an application shell."
+  },
+  {
+    "flags": "library",
+    "description": "Generate a library project for Angular."
+  },
+  {
+    "flags": "web-worker",
+    "description": "Create a Web Worker."
+  },
+  {
+    "flags": "environments",
+    "description": "Generate project environment files."
+  },
+  {
+    "flags": "config",
+    "description": "Generates a configuration file."
+  }
+]

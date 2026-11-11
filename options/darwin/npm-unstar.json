@@ -1,0 +1,14 @@
+[
+  {
+    "flags": "--registry",
+    "description": "The base URL of the npm registry."
+  },
+  {
+    "flags": "--no-unicode",
+    "description": ""
+  },
+  {
+    "flags": "--otp",
+    "description": "This is a one-time password from a two-factor authenticator. It's"
+  }
+]

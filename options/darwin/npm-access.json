@@ -1,0 +1,14 @@
+[
+  {
+    "flags": "--json",
+    "description": "Whether or not to output JSON data, rather than the normal output."
+  },
+  {
+    "flags": "--otp",
+    "description": "This is a one-time password from a two-factor authenticator. It's"
+  },
+  {
+    "flags": "--registry",
+    "description": "The base URL of the npm registry."
+  }
+]

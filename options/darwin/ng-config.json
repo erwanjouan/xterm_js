@@ -1,0 +1,10 @@
+[
+  {
+    "flags": "--help",
+    "description": "Shows a help message for this command in the console."
+  },
+  {
+    "flags": "-g, --global",
+    "description": "Access the global configuration in the caller's home directory."
+  }
+]

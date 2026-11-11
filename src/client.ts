@@ -199,10 +199,22 @@ function parseInput(line: string): { cmd: string | null; filterText: string } {
 
   const trailingSpace = raw.endsWith(' ');
   const second = tokens[1] ?? '';
+  const third = tokens[2] ?? '';
 
   // "cmd word [...]" where word is not a flag → subcommand pattern
   if (second && !second.startsWith('-')) {
-    // subcommand is locked in once there's a trailing space or further tokens
+    // 3-level: "cmd sub1 sub2 [flags...]" — e.g. "ng generate component --flag"
+    if (third && !third.startsWith('-')) {
+      if (trailingSpace || tokens.length > 3) {
+        const tripleKey = `${first}-${second}-${third}`;
+        const last = tokens[tokens.length - 1] ?? '';
+        return { cmd: tripleKey, filterText: !trailingSpace && last.startsWith('-') ? last : '' };
+      }
+      // Still completing third token: filter sub1 results by prefix
+      return { cmd: `${first}-${second}`, filterText: third };
+    }
+
+    // 2-level: subcommand is locked in once there's a trailing space or further tokens
     if (trailingSpace || tokens.length > 2) {
       const compoundKey = `${first}-${second}`;
       const last = tokens[tokens.length - 1] ?? '';

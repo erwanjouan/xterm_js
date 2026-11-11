@@ -1,0 +1,42 @@
+[
+  {
+    "flags": "--omit",
+    "description": "Dependency types to omit from the installation tree on disk."
+  },
+  {
+    "flags": "--include",
+    "description": "Option that allows for defining which types of dependencies to install."
+  },
+  {
+    "flags": "--dry-run",
+    "description": "Indicates that you don't want npm to make any changes and that it"
+  },
+  {
+    "flags": "--json",
+    "description": "Whether or not to output JSON data, rather than the normal output."
+  },
+  {
+    "flags": "--foreground-scripts",
+    "description": "Run all build scripts (ie, preinstall, install, and postinstall)"
+  },
+  {
+    "flags": "--ignore-scripts",
+    "description": "If true, npm does not run scripts specified in package.json files."
+  },
+  {
+    "flags": "-w, --workspace",
+    "description": "Enable running a command in the context of the configured workspaces of"
+  },
+  {
+    "flags": "--workspaces",
+    "description": "Set to true to run the command in the context of all configured"
+  },
+  {
+    "flags": "--include-workspace-root",
+    "description": "Include the workspace root when workspaces are enabled for a command."
+  },
+  {
+    "flags": "--install-links",
+    "description": "When set file: protocol dependencies will be packed and installed as"
+  }
+]

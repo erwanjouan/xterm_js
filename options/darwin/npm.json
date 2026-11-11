@@ -1,0 +1,266 @@
+[
+  {
+    "flags": "access",
+    "description": "Set access level on published packages"
+  },
+  {
+    "flags": "adduser",
+    "description": "Add a registry user account"
+  },
+  {
+    "flags": "audit",
+    "description": "Run a security audit"
+  },
+  {
+    "flags": "bugs",
+    "description": "Report bugs for a package in a web browser"
+  },
+  {
+    "flags": "cache",
+    "description": "Manipulates packages and npx cache"
+  },
+  {
+    "flags": "ci",
+    "description": "Clean install a project"
+  },
+  {
+    "flags": "completion",
+    "description": "Tab Completion for npm"
+  },
+  {
+    "flags": "config",
+    "description": "Manage the npm configuration files"
+  },
+  {
+    "flags": "dedupe",
+    "description": "Reduce duplication in the package tree"
+  },
+  {
+    "flags": "deprecate",
+    "description": "Deprecate a version of a package"
+  },
+  {
+    "flags": "diff",
+    "description": "The registry diff command"
+  },
+  {
+    "flags": "dist-tag",
+    "description": "Modify package distribution tags"
+  },
+  {
+    "flags": "docs",
+    "description": "Open documentation for a package in a web browser"
+  },
+  {
+    "flags": "doctor",
+    "description": "Check the health of your npm environment"
+  },
+  {
+    "flags": "edit",
+    "description": "Edit an installed package"
+  },
+  {
+    "flags": "exec",
+    "description": "Run a command from a local or remote npm package"
+  },
+  {
+    "flags": "explain",
+    "description": "Explain installed packages"
+  },
+  {
+    "flags": "explore",
+    "description": "Browse an installed package"
+  },
+  {
+    "flags": "find-dupes",
+    "description": "Find duplication in the package tree"
+  },
+  {
+    "flags": "fund",
+    "description": "Retrieve funding information"
+  },
+  {
+    "flags": "get",
+    "description": "Get a value from the npm configuration"
+  },
+  {
+    "flags": "help",
+    "description": "Get help on npm"
+  },
+  {
+    "flags": "help-search",
+    "description": "Search npm help documentation"
+  },
+  {
+    "flags": "init",
+    "description": "Create a package.json file"
+  },
+  {
+    "flags": "install",
+    "description": "Install a package"
+  },
+  {
+    "flags": "install-test",
+    "description": "Install package(s) and run tests"
+  },
+  {
+    "flags": "link",
+    "description": "Symlink a package folder"
+  },
+  {
+    "flags": "ll",
+    "description": "List installed packages"
+  },
+  {
+    "flags": "login",
+    "description": "Login to a registry user account"
+  },
+  {
+    "flags": "logout",
+    "description": "Log out of the registry"
+  },
+  {
+    "flags": "ls",
+    "description": "List installed packages"
+  },
+  {
+    "flags": "org",
+    "description": "Manage orgs"
+  },
+  {
+    "flags": "outdated",
+    "description": "Check for outdated packages"
+  },
+  {
+    "flags": "owner",
+    "description": "Manage package owners"
+  },
+  {
+    "flags": "pack",
+    "description": "Create a tarball from a package"
+  },
+  {
+    "flags": "ping",
+    "description": "Ping npm registry"
+  },
+  {
+    "flags": "pkg",
+    "description": "Manages your package.json"
+  },
+  {
+    "flags": "prefix",
+    "description": "Display prefix"
+  },
+  {
+    "flags": "profile",
+    "description": "Change settings on your registry profile"
+  },
+  {
+    "flags": "prune",
+    "description": "Remove extraneous packages"
+  },
+  {
+    "flags": "publish",
+    "description": "Publish a package"
+  },
+  {
+    "flags": "query",
+    "description": "Retrieve a filtered list of packages"
+  },
+  {
+    "flags": "rebuild",
+    "description": "Rebuild a package"
+  },
+  {
+    "flags": "repo",
+    "description": "Open package repository page in the browser"
+  },
+  {
+    "flags": "restart",
+    "description": "Restart a package"
+  },
+  {
+    "flags": "root",
+    "description": "Display npm root"
+  },
+  {
+    "flags": "run",
+    "description": "Run arbitrary package scripts"
+  },
+  {
+    "flags": "sbom",
+    "description": "Generate a Software Bill of Materials (SBOM)"
+  },
+  {
+    "flags": "search",
+    "description": "Search for packages"
+  },
+  {
+    "flags": "set",
+    "description": "Set a value in the npm configuration"
+  },
+  {
+    "flags": "shrinkwrap",
+    "description": "Lock down dependency versions for publication"
+  },
+  {
+    "flags": "star",
+    "description": "Mark your favorite packages"
+  },
+  {
+    "flags": "stars",
+    "description": "View packages marked as favorites"
+  },
+  {
+    "flags": "start",
+    "description": "Start a package"
+  },
+  {
+    "flags": "stop",
+    "description": "Stop a package"
+  },
+  {
+    "flags": "team",
+    "description": "Manage organization teams and team memberships"
+  },
+  {
+    "flags": "test",
+    "description": "Test a package"
+  },
+  {
+    "flags": "token",
+    "description": "Manage your authentication tokens"
+  },
+  {
+    "flags": "undeprecate",
+    "description": "Undeprecate a version of a package"
+  },
+  {
+    "flags": "uninstall",
+    "description": "Remove a package"
+  },
+  {
+    "flags": "unpublish",
+    "description": "Remove a package from the registry"
+  },
+  {
+    "flags": "unstar",
+    "description": "Remove an item from your favorite packages"
+  },
+  {
+    "flags": "update",
+    "description": "Update packages"
+  },
+  {
+    "flags": "version",
+    "description": "Bump a package version"
+  },
+  {
+    "flags": "view",
+    "description": "View registry info"
+  },
+  {
+    "flags": "whoami",
+    "description": "Display npm username"
+  }
+]

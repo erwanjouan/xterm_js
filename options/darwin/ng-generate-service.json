@@ -1,0 +1,22 @@
+[
+  {
+    "flags": "--name",
+    "description": "The name for the new service. This will be used to create the service's class and spec files (e.g., `my-service.service.ts` and `my-service.service.spec.ts`)."
+  },
+  {
+    "flags": "--project",
+    "description": "The name of the project where the service should be added. If not specified, the CLI will determine the project from the current directory."
+  },
+  {
+    "flags": "--flat",
+    "description": "Creates files at the top level of the project or the given path. If set to false, a new folder with the service's name will be created to contain the files."
+  },
+  {
+    "flags": "--skip-tests",
+    "description": "Skip the generation of a unit test file `spec.ts` for the service."
+  },
+  {
+    "flags": "--type",
+    "description": "Append a custom type to the service's filename. For example, if you set the type to `service`, the file will be named `my-service.service.ts`."
+  }
+]

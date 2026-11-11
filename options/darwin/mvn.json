@@ -1,0 +1,154 @@
+[
+  {
+    "flags": "-am, --also-make",
+    "description": "If project list is specified, also build projects required by the list"
+  },
+  {
+    "flags": "-amd, --also-make-dependents",
+    "description": "If project list is specified, also build projects that depend on projects on the list"
+  },
+  {
+    "flags": "-B, --batch-mode",
+    "description": "Run in non-interactive (batch) mode (disables output color)"
+  },
+  {
+    "flags": "-b, --builder",
+    "description": "The id of the build strategy to use"
+  },
+  {
+    "flags": "-C, --strict-checksums",
+    "description": "Fail the build if checksums don't match"
+  },
+  {
+    "flags": "-c, --lax-checksums",
+    "description": "Warn if checksums don't match"
+  },
+  {
+    "flags": "-cpu, --check-plugin-updates",
+    "description": "Ineffective, only kept for backward compatibility"
+  },
+  {
+    "flags": "-D, --define",
+    "description": "Define a system property"
+  },
+  {
+    "flags": "-e, --errors",
+    "description": "Produce execution error messages"
+  },
+  {
+    "flags": "-emp, --encrypt-master-password",
+    "description": "Encrypt master security password"
+  },
+  {
+    "flags": "-ep, --encrypt-password",
+    "description": "Encrypt server password"
+  },
+  {
+    "flags": "-f, --file",
+    "description": "Force the use of an alternate POM file (or directory with pom.xml)"
+  },
+  {
+    "flags": "-fae, --fail-at-end",
+    "description": "Only fail the build afterwards; allow all non-impacted builds to continue"
+  },
+  {
+    "flags": "-ff, --fail-fast",
+    "description": "Stop at first failure in reactorized builds"
+  },
+  {
+    "flags": "-fn, --fail-never",
+    "description": "NEVER fail the build, regardless of project result"
+  },
+  {
+    "flags": "-gs, --global-settings",
+    "description": "Alternate path for the global settings file"
+  },
+  {
+    "flags": "-gt, --global-toolchains",
+    "description": "Alternate path for the global toolchains file"
+  },
+  {
+    "flags": "-h, --help",
+    "description": "Display help information"
+  },
+  {
+    "flags": "-l, --log-file",
+    "description": "Log file where all build output will go (disables output color)"
+  },
+  {
+    "flags": "-llr, --legacy-local-repository",
+    "description": "Use Maven 2 Legacy Local Repository behaviour, ie no use of _remote.repositories. Can also be activated by using -Dmaven.legacyLocalRepo=true"
+  },
+  {
+    "flags": "-N, --non-recursive",
+    "description": "Do not recurse into sub-projects"
+  },
+  {
+    "flags": "-npr, --no-plugin-registry",
+    "description": "Ineffective, only kept for backward compatibility"
+  },
+  {
+    "flags": "-npu, --no-plugin-updates",
+    "description": "Ineffective, only kept for backward compatibility"
+  },
+  {
+    "flags": "-nsu, --no-snapshot-updates",
+    "description": "Suppress SNAPSHOT updates"
+  },
+  {
+    "flags": "-ntp, --no-transfer-progress",
+    "description": "Do not display transfer progress when downloading or uploading"
+  },
+  {
+    "flags": "-o, --offline",
+    "description": "Work offline"
+  },
+  {
+    "flags": "-P, --activate-profiles",
+    "description": "Comma-delimited list of profiles to activate"
+  },
+  {
+    "flags": "-pl, --projects",
+    "description": "Comma-delimited list of specified reactor projects to build instead of all projects. A project can be specified by [groupId]:artifactId or by its relative path"
+  },
+  {
+    "flags": "-q, --quiet",
+    "description": "Quiet output - only show errors"
+  },
+  {
+    "flags": "-rf, --resume-from",
+    "description": "Resume reactor from specified project"
+  },
+  {
+    "flags": "-s, --settings",
+    "description": "Alternate path for the user settings file"
+  },
+  {
+    "flags": "-t, --toolchains",
+    "description": "Alternate path for the user toolchains file"
+  },
+  {
+    "flags": "-T, --threads",
+    "description": "Thread count, for instance 2.0C where C is core multiplied"
+  },
+  {
+    "flags": "-U, --update-snapshots",
+    "description": "Forces a check for missing releases and updated snapshots on remote repositories"
+  },
+  {
+    "flags": "-up, --update-plugins",
+    "description": "Ineffective, only kept for backward compatibility"
+  },
+  {
+    "flags": "-v, --version",
+    "description": "Display version information"
+  },
+  {
+    "flags": "-V, --show-version",
+    "description": "Display version information WITHOUT stopping build"
+  },
+  {
+    "flags": "-X, --debug",
+    "description": "Produce execution debug output"
+  }
+]

@@ -1,0 +1,34 @@
+[
+  {
+    "flags": "--name",
+    "description": "The name for the new library. This name will be used for the project directory and various identifiers within the library's code."
+  },
+  {
+    "flags": "--entry-file",
+    "description": "The path to the library's public API file, relative to the workspace root. This file defines what parts of the library are accessible to applications that import it."
+  },
+  {
+    "flags": "-p, --prefix",
+    "description": "A prefix to be added to the selectors of components generated within this library. For example, if the prefix is `my-lib` and you generate a component named `my-component`, the selector will be `my-lib-my-component`."
+  },
+  {
+    "flags": "--skip-package-json",
+    "description": "Do not automatically add dependencies to the `package.json` file."
+  },
+  {
+    "flags": "--skip-install",
+    "description": "Skip the automatic installation of packages. You will need to manually install the dependencies later."
+  },
+  {
+    "flags": "--skip-ts-config",
+    "description": "Do not update the workspace `tsconfig.json` file to add a path mapping for the new library. The path mapping is needed to use the library in an application, but can be disabled here to simplify development."
+  },
+  {
+    "flags": "--project-root",
+    "description": "The root directory for the new library, relative to the workspace root. If not specified, the library will be created in a subfolder within the `projects` directory, using the library's name."
+  },
+  {
+    "flags": "--standalone",
+    "description": "Create a library that utilizes the standalone API, eliminating the need for NgModules. This can simplify the structure of your library and its usage in applications."
+  }
+]

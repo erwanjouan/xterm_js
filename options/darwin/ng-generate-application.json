@@ -1,0 +1,66 @@
+[
+  {
+    "flags": "--project-root",
+    "description": "The directory where the new application's files will be created, relative to the workspace root. If not specified, the application will be created in a subfolder within the `projects` directory, using the application's name."
+  },
+  {
+    "flags": "--name",
+    "description": "The name for the new application. This name will be used for the project directory and various identifiers throughout the application's code."
+  },
+  {
+    "flags": "-s, --inline-style",
+    "description": "Include the styles for the root component directly within the `app.component.ts` file. Only CSS styles can be included inline. By default, a separate stylesheet file (e.g., `app.component.css`) is created."
+  },
+  {
+    "flags": "-t, --inline-template",
+    "description": "Include the HTML template for the root component directly within the `app.component.ts` file. By default, a separate template file (e.g., `app.component.html`) is created."
+  },
+  {
+    "flags": "--view-encapsulation",
+    "description": "Sets the view encapsulation mode for the application's components. This determines how component styles are scoped and applied."
+  },
+  {
+    "flags": "--routing",
+    "description": "Generate an application with routing already configured. This sets up the necessary files and modules for managing navigation between different views in your application."
+  },
+  {
+    "flags": "-p, --prefix",
+    "description": "A prefix to be added to the selectors of components generated within this application. For example, if the prefix is `my-app` and you generate a component named `my-component`, the selector will be `my-app-my-component`."
+  },
+  {
+    "flags": "--style",
+    "description": "The type of stylesheet files to be created for components in the application."
+  },
+  {
+    "flags": "-S, --skip-tests",
+    "description": "Skip the generation of a unit test files `spec.ts`."
+  },
+  {
+    "flags": "--skip-package-json",
+    "description": "Do not add dependencies to the `package.json` file."
+  },
+  {
+    "flags": "--minimal",
+    "description": "Generate a minimal project without any testing frameworks. This is intended for learning purposes and simple experimentation, not for production applications."
+  },
+  {
+    "flags": "--skip-install",
+    "description": "Skip the automatic installation of packages. You will need to manually install the dependencies later."
+  },
+  {
+    "flags": "--strict",
+    "description": "Enable stricter bundle budget settings for the application. This helps to keep your application's bundle size small and improve performance. For more information, see https://angular.dev/tools/cli/template-typecheck#strict-mode"
+  },
+  {
+    "flags": "--standalone",
+    "description": "Create an application that utilizes the standalone API, eliminating the need for NgModules. This can simplify the structure of your application."
+  },
+  {
+    "flags": "--ssr",
+    "description": "Configure the application for Server-Side Rendering (SSR) and Static Site Generation (SSG/Prerendering)."
+  },
+  {
+    "flags": "--zoneless",
+    "description": "Generate an application that does not use `zone.js`."
+  }
+]

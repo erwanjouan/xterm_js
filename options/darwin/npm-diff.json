@@ -1,0 +1,54 @@
+[
+  {
+    "flags": "--diff",
+    "description": "Define arguments to compare in npm diff."
+  },
+  {
+    "flags": "--diff-name-only",
+    "description": "Prints only filenames when using npm diff."
+  },
+  {
+    "flags": "--diff-unified",
+    "description": "The number of lines of context to print in npm diff."
+  },
+  {
+    "flags": "--diff-ignore-all-space",
+    "description": "Ignore whitespace when comparing lines in npm diff."
+  },
+  {
+    "flags": "--diff-no-prefix",
+    "description": "Do not show any source or destination prefix in npm diff output."
+  },
+  {
+    "flags": "--diff-src-prefix",
+    "description": "Source prefix to be used in npm diff output."
+  },
+  {
+    "flags": "--diff-dst-prefix",
+    "description": "Destination prefix to be used in npm diff output."
+  },
+  {
+    "flags": "--diff-text",
+    "description": "Treat all files as text in npm diff."
+  },
+  {
+    "flags": "-g, --global",
+    "description": "Operates in \"global\" mode, so that packages are installed into the"
+  },
+  {
+    "flags": "--tag",
+    "description": "If you ask npm to install a package and don't tell it a specific"
+  },
+  {
+    "flags": "-w, --workspace",
+    "description": "Enable running a command in the context of the configured workspaces of"
+  },
+  {
+    "flags": "--workspaces",
+    "description": "Set to true to run the command in the context of all configured"
+  },
+  {
+    "flags": "--include-workspace-root",
+    "description": "Include the workspace root when workspaces are enabled for a command."
+  }
+]

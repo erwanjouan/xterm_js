@@ -1,0 +1,14 @@
+[
+  {
+    "flags": "--registry",
+    "description": "The base URL of the npm registry."
+  },
+  {
+    "flags": "--scope",
+    "description": "Associate an operation with a scope for a scoped registry."
+  },
+  {
+    "flags": "--auth-type",
+    "description": "What authentication strategy to use with login. Note that if an otp"
+  }
+]

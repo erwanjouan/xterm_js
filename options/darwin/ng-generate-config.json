@@ -1,0 +1,10 @@
+[
+  {
+    "flags": "--project",
+    "description": "The name of the project where the configuration file should be created or updated."
+  },
+  {
+    "flags": "--type",
+    "description": "Specifies the type of configuration file to generate."
+  }
+]

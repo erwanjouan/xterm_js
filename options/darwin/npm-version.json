@@ -1,0 +1,50 @@
+[
+  {
+    "flags": "--allow-same-version",
+    "description": "Prevents throwing an error when npm version is used to set the new"
+  },
+  {
+    "flags": "--no-commit-hooks",
+    "description": ""
+  },
+  {
+    "flags": "--no-git-tag-version",
+    "description": ""
+  },
+  {
+    "flags": "--json",
+    "description": "Whether or not to output JSON data, rather than the normal output."
+  },
+  {
+    "flags": "--preid",
+    "description": "The \"prerelease identifier\" to use as a prefix for the \"prerelease\""
+  },
+  {
+    "flags": "--sign-git-tag",
+    "description": "If set to true, then the npm version command will tag the version using"
+  },
+  {
+    "flags": "-S, --save, --no-save, --save-prod, --save-dev, --save-optional, --save-peer, --save-bundle",
+    "description": "Save installed packages to a package.json file as dependencies."
+  },
+  {
+    "flags": "-w, --workspace",
+    "description": "Enable running a command in the context of the configured workspaces of"
+  },
+  {
+    "flags": "--workspaces",
+    "description": "Set to true to run the command in the context of all configured"
+  },
+  {
+    "flags": "--no-workspaces-update",
+    "description": ""
+  },
+  {
+    "flags": "--include-workspace-root",
+    "description": "Include the workspace root when workspaces are enabled for a command."
+  },
+  {
+    "flags": "--ignore-scripts",
+    "description": "If true, npm does not run scripts specified in package.json files."
+  }
+]

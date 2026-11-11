@@ -1,0 +1,6 @@
+[
+  {
+    "flags": "-g, --global",
+    "description": "Operates in \"global\" mode, so that packages are installed into the"
+  }
+]

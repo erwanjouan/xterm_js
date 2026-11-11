@@ -1,0 +1,6 @@
+[
+  {
+    "flags": "--registry",
+    "description": "The base URL of the npm registry."
+  }
+]

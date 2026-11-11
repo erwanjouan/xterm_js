@@ -1,0 +1,62 @@
+[
+  {
+    "flags": "-a, --all",
+    "description": "When running npm outdated and npm ls, setting --all will show all"
+  },
+  {
+    "flags": "--json",
+    "description": "Whether or not to output JSON data, rather than the normal output."
+  },
+  {
+    "flags": "-l, --long",
+    "description": "Show extended information in ls, search, and help-search."
+  },
+  {
+    "flags": "-p, --parseable",
+    "description": "Output parseable results from commands that write to standard output."
+  },
+  {
+    "flags": "-g, --global",
+    "description": "Operates in \"global\" mode, so that packages are installed into the"
+  },
+  {
+    "flags": "--depth",
+    "description": "The depth to go when recursing packages for npm ls."
+  },
+  {
+    "flags": "--omit",
+    "description": "Dependency types to omit from the installation tree on disk."
+  },
+  {
+    "flags": "--include",
+    "description": "Option that allows for defining which types of dependencies to install."
+  },
+  {
+    "flags": "--link",
+    "description": "Used with npm ls, limiting output to only those packages that are"
+  },
+  {
+    "flags": "--package-lock-only",
+    "description": "If set to true, the current operation will only use the package-"
+  },
+  {
+    "flags": "--no-unicode",
+    "description": ""
+  },
+  {
+    "flags": "-w, --workspace",
+    "description": "Enable running a command in the context of the configured workspaces of"
+  },
+  {
+    "flags": "--workspaces",
+    "description": "Set to true to run the command in the context of all configured"
+  },
+  {
+    "flags": "--include-workspace-root",
+    "description": "Include the workspace root when workspaces are enabled for a command."
+  },
+  {
+    "flags": "--install-links",
+    "description": "When set file: protocol dependencies will be packed and installed as"
+  }
+]

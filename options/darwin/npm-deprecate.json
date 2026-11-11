@@ -1,0 +1,14 @@
+[
+  {
+    "flags": "--registry",
+    "description": "The base URL of the npm registry."
+  },
+  {
+    "flags": "--otp",
+    "description": "This is a one-time password from a two-factor authenticator. It's"
+  },
+  {
+    "flags": "--dry-run",
+    "description": "Indicates that you don't want npm to make any changes and that it"
+  }
+]

@@ -1,0 +1,6 @@
+[
+  {
+    "flags": "--viewer",
+    "description": "The program to use to view help content."
+  }
+]

@@ -1,4 +1,4 @@
-import { loadManOptions, loadManOptionsFromWeb, loadGitSubcommands, loadGitSubcmdOptions, loadDockerSubcommands, loadDockerSubcmdOptions, loadKubectlSubcommands, loadKubectlSubcmdOptions } from '../src/man-parser';
+import { loadManOptions, loadManOptionsFromWeb, loadMavenOptions, loadNpmSubcommands, loadNpmSubcmdOptions, loadNgSubcommands, loadNgCommandOptions, loadNgGenerateSchematics, loadNgGenerateSchematicOptions, loadGitSubcommands, loadGitSubcmdOptions, loadDockerSubcommands, loadDockerSubcmdOptions, loadKubectlSubcommands, loadKubectlSubcmdOptions } from '../src/man-parser';
 import path from 'path';
 import fs from 'fs';
 
@@ -39,6 +39,39 @@ for (const cmd of commands) {
         console.log(`  kubectl-${sub.flags.padEnd(16)} ${opts.length} options  →  ${rel}`);
       }
     }
+  } else if (cmd === 'ng') {
+    const subcommands = loadNgSubcommands();
+    console.log(`ng       ${subcommands.length} subcommands  →  ${write('ng', subcommands)}`);
+    for (const sub of subcommands) {
+      const opts = loadNgCommandOptions(sub.flags);
+      if (opts.length > 0) {
+        const rel = write(`ng-${sub.flags}`, opts);
+        console.log(`  ng-${sub.flags.padEnd(18)} ${opts.length} options  →  ${rel}`);
+      }
+    }
+    // ng generate schematics + per-schematic options
+    const schematics = loadNgGenerateSchematics();
+    console.log(`  ng-generate      ${schematics.length} schematics  →  ${write('ng-generate', schematics)}`);
+    for (const sch of schematics) {
+      const opts = loadNgGenerateSchematicOptions(sch.flags);
+      if (opts.length > 0) {
+        const rel = write(`ng-generate-${sch.flags}`, opts);
+        console.log(`    ng-generate-${sch.flags.padEnd(14)} ${opts.length} options  →  ${rel}`);
+      }
+    }
+  } else if (cmd === 'npm') {
+    const subcommands = loadNpmSubcommands();
+    console.log(`npm      ${subcommands.length} subcommands  →  ${write('npm', subcommands)}`);
+    for (const sub of subcommands) {
+      const opts = loadNpmSubcmdOptions(sub.flags);
+      if (opts.length > 0) {
+        const rel = write(`npm-${sub.flags}`, opts);
+        console.log(`  npm-${sub.flags.padEnd(18)} ${opts.length} options  →  ${rel}`);
+      }
+    }
+  } else if (cmd === 'mvn') {
+    const opts = loadMavenOptions();
+    console.log(`mvn      ${opts.length} options  →  ${write('mvn', opts)}`);
   } else if (cmd === 'docker') {
     const subcommands = loadDockerSubcommands();
     console.log(`docker   ${subcommands.length} subcommands  →  ${write('docker', subcommands)}`);

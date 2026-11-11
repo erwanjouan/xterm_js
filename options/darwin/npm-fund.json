@@ -1,0 +1,22 @@
+[
+  {
+    "flags": "--json",
+    "description": "Whether or not to output JSON data, rather than the normal output."
+  },
+  {
+    "flags": "--no-browser, --browser",
+    "description": "The browser that is called by npm commands to open websites."
+  },
+  {
+    "flags": "--no-unicode",
+    "description": ""
+  },
+  {
+    "flags": "-w, --workspace",
+    "description": "Enable running a command in the context of the configured workspaces of"
+  },
+  {
+    "flags": "--which",
+    "description": "If there are multiple funding sources, which 1-indexed source URL to"
+  }
+]

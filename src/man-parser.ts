@@ -1,4 +1,6 @@
 import { spawnSync } from 'child_process';
+import fs from 'fs';
+import path from 'path';
 
 export interface CommandOption {
   flags: string;
@@ -48,6 +50,242 @@ export function loadManOptionsFromWeb(cmd: string): CommandOption[] {
   const opts = fetchOptionsFromSection(cmd, 1);
   if (opts.length > 0) return opts;
   return fetchOptionsFromSection(cmd, 8);
+}
+
+// ----- Maven -----------------------------------------------------------------
+
+export function loadMavenOptions(): CommandOption[] {
+  const result = spawnSync(
+    'curl',
+    ['-s', '--max-time', '10', 'https://maven.apache.org/ref/3.6.1/maven-embedder/cli.html'],
+    { encoding: 'utf8', timeout: 15000 }
+  );
+  if (!result.stdout) return [];
+
+  const options: CommandOption[] = [];
+  // Rows alternate classes 'a'/'b'; header row uses <th> so the <td> guard skips it
+  const rowRe = /<tr class='[ab]'><td><code>([\s\S]*?)<\/code><\/td><td>([\s\S]*?)<\/td><\/tr>/gi;
+  let match;
+
+  while ((match = rowRe.exec(result.stdout)) !== null) {
+    // Raw flags: "-am,--also-make" or "-b,--builder " → normalise to "-am, --also-make"
+    const flags = stripHtml(match[1]).replace(/,--/g, ', --').trim();
+    const description = stripHtml(match[2]).trim();
+    if (flags) options.push({ flags, description });
+  }
+
+  return options;
+}
+
+// ----- npm -------------------------------------------------------------------
+
+// Parse "Configuration" section of `npm help <sub> | col -bx` into configName → description
+function parseNpmHelpDescriptions(subcmd: string): Map<string, string> {
+  const result = spawnSync(
+    'bash', ['-c', `npm help ${subcmd} 2>/dev/null | col -bx 2>/dev/null`],
+    { encoding: 'utf8', timeout: 10000, env: { ...process.env, MANPAGER: 'cat', TERM: 'dumb' } }
+  );
+  const descMap = new Map<string, string>();
+  if (!result.stdout) return descMap;
+
+  let inConfig = false;
+  let currentParam = '';
+  let seenBullets = false;
+  let pendingDesc = '';
+
+  const flush = () => {
+    if (currentParam && pendingDesc) descMap.set(currentParam, pendingDesc);
+    currentParam = ''; seenBullets = false; pendingDesc = '';
+  };
+
+  for (const line of result.stdout.split('\n')) {
+    const trimmed = line.trim();
+    if (/^   Configuration\s*$/.test(line)) { inConfig = true; continue; }
+    if (inConfig && /^   [A-Z]/.test(line)) { flush(); break; }
+    if (!inConfig) continue;
+
+    // Option name: 3-space indent + lowercase identifier only
+    if (/^   [a-z][a-z0-9-]*\s*$/.test(line)) {
+      flush();
+      currentParam = trimmed;
+      continue;
+    }
+    if (!currentParam || !trimmed) continue;
+    if (trimmed.startsWith('•')) { seenBullets = true; continue; }
+    // Description lines sit at 7-space indent; bullet continuations are at 11+ spaces
+    const indent = line.search(/\S/);
+    if (seenBullets && !pendingDesc && indent === 7) pendingDesc = trimmed;
+  }
+  flush();
+  return descMap;
+}
+
+// Parse a single bracket group "[flag1|flag2|...]" into a flags string
+function parseBracketGroup(bracket: string): string | null {
+  // Strip outer [] then remove value placeholders like <hoisted|nested|...>
+  const inner = bracket.slice(1, -1).replace(/<[^>]*>/g, '').trim();
+  const shortFlags: string[] = [];
+  const longFlags: string[] = [];
+
+  for (const part of inner.split('|').map(p => p.trim()).filter(Boolean)) {
+    if (!part.startsWith('-')) continue;
+    const flag = part.split(/\s/)[0]; // drop trailing value hint
+    if (flag.startsWith('--')) longFlags.push(flag);
+    else shortFlags.push(flag);
+  }
+
+  if (shortFlags.length === 0 && longFlags.length === 0) return null;
+  return [...shortFlags, ...longFlags].join(', ');
+}
+
+export function loadNpmSubcommands(): CommandOption[] {
+  // `npm -l` lists every command with a one-line description: "    name   Description text"
+  const result = spawnSync('npm', ['-l'], { encoding: 'utf8', timeout: 5000 });
+  const output = (result.stdout ?? '') + (result.stderr ?? '');
+  const options: CommandOption[] = [];
+  let inCommands = false;
+
+  for (const line of output.split('\n')) {
+    if (/^All commands:/.test(line)) { inCommands = true; continue; }
+    if (!inCommands) continue;
+    // Command lines: 4-space indent + name + 2+ spaces + description
+    const m = line.match(/^    ([a-z][a-z0-9-]*)  {2,}(.+)/);
+    if (m) options.push({ flags: m[1], description: m[2].trim() });
+  }
+  return options;
+}
+
+export function loadNpmSubcmdOptions(subcmd: string): CommandOption[] {
+  const hResult = spawnSync('npm', [subcmd, '-h'], { encoding: 'utf8', timeout: 5000 });
+  const hOutput = (hResult.stdout ?? '') + (hResult.stderr ?? '');
+  const descMap = parseNpmHelpDescriptions(subcmd);
+
+  const options: CommandOption[] = [];
+  const seen = new Set<string>();
+  let inOptions = false;
+
+  for (const line of hOutput.split('\n')) {
+    if (/^Options:/.test(line)) { inOptions = true; continue; }
+    if (inOptions && /^aliases:/.test(line.trim())) break;
+    if (!inOptions || !line.trim()) continue;
+
+    // Match non-nested bracket groups only
+    const bracketRe = /\[([^\[\]]*)\]/g;
+    let m;
+    while ((m = bracketRe.exec(line)) !== null) {
+      const flags = parseBracketGroup(m[0]);
+      if (!flags || seen.has(flags)) continue;
+      seen.add(flags);
+
+      // Look up description via the first non-negated long flag
+      const primary = flags.split(', ').find(f => f.startsWith('--') && !f.startsWith('--no-'));
+      const description = primary ? (descMap.get(primary.slice(2)) ?? '') : '';
+      options.push({ flags, description });
+    }
+  }
+  return options;
+}
+
+// ----- Angular CLI -----------------------------------------------------------
+
+function camelToKebab(s: string): string {
+  return s.replace(/([A-Z])/g, m => '-' + m.toLowerCase());
+}
+
+function findNgSchematicsPath(): string | null {
+  const result = spawnSync('npm', ['root', '-g'], { encoding: 'utf8', timeout: 5000 });
+  const globalRoot = result.stdout?.trim();
+  if (globalRoot) {
+    const p = path.join(globalRoot, '@angular', 'cli', 'node_modules', '@schematics', 'angular');
+    if (fs.existsSync(p)) return p;
+  }
+  const local = path.join(process.cwd(), 'node_modules', '@schematics', 'angular');
+  if (fs.existsSync(local)) return local;
+  return null;
+}
+
+export function loadNgSubcommands(): CommandOption[] {
+  const result = spawnSync('ng', ['--help'], { encoding: 'utf8', timeout: 5000 });
+  const output = (result.stdout ?? '') + (result.stderr ?? '');
+  const options: CommandOption[] = [];
+  let inCommands = false;
+
+  for (const line of output.split('\n')) {
+    if (/^Commands:/.test(line)) { inCommands = true; continue; }
+    if (inCommands && /^Options:/.test(line)) break;
+    if (!inCommands) continue;
+
+    const usageMatch = line.match(/^\s+ng\s+([a-z][a-z0-9-]*)/);
+    if (!usageMatch) continue;
+    const name = usageMatch[1];
+
+    const descIdx = line.search(/\s{2,}[A-Z]/);
+    if (descIdx === -1) { options.push({ flags: name, description: '' }); continue; }
+
+    const description = line.slice(descIdx).trim().replace(/\s{2,}\[aliases:.*$/, '').trim();
+    options.push({ flags: name, description });
+  }
+  return options;
+}
+
+export function loadNgCommandOptions(cmd: string): CommandOption[] {
+  const result = spawnSync('ng', [cmd, '--help'], { encoding: 'utf8', timeout: 5000 });
+  const output = (result.stdout ?? '') + (result.stderr ?? '');
+  if (!output.includes('Options:')) return [];
+
+  const options: CommandOption[] = [];
+  let inOptions = false;
+
+  for (const line of output.split('\n')) {
+    if (/^Options:/.test(line.trim())) { inOptions = true; continue; }
+    if (!inOptions || !line.trim()) continue;
+
+    const m = line.match(/^\s{2,6}(-[a-zA-Z],\s+)?(--[a-z][a-z0-9-]*)\s{2,}(.*)/);
+    if (!m) continue;
+
+    const shortFlag = m[1] ? m[1].trim().replace(/,$/, '') : '';
+    const longFlag = m[2];
+    const description = m[3].trim().replace(/\s{2,}\[.*$/, '').trim();
+    const flags = shortFlag ? `${shortFlag}, ${longFlag}` : longFlag;
+    options.push({ flags, description });
+  }
+  return options;
+}
+
+export function loadNgGenerateSchematics(): CommandOption[] {
+  const schematicsPath = findNgSchematicsPath();
+  if (!schematicsPath) return [];
+
+  const collectionPath = path.join(schematicsPath, 'collection.json');
+  if (!fs.existsSync(collectionPath)) return [];
+
+  const collection = JSON.parse(fs.readFileSync(collectionPath, 'utf8')) as {
+    schematics: Record<string, { description?: string; hidden?: boolean; aliases?: string[] }>;
+  };
+  return Object.entries(collection.schematics)
+    .filter(([, s]) => !s.hidden)
+    .map(([name, s]) => ({ flags: name, description: s.description ?? '' }));
+}
+
+export function loadNgGenerateSchematicOptions(schematic: string): CommandOption[] {
+  const schematicsPath = findNgSchematicsPath();
+  if (!schematicsPath) return [];
+
+  const schemaPath = path.join(schematicsPath, schematic, 'schema.json');
+  if (!fs.existsSync(schemaPath)) return [];
+
+  const schema = JSON.parse(fs.readFileSync(schemaPath, 'utf8')) as {
+    properties?: Record<string, { description?: string; alias?: string; 'x-deprecated'?: string; visible?: boolean }>;
+  };
+  const options: CommandOption[] = [];
+
+  for (const [name, prop] of Object.entries(schema.properties ?? {})) {
+    if (prop['x-deprecated'] || prop.visible === false) continue;
+    const longFlag = '--' + camelToKebab(name);
+    const flags = prop.alias ? `-${prop.alias}, ${longFlag}` : longFlag;
+    options.push({ flags, description: (prop.description ?? '').trim() });
+  }
+  return options;
 }
 // -----------------------------------------------------------------------------
 
