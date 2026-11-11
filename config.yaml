@@ -1,22 +1,24 @@
 autocomplete:
-  - cp
-  - rm
-  - find
-  - ps
-  - sort
-  - ping
-  - ssh
-  - netstat
-  - sed
-  - git
-  - grep
-  - cut
-  - rsync
-  - docker
-  - kubectl
-  - mvn
-  - npm
-  - ng
+  platform:
+    - cp
+    - rm
+    - find
+    - ps
+    - sort
+    - ping
+    - ssh
+    - netstat
+    - sed
+    - grep
+    - cut
+    - rsync
+  common:
+    - git
+    - docker
+    - kubectl
+    - mvn
+    - npm
+    - ng
 
 launcher:
   commands:

@@ -54,6 +54,32 @@ export function loadManOptionsFromWeb(cmd: string): CommandOption[] {
 
 // ----- Maven -----------------------------------------------------------------
 
+function loadMavenLifecyclePhases(): CommandOption[] {
+  const result = spawnSync(
+    'curl',
+    ['-s', '--max-time', '10', 'https://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html'],
+    { encoding: 'utf8', timeout: 15000 }
+  );
+  if (!result.stdout) return [];
+
+  const options: CommandOption[] = [];
+  const seen = new Set<string>();
+  // Only match rows where the second cell is plain text (not <code>-wrapped plugin bindings)
+  const rowRe = /<td><code>([a-z][a-z0-9-]*)<\/code><\/td>\s*<td>(?!<code>)([^<]+)<\/td>/gi;
+  let match;
+
+  while ((match = rowRe.exec(result.stdout)) !== null) {
+    const phase = match[1].trim();
+    const description = match[2].trim();
+    if (phase && description && !seen.has(phase)) {
+      seen.add(phase);
+      options.push({ flags: phase, description });
+    }
+  }
+
+  return options;
+}
+
 export function loadMavenOptions(): CommandOption[] {
   const result = spawnSync(
     'curl',
@@ -62,19 +88,19 @@ export function loadMavenOptions(): CommandOption[] {
   );
   if (!result.stdout) return [];
 
-  const options: CommandOption[] = [];
+  const flags: CommandOption[] = [];
   // Rows alternate classes 'a'/'b'; header row uses <th> so the <td> guard skips it
   const rowRe = /<tr class='[ab]'><td><code>([\s\S]*?)<\/code><\/td><td>([\s\S]*?)<\/td><\/tr>/gi;
   let match;
 
   while ((match = rowRe.exec(result.stdout)) !== null) {
-    // Raw flags: "-am,--also-make" or "-b,--builder " → normalise to "-am, --also-make"
-    const flags = stripHtml(match[1]).replace(/,--/g, ', --').trim();
+    const f = stripHtml(match[1]).replace(/,--/g, ', --').trim();
     const description = stripHtml(match[2]).trim();
-    if (flags) options.push({ flags, description });
+    if (f) flags.push({ flags: f, description });
   }
 
-  return options;
+  // Lifecycle phases first (most commonly typed), then CLI flags
+  return [...loadMavenLifecyclePhases(), ...flags];
 }
 
 // ----- npm -------------------------------------------------------------------

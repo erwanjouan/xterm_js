@@ -19,7 +19,7 @@ interface LauncherConfig {
 }
 
 interface AppConfig {
-  autocomplete: string[];
+  autocomplete: { platform: string[]; common: string[] };
   launcher: LauncherConfig;
 }
 
@@ -33,19 +33,28 @@ const wss = new WebSocketServer({ server });
 // ----- Man-page options -------------------------------------------------------
 const optionsCache = new Map<string, CommandOption[]>();
 
-const optionsDir = path.join(__dirname, '../options', process.platform);
-if (fs.existsSync(optionsDir)) {
-  for (const file of fs.readdirSync(optionsDir).filter(f => f.endsWith('.json'))) {
+function loadOptionsDir(dir: string) {
+  if (!fs.existsSync(dir)) return;
+  for (const file of fs.readdirSync(dir).filter(f => f.endsWith('.json'))) {
     const key = file.slice(0, -5);
     try {
-      optionsCache.set(key, JSON.parse(fs.readFileSync(path.join(optionsDir, file), 'utf8')) as CommandOption[]);
+      optionsCache.set(key, JSON.parse(fs.readFileSync(path.join(dir, file), 'utf8')) as CommandOption[]);
     } catch {
       console.warn(`[options] Failed to parse ${file}`);
     }
   }
+}
+
+const commonDir = path.join(__dirname, '../options/common');
+const platformDir = path.join(__dirname, '../options', process.platform);
+
+loadOptionsDir(commonDir);
+loadOptionsDir(platformDir); // platform entries override common if same key
+
+if (optionsCache.size > 0) {
   console.log(`Options loaded for: ${[...optionsCache.keys()].sort().join(', ')}`);
 } else {
-  console.warn(`[options] ${optionsDir} not found — run 'make options' to generate.`);
+  console.warn(`[options] No options found — run 'make options' to generate.`);
 }
 // -----------------------------------------------------------------------------
 
@@ -161,7 +170,7 @@ wss.on('connection', (ws: WebSocket) => {
   });
 });
 
-const PORT = process.env.PORT ?? 3000;
-server.listen(PORT, () => {
+const PORT = Number(process.env.PORT ?? 3000);
+server.listen(PORT, '127.0.0.1', () => {
   console.log(`Terminal server running at http://localhost:${PORT}`);
 });

@@ -9,11 +9,16 @@ if (commands.length === 0) {
 }
 
 const platform = process.platform;
-const outDir = path.join(__dirname, '..', 'options', platform);
-fs.mkdirSync(outDir, { recursive: true });
+const platformDir = path.join(__dirname, '..', 'options', platform);
+const commonDir = path.join(__dirname, '..', 'options', 'common');
+fs.mkdirSync(platformDir, { recursive: true });
+fs.mkdirSync(commonDir, { recursive: true });
 
-function write(name: string, data: unknown) {
-  const file = path.join(outDir, `${name}.json`);
+const COMMON_CMDS = new Set(['git', 'kubectl', 'docker', 'npm', 'mvn', 'ng']);
+
+function write(name: string, data: unknown, forceCommon = false) {
+  const dir = (forceCommon || COMMON_CMDS.has(name.split('-')[0])) ? commonDir : platformDir;
+  const file = path.join(dir, `${name}.json`);
   fs.writeFileSync(file, JSON.stringify(data, null, 2));
   return path.relative(process.cwd(), file);
 }

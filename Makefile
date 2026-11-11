@@ -1,5 +1,7 @@
-PLATFORM := $(shell node -e "process.stdout.write(process.platform)")
-COMMANDS  := $(shell node -e "const yaml=require('js-yaml'),fs=require('fs'); console.log((yaml.load(fs.readFileSync('config.yaml','utf8')).autocomplete||[]).join(' '))")
+PLATFORM      := $(shell node -e "process.stdout.write(process.platform)")
+PLATFORM_CMDS := $(shell node -e "const yaml=require('js-yaml'),fs=require('fs'); const a=yaml.load(fs.readFileSync('config.yaml','utf8')).autocomplete; console.log((a.platform||[]).join(' '))")
+COMMON_CMDS   := $(shell node -e "const yaml=require('js-yaml'),fs=require('fs'); const a=yaml.load(fs.readFileSync('config.yaml','utf8')).autocomplete; console.log((a.common||[]).join(' '))")
+COMMANDS      := $(PLATFORM_CMDS) $(COMMON_CMDS)
 
 .PHONY: options build run clean
 
