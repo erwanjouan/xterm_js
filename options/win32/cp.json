@@ -1,0 +1,146 @@
+[
+  {
+    "flags": "-a, --archive",
+    "description": "same as -dR --preserve=all"
+  },
+  {
+    "flags": "--backup[=CONTROL]",
+    "description": "make a backup of each existing destination file"
+  },
+  {
+    "flags": "-b",
+    "description": "like --backup but does not accept an argument"
+  },
+  {
+    "flags": "--copy-contents",
+    "description": "copy contents of special files when recursive"
+  },
+  {
+    "flags": "-d",
+    "description": "same as --no-dereference --preserve=links"
+  },
+  {
+    "flags": "-f, --force",
+    "description": "if an existing destination file cannot be opened, remove it and try again (redundant if the -n option is used)"
+  },
+  {
+    "flags": "-i, --interactive",
+    "description": "prompt before overwrite (overrides a previous -n option)"
+  },
+  {
+    "flags": "-H",
+    "description": "follow command-line symbolic links in SOURCE"
+  },
+  {
+    "flags": "-l, --link",
+    "description": "link files instead of copying"
+  },
+  {
+    "flags": "-L, --dereference",
+    "description": "always follow symbolic links in SOURCE"
+  },
+  {
+    "flags": "-n, --no-clobber",
+    "description": "do not overwrite an existing file (overrides a previous -i option)"
+  },
+  {
+    "flags": "-P, --no-dereference",
+    "description": "never follow symbolic links in SOURCE"
+  },
+  {
+    "flags": "-p",
+    "description": "same as --preserve=mode,ownership,timestamps"
+  },
+  {
+    "flags": "--preserve[=ATTR_LIST]",
+    "description": "preserve the specified attributes (default: mode,ownership,timestamps), if possible additional attributes: context, links, xattr, all"
+  },
+  {
+    "flags": "-c",
+    "description": "same as --preserve=context"
+  },
+  {
+    "flags": "--no-preserve=ATTR_LIST",
+    "description": "don't preserve the specified attributes"
+  },
+  {
+    "flags": "--parents",
+    "description": "use full source file name under DIRECTORY"
+  },
+  {
+    "flags": "-R, -r, --recursive",
+    "description": "copy directories recursively"
+  },
+  {
+    "flags": "--reflink[=WHEN]",
+    "description": "control clone/CoW copies. See below."
+  },
+  {
+    "flags": "--remove-destination",
+    "description": "remove each existing destination file before attempting to open it (contrast with --force)"
+  },
+  {
+    "flags": "--sparse=WHEN",
+    "description": "control creation of sparse files. See below."
+  },
+  {
+    "flags": "--strip-trailing-slashes",
+    "description": "remove any trailing slashes from each SOURCE argument"
+  },
+  {
+    "flags": "-s, --symbolic-link",
+    "description": "make symbolic links instead of copying"
+  },
+  {
+    "flags": "-S, --suffix=SUFFIX",
+    "description": "override the usual backup suffix"
+  },
+  {
+    "flags": "-t, --target-directory=DIRECTORY",
+    "description": "copy all SOURCE arguments into DIRECTORY"
+  },
+  {
+    "flags": "-T, --no-target-directory",
+    "description": "treat DEST as a normal file"
+  },
+  {
+    "flags": "-u, --update",
+    "description": "copy only when the SOURCE file is newer than the destination file or when the destination file is missing"
+  },
+  {
+    "flags": "-v, --verbose",
+    "description": "explain what is being done"
+  },
+  {
+    "flags": "-x, --one-file-system",
+    "description": "stay on this file system"
+  },
+  {
+    "flags": "-Z, --context=CONTEXT",
+    "description": "set security context of copy to CONTEXT"
+  },
+  {
+    "flags": "--help",
+    "description": "display this help and exit"
+  },
+  {
+    "flags": "--version",
+    "description": "output version information and exit"
+  },
+  {
+    "flags": "none, off",
+    "description": "never make backups (even if --backup is given)"
+  },
+  {
+    "flags": "numbered, t",
+    "description": "make numbered backups"
+  },
+  {
+    "flags": "existing, nil",
+    "description": "numbered if numbered backups exist, simple otherwise"
+  },
+  {
+    "flags": "simple, never",
+    "description": "always make simple backups"
+  }
+]
