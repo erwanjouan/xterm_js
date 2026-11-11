@@ -12,6 +12,8 @@ autocomplete:
     - grep
     - cut
     - rsync
+    - du
+    - df
   common:
     - git
     - docker

@@ -1,0 +1,110 @@
+[
+  {
+    "flags": "-a, --all",
+    "description": "write counts for all files, not just directories"
+  },
+  {
+    "flags": "--apparent-size",
+    "description": "print apparent sizes, rather than disk usage; although the apparent size is usually smaller, it may be larger due to holes in ('sparse') files, internal\nfragmentation, indirect blocks, and the like"
+  },
+  {
+    "flags": "-B, --block-size=SIZE",
+    "description": "use SIZE-byte blocks"
+  },
+  {
+    "flags": "-b, --bytes",
+    "description": "equivalent to '--apparent-size --block-size=1'"
+  },
+  {
+    "flags": "-c, --total",
+    "description": "produce a grand total"
+  },
+  {
+    "flags": "-D, --dereference-args",
+    "description": "dereference only symlinks that are listed on the command line"
+  },
+  {
+    "flags": "--files0-from=F",
+    "description": "summarize disk usage of the NUL-terminated file names specified in file F; If F is - then read names from standard input"
+  },
+  {
+    "flags": "-H",
+    "description": "equivalent to --dereference-args (-D)"
+  },
+  {
+    "flags": "-h, --human-readable",
+    "description": "print sizes in human readable format (e.g., 1K 234M 2G)"
+  },
+  {
+    "flags": "--si",
+    "description": "like -h, but use powers of 1000 not 1024"
+  },
+  {
+    "flags": "-k",
+    "description": "like --block-size=1K"
+  },
+  {
+    "flags": "-l, --count-links",
+    "description": "count sizes many times if hard linked"
+  },
+  {
+    "flags": "-m",
+    "description": "like --block-size=1M"
+  },
+  {
+    "flags": "-L, --dereference",
+    "description": "dereference all symbolic links"
+  },
+  {
+    "flags": "-P, --no-dereference",
+    "description": "don't follow any symbolic links (this is the default)"
+  },
+  {
+    "flags": "-0, --null",
+    "description": "end each output line with 0 byte rather than newline"
+  },
+  {
+    "flags": "-S, --separate-dirs",
+    "description": "do not include size of subdirectories"
+  },
+  {
+    "flags": "-s, --summarize",
+    "description": "display only a total for each argument"
+  },
+  {
+    "flags": "-x, --one-file-system",
+    "description": "skip directories on different file systems"
+  },
+  {
+    "flags": "-X, --exclude-from=FILE",
+    "description": "exclude files that match any pattern in FILE"
+  },
+  {
+    "flags": "--exclude=PATTERN",
+    "description": "exclude files that match PATTERN"
+  },
+  {
+    "flags": "--max-depth=N",
+    "description": "print the total for a directory (or file, with --all) only if it is N or fewer levels below the command line argument; --max-depth=0\nis the same as --summarize"
+  },
+  {
+    "flags": "--time",
+    "description": "show time of the last modification of any file in the directory, or any of its subdirectories"
+  },
+  {
+    "flags": "--time=WORD",
+    "description": "show time as WORD instead of modification time: atime, access, use, ctime or status"
+  },
+  {
+    "flags": "--time-style=STYLE",
+    "description": "show times using style STYLE: full-iso, long-iso, iso, +FORMAT FORMAT is interpreted like 'date'"
+  },
+  {
+    "flags": "--help",
+    "description": "display this help and exit"
+  },
+  {
+    "flags": "--version",
+    "description": "output version information and exit"
+  }
+]

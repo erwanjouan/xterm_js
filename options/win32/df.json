@@ -1,0 +1,74 @@
+[
+  {
+    "flags": "-a, --all",
+    "description": "include dummy file systems"
+  },
+  {
+    "flags": "-B, --block-size=SIZE",
+    "description": "use SIZE-byte blocks"
+  },
+  {
+    "flags": "--direct",
+    "description": "show statistics for a file instead of mount point"
+  },
+  {
+    "flags": "--total",
+    "description": "produce a grand total"
+  },
+  {
+    "flags": "-h, --human-readable",
+    "description": "print sizes in human readable format (e.g., 1K 234M 2G)"
+  },
+  {
+    "flags": "-H, --si",
+    "description": "likewise, but use powers of 1000 not 1024"
+  },
+  {
+    "flags": "-i, --inodes",
+    "description": "list inode information instead of block usage"
+  },
+  {
+    "flags": "-k",
+    "description": "like --block-size=1K"
+  },
+  {
+    "flags": "-l, --local",
+    "description": "limit listing to local file systems"
+  },
+  {
+    "flags": "--no-sync",
+    "description": "do not invoke sync before getting usage info (default)"
+  },
+  {
+    "flags": "-P, --portability",
+    "description": "use the POSIX output format"
+  },
+  {
+    "flags": "--sync",
+    "description": "invoke sync before getting usage info"
+  },
+  {
+    "flags": "-t, --type=TYPE",
+    "description": "limit listing to file systems of type TYPE"
+  },
+  {
+    "flags": "-T, --print-type",
+    "description": "print file system type"
+  },
+  {
+    "flags": "-x, --exclude-type=TYPE",
+    "description": "limit listing to file systems not of type TYPE"
+  },
+  {
+    "flags": "-v",
+    "description": "(ignored)"
+  },
+  {
+    "flags": "--help",
+    "description": "display this help and exit"
+  },
+  {
+    "flags": "--version",
+    "description": "output version information and exit"
+  }
+]
