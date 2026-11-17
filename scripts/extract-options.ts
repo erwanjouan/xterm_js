@@ -1,4 +1,4 @@
-import { loadManOptions, loadManOptionsFromWeb, loadMavenOptions, loadNpmSubcommands, loadNpmSubcmdOptions, loadNgSubcommands, loadNgCommandOptions, loadNgGenerateSchematics, loadNgGenerateSchematicOptions, loadGitSubcommands, loadGitSubcmdOptions, loadDockerSubcommands, loadDockerSubcmdOptions, loadKubectlSubcommands, loadKubectlSubcmdOptions } from '../src/man-parser';
+import { loadManOptions, loadManOptionsFromWeb, loadMavenOptions, loadNpmSubcommands, loadNpmSubcmdOptions, loadNgSubcommands, loadNgCommandOptions, loadNgGenerateSchematics, loadNgGenerateSchematicOptions, loadGitSubcommands, loadGitSubcmdOptions, loadGitManSubcmdOptions, loadDockerSubcommands, loadDockerSubcmdOptions, loadKubectlSubcommands, loadKubectlSubcmdOptions } from '../src/man-parser';
 import path from 'path';
 import fs from 'fs';
 
@@ -28,7 +28,12 @@ for (const cmd of commands) {
     const subcommands = loadGitSubcommands();
     console.log(`git      ${subcommands.length} subcommands  →  ${write('git', subcommands)}`);
     for (const sub of subcommands) {
-      const opts = loadGitSubcmdOptions(sub.flags);
+      let opts = loadGitSubcmdOptions(sub.flags);
+      // -h only exposes a few git-specific flags; fall back to the man page for richer coverage
+      if (opts.length < 15) {
+        const manOpts = loadGitManSubcmdOptions(sub.flags);
+        if (manOpts.length > opts.length) opts = manOpts;
+      }
       if (opts.length > 0) {
         const rel = write(`git-${sub.flags}`, opts);
         console.log(`  git-${sub.flags.padEnd(18)} ${opts.length} options  →  ${rel}`);

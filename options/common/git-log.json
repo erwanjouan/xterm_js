@@ -1,38 +1,370 @@
 [
   {
-    "flags": "-q, --quiet",
-    "description": "suppress diff output"
+    "flags": "--follow",
+    "description": "Continue listing the history of a file beyond renames (works only for a single file)."
   },
   {
-    "flags": "--source",
-    "description": "show source"
+    "flags": "--no-decorate, --decorate[=short|full|auto|no]",
+    "description": "Print out the ref names of any commits that are shown. If short is specified, the ref name prefixes refs/heads/, refs/tags/ and refs/remotes/ will not be printed. If full is specified, the full ref name (including prefix) will be printed. If auto is specified, then if the output is going to a terminal, the ref names are shown as if short were given, otherwise no ref names are shown. The option --decorate is short-hand for --decorate=short. Default to configuration value of log.decorate if configured, otherwise, auto."
   },
   {
-    "flags": "--use-mailmap",
-    "description": "use mail map file"
-  },
-  {
-    "flags": "--mailmap",
-    "description": "alias of --use-mailmap"
+    "flags": "--decorate-refs=<pattern>, --decorate-refs-exclude=<pattern>",
+    "description": "For each candidate reference, do not use it for decoration if it matches any patterns given to --decorate-refs-exclude or if it doesn’t match any of the patterns given to --decorate-refs. The log.excludeDecoration config option allows excluding refs from the decorations, but an explicit --decorate-refs pattern will override a match in log.excludeDecoration."
   },
   {
     "flags": "--clear-decorations",
-    "description": "clear all previously-defined decoration filters"
+    "description": "When specified, this option clears all previous --decorate-refs or --decorate-refs-exclude options and relaxes the default decoration filter to include all references. This option is assumed if the config value log.initialDecorationSet is set to all."
   },
   {
-    "flags": "--decorate-refs <pattern>",
-    "description": "only decorate refs that match <pattern>"
+    "flags": "--source",
+    "description": "Print out the ref name given on the command line by which each commit was reached."
   },
   {
-    "flags": "--decorate-refs-exclude <pattern>",
-    "description": "do not decorate refs that match <pattern>"
+    "flags": "--[no-]mailmap, --[no-]use-mailmap",
+    "description": "Use mailmap file to map author and committer names and email addresses to canonical real names and email addresses. See git- shortlog(1)."
   },
   {
-    "flags": "--decorate[=...]",
-    "description": "decorate options"
+    "flags": "--full-diff",
+    "description": "Without this flag, git log -p <path>... shows commits that touch the specified paths, and diffs about the same specified paths. With this, the full diff is shown for commits that touch the specified paths; this means that \"<path>...\" limits only commits, and doesn’t limit diff for those commits."
   },
   {
-    "flags": "-L <range:file>",
-    "description": "trace the evolution of line range <start>,<end> or function :<funcname> in <file>"
+    "flags": "--log-size",
+    "description": "Include a line “log size <number>” in the output for each commit, where <number> is the length of that commit’s message in bytes. Intended to speed up tools that read log messages from git log output by allowing them to allocate space in advance."
+  },
+  {
+    "flags": "-L<start>,<end>:<file>, -L:<funcname>:<file>",
+    "description": "Trace the evolution of the line range given by <start>,<end>, or by the function name regex <funcname>, within the <file>. You may not give any pathspec limiters. This is currently limited to a walk starting from a single revision, i.e., you may only give zero or one positive revision arguments, and <start> and <end> (or <funcname>) must exist in the starting revision. You can specify this option more than once. Implies --patch. Patch output can be suppressed using --no-patch, but other diff formats (namely --raw, --numstat, --shortstat, --dirstat, --summary, --name-only, --name-status, --check) are not currently implemented."
+  },
+  {
+    "flags": "--since=<date1> limits to commits newer than <date1>, and using it with",
+    "description": ""
+  },
+  {
+    "flags": "--grep=<pattern> further limits to commits whose log message has a line",
+    "description": ""
+  },
+  {
+    "flags": "-<number>, -n <number>, --max-count=<number>",
+    "description": "Limit the number of commits to output."
+  },
+  {
+    "flags": "--skip=<number>",
+    "description": "Skip number commits before starting to show the commit output."
+  },
+  {
+    "flags": "--since=<date>, --after=<date>",
+    "description": "Show commits more recent than a specific date."
+  },
+  {
+    "flags": "--since-as-filter=<date>",
+    "description": "Show all commits more recent than a specific date. This visits all commits in the range, rather than stopping at the first commit which is older than a specific date."
+  },
+  {
+    "flags": "--until=<date>, --before=<date>",
+    "description": "Show commits older than a specific date."
+  },
+  {
+    "flags": "--author=<pattern>, --committer=<pattern>",
+    "description": "Limit the commits output to ones with author/committer header lines that match the specified pattern (regular expression). With more than one --author=<pattern>, commits whose author matches any of the given patterns are chosen (similarly for multiple --committer=<pattern>)."
+  },
+  {
+    "flags": "--grep-reflog=<pattern>",
+    "description": "Limit the commits output to ones with reflog entries that match the specified pattern (regular expression). With more than one --grep-reflog, commits whose reflog message matches any of the given patterns are chosen. It is an error to use this option unless --walk-reflogs is in use."
+  },
+  {
+    "flags": "--grep=<pattern>",
+    "description": "Limit the commits output to ones with log message that matches the specified pattern (regular expression). With more than one --grep=<pattern>, commits whose message matches any of the given patterns are chosen (but see --all-match)."
+  },
+  {
+    "flags": "--all-match",
+    "description": "Limit the commits output to ones that match all given --grep, instead of ones that match at least one."
+  },
+  {
+    "flags": "--invert-grep",
+    "description": "Limit the commits output to ones with log message that do not match the pattern specified with --grep=<pattern>."
+  },
+  {
+    "flags": "-i, --regexp-ignore-case",
+    "description": "Match the regular expression limiting patterns without regard to letter case."
+  },
+  {
+    "flags": "--basic-regexp",
+    "description": "Consider the limiting patterns to be basic regular expressions; this is the default."
+  },
+  {
+    "flags": "-E, --extended-regexp",
+    "description": "Consider the limiting patterns to be extended regular expressions instead of the default basic regular expressions."
+  },
+  {
+    "flags": "-F, --fixed-strings",
+    "description": "Consider the limiting patterns to be fixed strings (don’t interpret pattern as a regular expression)."
+  },
+  {
+    "flags": "-P, --perl-regexp",
+    "description": "Consider the limiting patterns to be Perl-compatible regular expressions."
+  },
+  {
+    "flags": "--remove-empty",
+    "description": "Stop when a given path disappears from the tree."
+  },
+  {
+    "flags": "--merges",
+    "description": "Print only merge commits. This is exactly the same as --min-parents=2."
+  },
+  {
+    "flags": "--no-merges",
+    "description": "Do not print commits with more than one parent. This is exactly the same as --max-parents=1."
+  },
+  {
+    "flags": "--min-parents=<number>, --max-parents=<number>, --no-min-parents, --no-max-parents",
+    "description": "Show only commits which have at least (or at most) that many parent commits. In particular, --max-parents=1 is the same as --no-merges, --min-parents=2 is the same as --merges.  --max-parents=0 gives all root commits and --min-parents=3 all octopus merges."
+  },
+  {
+    "flags": "--first-parent",
+    "description": "When finding commits to include, follow only the first parent commit upon seeing a merge commit. This option can give a better overview when viewing the evolution of a particular topic branch, because merges into a topic branch tend to be only about adjusting to updated upstream from time to time, and this option allows you to ignore the individual commits brought in to your history by such a merge."
+  },
+  {
+    "flags": "--exclude-first-parent-only",
+    "description": "When finding commits to exclude (with a ^), follow only the first parent commit upon seeing a merge commit. This can be used to find the set of changes in a topic branch from the point where it diverged from the remote branch, given that arbitrary merges can be valid topic branch changes."
+  },
+  {
+    "flags": "--not",
+    "description": "Reverses the meaning of the ^ prefix (or lack thereof) for all following revision specifiers, up to the next --not."
+  },
+  {
+    "flags": "--all",
+    "description": "Pretend as if all the refs in refs/, along with HEAD, are listed on the command line as <commit>."
+  },
+  {
+    "flags": "--branches[=<pattern>]",
+    "description": "Pretend as if all the refs in refs/heads are listed on the command line as <commit>. If <pattern> is given, limit branches to ones matching given shell glob. If pattern lacks ?, *, or [, /* at the end is implied."
+  },
+  {
+    "flags": "--tags[=<pattern>]",
+    "description": "Pretend as if all the refs in refs/tags are listed on the command line as <commit>. If <pattern> is given, limit tags to ones matching given shell glob. If pattern lacks ?, *, or [, /* at the end is implied."
+  },
+  {
+    "flags": "--remotes[=<pattern>]",
+    "description": "Pretend as if all the refs in refs/remotes are listed on the command line as <commit>. If <pattern> is given, limit remote-tracking branches to ones matching given shell glob. If pattern lacks ?, *, or [, /* at the end is implied."
+  },
+  {
+    "flags": "--glob=<glob-pattern>",
+    "description": "Pretend as if all the refs matching shell glob <glob-pattern> are listed on the command line as <commit>. Leading refs/, is automatically prepended if missing. If pattern lacks ?, *, or [, /* at the end is implied."
+  },
+  {
+    "flags": "--exclude=<glob-pattern>",
+    "description": "Do not include refs matching <glob-pattern> that the next --all, --branches, --tags, --remotes, or --glob would otherwise consider. Repetitions of this option accumulate exclusion patterns up to the next --all, --branches, --tags, --remotes, or --glob option (other options or arguments do not clear accumulated patterns)."
+  },
+  {
+    "flags": "--exclude-hidden=[receive|uploadpack]",
+    "description": "Do not include refs that would be hidden by git-receive-pack or git-upload-pack by consulting the appropriate receive.hideRefs or uploadpack.hideRefs configuration along with transfer.hideRefs (see git-config(1)). This option affects the next pseudo-ref option --all or --glob and is cleared after processing them."
+  },
+  {
+    "flags": "--reflog",
+    "description": "Pretend as if all objects mentioned by reflogs are listed on the command line as <commit>."
+  },
+  {
+    "flags": "--alternate-refs",
+    "description": "Pretend as if all objects mentioned as ref tips of alternate repositories were listed on the command line. An alternate repository is any repository whose object directory is specified in objects/info/alternates. The set of included objects may be modified by core.alternateRefsCommand, etc. See git-config(1)."
+  },
+  {
+    "flags": "--single-worktree",
+    "description": "By default, all working trees will be examined by the following options when there are more than one (see git-worktree(1)): --all, --reflog and --indexed-objects. This option forces them to examine the current working tree only."
+  },
+  {
+    "flags": "--ignore-missing",
+    "description": "Upon seeing an invalid object name in the input, pretend as if the bad input was not given."
+  },
+  {
+    "flags": "--bisect",
+    "description": "Pretend as if the bad bisection ref refs/bisect/bad was listed and as if it was followed by --not and the good bisection refs refs/bisect/good-* on the command line."
+  },
+  {
+    "flags": "--stdin",
+    "description": "In addition to the <commit> listed on the command line, read them from the standard input. If a -- separator is seen, stop reading commits and start reading paths to limit the result."
+  },
+  {
+    "flags": "--cherry-mark",
+    "description": "Like --cherry-pick (see below) but mark equivalent commits with = rather than omitting them, and inequivalent ones with +."
+  },
+  {
+    "flags": "--cherry-pick",
+    "description": "Omit any commit that introduces the same change as another commit on the “other side” when the set of commits are limited with symmetric difference."
+  },
+  {
+    "flags": "--left-only, --right-only",
+    "description": "List only commits on the respective side of a symmetric difference, i.e. only those which would be marked < resp.  > by --left-right."
+  },
+  {
+    "flags": "--cherry",
+    "description": "A synonym for --right-only --cherry-mark --no-merges; useful to limit the output to the commits on our side and mark those that have been applied to the other side of a forked history with git log --cherry upstream...mybranch, similar to git cherry upstream mybranch."
+  },
+  {
+    "flags": "-g, --walk-reflogs",
+    "description": "Instead of walking the commit ancestry chain, walk reflog entries from the most recent one to older ones. When this option is used you cannot specify commits to exclude (that is, ^commit, commit1..commit2, and commit1...commit2 notations cannot be used)."
+  },
+  {
+    "flags": "--merge",
+    "description": "After a failed merge, show refs that touch files having a conflict and don’t exist on all heads to merge."
+  },
+  {
+    "flags": "--boundary",
+    "description": "Output excluded boundary commits. Boundary commits are prefixed with -."
+  },
+  {
+    "flags": "--simplify-by-decoration",
+    "description": "Commits that are referred by some branch or tag are selected."
+  },
+  {
+    "flags": "--show-pulls",
+    "description": "Include all commits from the default mode, but also any merge commits that are not TREESAME to the first parent but are TREESAME to a later parent. This mode is helpful for showing the merge commits that \"first introduced\" a change to a branch."
+  },
+  {
+    "flags": "--full-history",
+    "description": "Same as the default mode, but does not prune some history."
+  },
+  {
+    "flags": "--dense",
+    "description": "Only the selected commits are shown, plus some to have a meaningful history."
+  },
+  {
+    "flags": "--sparse",
+    "description": "All commits in the simplified history are shown."
+  },
+  {
+    "flags": "--simplify-merges",
+    "description": "Additional option to --full-history to remove some needless merges from the resulting history, as there are no selected commits contributing to this merge."
+  },
+  {
+    "flags": "--ancestry-path[=<commit>]",
+    "description": "When given a range of commits to display (e.g.  commit1..commit2 or commit2 ^commit1), only display commits in that range that are ancestors of <commit>, descendants of <commit>, or <commit> itself. If no commit is specified, use commit1 (the excluded part of the range) as <commit>. Can be passed multiple times; if so, a commit is included if it is any of the commits given or if it is an ancestor or descendant of one of them."
+  },
+  {
+    "flags": "--parents or --children) are used. The following settings are",
+    "description": ""
+  },
+  {
+    "flags": "--full-history without parent rewriting",
+    "description": "This mode differs from the default in one point: always follow all parents of a merge, even if it is TREESAME to one of them. Even if more than one side of the merge has commits that are included, this does not imply that the merge itself is! In the example, we get"
+  },
+  {
+    "flags": "--full-history with parent rewriting",
+    "description": "Ordinary commits are only included if they are !TREESAME (though this can be changed, see --sparse below)."
+  },
+  {
+    "flags": "--dense",
+    "description": "Commits that are walked are included if they are not TREESAME to any parent."
+  },
+  {
+    "flags": "--sparse",
+    "description": "All commits that are walked are included."
+  },
+  {
+    "flags": "--simplify-merges",
+    "description": "First, build a history graph in the same way that --full-history with parent rewriting does (see above)."
+  },
+  {
+    "flags": "--ancestry-path[=<commit>]",
+    "description": "Limit the displayed commits to those which are an ancestor of <commit>, or which are a descendant of <commit>, or are <commit> itself."
+  },
+  {
+    "flags": "--simplify-merges option requires walking the entire commit history",
+    "description": ""
+  },
+  {
+    "flags": "--show-pulls",
+    "description": "In addition to the commits shown in the default history, show each merge commit that is not TREESAME to its first parent but is TREESAME to a later parent."
+  },
+  {
+    "flags": "--date-order",
+    "description": "Show no parents before all of its children are shown, but otherwise show commits in the commit timestamp order."
+  },
+  {
+    "flags": "--author-date-order",
+    "description": "Show no parents before all of its children are shown, but otherwise show commits in the author timestamp order."
+  },
+  {
+    "flags": "--topo-order",
+    "description": "Show no parents before all of its children are shown, and avoid showing commits on multiple lines of history intermixed."
+  },
+  {
+    "flags": "--reverse",
+    "description": "Output the commits chosen to be shown (see Commit Limiting section above) in reverse order. Cannot be combined with --walk-reflogs."
+  },
+  {
+    "flags": "--no-walk[=(sorted|unsorted)]",
+    "description": "Only show the given commits, but do not traverse their ancestors. This has no effect if a range is specified. If the argument unsorted is given, the commits are shown in the order they were given on the command line. Otherwise (if sorted or no argument was given), the commits are shown in reverse chronological order by commit time. Cannot be combined with --graph."
+  },
+  {
+    "flags": "--do-walk",
+    "description": "Overrides a previous --no-walk."
+  },
+  {
+    "flags": "--pretty[=<format>], --format=<format>",
+    "description": "Pretty-print the contents of the commit logs in a given format, where <format> can be one of oneline, short, medium, full, fuller, reference, email, raw, format:<string> and tformat:<string>. When <format> is none of the above, and has %placeholder in it, it acts as if --pretty=tformat:<format> were given."
+  },
+  {
+    "flags": "--abbrev-commit",
+    "description": "Instead of showing the full 40-byte hexadecimal commit object name, show a prefix that names the object uniquely. \"--abbrev=<n>\" (which also modifies diff output, if it is displayed) option can be used to specify the minimum length of the prefix."
+  },
+  {
+    "flags": "--no-abbrev-commit",
+    "description": "Show the full 40-byte hexadecimal commit object name. This negates --abbrev-commit, either explicit or implied by other options such as \"--oneline\". It also overrides the log.abbrevCommit variable."
+  },
+  {
+    "flags": "--oneline",
+    "description": "This is a shorthand for \"--pretty=oneline --abbrev-commit\" used together."
+  },
+  {
+    "flags": "--encoding=<encoding>",
+    "description": "Commit objects record the character encoding used for the log message in their encoding header; this option can be used to tell the command to re-code the commit log message in the encoding preferred by the user. For non plumbing commands this defaults to UTF-8. Note that if an object claims to be encoded in X and we are outputting in X, we will output the object verbatim; this means that invalid sequences in the original commit may be copied to the output. Likewise, if iconv(3) fails to convert the commit, we will quietly output the original object verbatim."
+  },
+  {
+    "flags": "--expand-tabs=<n>, --expand-tabs, --no-expand-tabs",
+    "description": "Perform a tab expansion (replace each tab with enough spaces to fill to the next display column that is multiple of <n>) in the log message before showing it in the output.  --expand-tabs is a short-hand for --expand-tabs=8, and --no-expand-tabs is a short-hand for --expand-tabs=0, which disables tab expansion."
+  },
+  {
+    "flags": "--notes[=<ref>]",
+    "description": "Show the notes (see git-notes(1)) that annotate the commit, when showing the commit log message. This is the default for git log, git show and git whatchanged commands when there is no --pretty, --format, or --oneline option given on the command line."
+  },
+  {
+    "flags": "--no-notes",
+    "description": "Do not show notes. This negates the above --notes option, by resetting the list of notes refs from which notes are shown. Options are parsed in the order given on the command line, so e.g. \"--notes --notes=foo --no-notes --notes=bar\" will only show notes from \"refs/notes/bar\"."
+  },
+  {
+    "flags": "--show-notes[=<ref>], --[no-]standard-notes",
+    "description": "These options are deprecated. Use the above --notes/--no-notes options instead."
+  },
+  {
+    "flags": "--show-signature",
+    "description": "Check the validity of a signed commit object by passing the signature to gpg --verify and show the output."
+  },
+  {
+    "flags": "--relative-date",
+    "description": "Synonym for --date=relative."
+  },
+  {
+    "flags": "--date=<format>",
+    "description": "Only takes effect for dates shown in human-readable format, such as when using --pretty.  log.date config variable sets a default value for the log command’s --date option. By default, dates are shown in the original time zone (either committer’s or author’s). If -local is appended to the format (e.g., iso-local), the user’s local time zone is used instead."
+  },
+  {
+    "flags": "--parents",
+    "description": "Print also the parents of the commit (in the form \"commit parent...\"). Also enables parent rewriting, see History Simplification above."
+  },
+  {
+    "flags": "--children",
+    "description": "Print also the children of the commit (in the form \"commit child...\"). Also enables parent rewriting, see History Simplification above."
+  },
+  {
+    "flags": "--left-right",
+    "description": "Mark which side of a symmetric difference a commit is reachable from. Commits from the left side are prefixed with < and those from the right with >. If combined with --boundary, those commits are prefixed with -."
+  },
+  {
+    "flags": "--graph",
+    "description": "Draw a text-based graphical representation of the commit history on the left hand side of the output. This may cause extra lines to be printed in between commits, in order for the graph history to be drawn properly. Cannot be combined with --no-walk."
+  },
+  {
+    "flags": "--show-linear-break[=<barrier>]",
+    "description": "When --graph is not used, all history branches are flattened which can make it hard to see that the two consecutive commits do not belong to a linear branch. This option puts a barrier in between them in that case. If <barrier> is specified, it is the string that will be shown instead of the default one."
   }
 ]

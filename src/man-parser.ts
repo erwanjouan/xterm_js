@@ -404,6 +404,66 @@ export function loadGitSubcommands(): CommandOption[] {
   return options;
 }
 
+export function loadGitManSubcmdOptions(subcmd: string): CommandOption[] {
+  const result = spawnSync(
+    'bash',
+    ['-c', `man git-${subcmd} 2>/dev/null | col -bx 2>/dev/null`],
+    { encoding: 'utf8', timeout: 10000, env: { ...process.env, TERM: 'dumb', MANPAGER: 'cat' } }
+  );
+  if (!result.stdout) return [];
+
+  const lines = result.stdout.split('\n');
+  const options: CommandOption[] = [];
+  let inOptions = false;
+  let flags = '';
+  let descParts: string[] = [];
+
+  const flush = () => {
+    if (flags) {
+      options.push({ flags: flags.replace(/,\s*$/, '').trim(), description: descParts.join(' ').trim() });
+      flags = '';
+      descParts = [];
+    }
+  };
+
+  const indentOf = (line: string) => { const m = line.match(/^( *)/); return m ? m[1].length : 0; };
+
+  for (const line of lines) {
+    const trimmed = line.trim();
+    const indent = indentOf(line);
+
+    if (!inOptions) {
+      if (/^\s*OPTIONS\s*$/.test(line)) inOptions = true;
+      continue;
+    }
+
+    // End at next top-level section (no indent, uppercase)
+    if (indent === 0 && trimmed && /^[A-Z]/.test(trimmed)) { flush(); break; }
+
+    // Blank line: flush current option
+    if (!trimmed) { flush(); continue; }
+
+    // Flag line: 7-space indent starting with '-'
+    if (indent === 7 && trimmed[0] === '-') {
+      // If the previous flag line ended with a comma, this is a continuation
+      if (flags && flags.endsWith(',')) {
+        flags += ' ' + trimmed;
+      } else {
+        flush();
+        flags = trimmed;
+      }
+      continue;
+    }
+
+    // Description line: 11+ spaces, with an active flag (first paragraph only)
+    if (indent >= 11 && flags) {
+      descParts.push(trimmed);
+    }
+  }
+  flush();
+  return options;
+}
+
 export function loadGitSubcmdOptions(subcmd: string): CommandOption[] {
   // git -h writes to stderr and exits non-zero; capture both streams
   const result = spawnSync('git', [subcmd, '-h'], { encoding: 'utf8', timeout: 5000 });

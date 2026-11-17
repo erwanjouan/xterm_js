@@ -1,58 +1,62 @@
 [
   {
-    "flags": "-c, --create <branch>",
-    "description": "create and switch to a new branch"
+    "flags": "-c <new-branch>, --create <new-branch>",
+    "description": "Create a new branch named <new-branch> starting at <start-point> before switching to the branch. This is a convenient shortcut for:"
   },
   {
-    "flags": "-C, --force-create <branch>",
-    "description": "create/reset and switch to a branch"
-  },
-  {
-    "flags": "--guess",
-    "description": "second guess 'git switch <no-such-branch>'"
-  },
-  {
-    "flags": "--discard-changes",
-    "description": "throw away local modifications"
-  },
-  {
-    "flags": "-q, --quiet",
-    "description": "suppress progress reporting"
-  },
-  {
-    "flags": "--recurse-submodules[=<checkout>]",
-    "description": "control recursive updating of submodules"
-  },
-  {
-    "flags": "--progress",
-    "description": "force progress reporting"
-  },
-  {
-    "flags": "-m, --merge",
-    "description": "perform a 3-way merge with the new branch"
-  },
-  {
-    "flags": "--conflict <style>",
-    "description": "conflict style (merge, diff3, or zdiff3)"
+    "flags": "-C <new-branch>, --force-create <new-branch>",
+    "description": "Similar to --create except that if <new-branch> already exists, it will be reset to <start-point>. This is a convenient shortcut for:"
   },
   {
     "flags": "-d, --detach",
-    "description": "detach HEAD at named commit"
+    "description": "Switch to a commit for inspection and discardable experiments. See the \"DETACHED HEAD\" section in git-checkout(1) for details."
+  },
+  {
+    "flags": "--guess, --no-guess",
+    "description": "If <branch> is not found but there does exist a tracking branch in exactly one remote (call it <remote>) with a matching name, treat as equivalent to"
   },
   {
     "flags": "-f, --force",
-    "description": "force checkout (throw away local modifications)"
+    "description": "An alias for --discard-changes."
+  },
+  {
+    "flags": "--discard-changes",
+    "description": "Proceed even if the index or the working tree differs from HEAD. Both the index and working tree are restored to match the switching target. If --recurse-submodules is specified, submodule content is also restored to match the switching target. This is used to throw away local changes."
+  },
+  {
+    "flags": "-m, --merge",
+    "description": "If you have local modifications to one or more files that are different between the current branch and the branch to which you are switching, the command refuses to switch branches in order to preserve your modifications in context. However, with this option, a three-way merge between the current branch, your working tree contents, and the new branch is done, and you will be on the new branch."
+  },
+  {
+    "flags": "--conflict=<style>",
+    "description": "The same as --merge option above, but changes the way the conflicting hunks are presented, overriding the merge.conflictStyle configuration variable. Possible values are \"merge\" (default), \"diff3\", and \"zdiff3\"."
+  },
+  {
+    "flags": "-q, --quiet",
+    "description": "Quiet, suppress feedback messages."
+  },
+  {
+    "flags": "--progress, --no-progress",
+    "description": "Progress status is reported on the standard error stream by default when it is attached to a terminal, unless --quiet is specified. This flag enables progress reporting even if not attached to a terminal, regardless of --quiet."
+  },
+  {
+    "flags": "-t, --track [direct|inherit]",
+    "description": "When creating a new branch, set up \"upstream\" configuration.  -c is implied. See --track in git-branch(1) for details."
+  },
+  {
+    "flags": "--no-track",
+    "description": "Do not set up \"upstream\" configuration, even if the branch.autoSetupMerge configuration variable is true."
   },
   {
     "flags": "--orphan <new-branch>",
-    "description": "new unparented branch"
-  },
-  {
-    "flags": "--overwrite-ignore",
-    "description": "update ignored files (default)"
+    "description": "Create a new orphan branch, named <new-branch>. All tracked files are removed."
   },
   {
     "flags": "--ignore-other-worktrees",
-    "description": "do not check if another worktree is holding the given ref"
+    "description": "git switch refuses when the wanted ref is already checked out by another worktree. This option makes it check the ref out anyway. In other words, the ref can be held by more than one worktree."
+  },
+  {
+    "flags": "--recurse-submodules, --no-recurse-submodules",
+    "description": "Using --recurse-submodules will update the content of all active submodules according to the commit recorded in the superproject. If nothing (or --no-recurse-submodules) is used, submodules working trees will not be updated. Just like git-submodule(1), this will detach HEAD of the submodules."
   }
 ]

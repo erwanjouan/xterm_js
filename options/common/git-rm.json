@@ -1,38 +1,42 @@
 [
   {
-    "flags": "-n, --dry-run",
-    "description": "dry run"
-  },
-  {
-    "flags": "-q, --quiet",
-    "description": "do not list removed files"
-  },
-  {
-    "flags": "--cached",
-    "description": "only remove from the index"
-  },
-  {
     "flags": "-f, --force",
-    "description": "override the up-to-date check"
+    "description": "Override the up-to-date check."
+  },
+  {
+    "flags": "-n, --dry-run",
+    "description": "Don’t actually remove any file(s). Instead, just show if they exist in the index and would otherwise be removed by the command."
   },
   {
     "flags": "-r",
-    "description": "allow recursive removal"
+    "description": "Allow recursive removal when a leading directory name is given."
+  },
+  {
+    "flags": "--",
+    "description": "This option can be used to separate command-line options from the list of files, (useful when filenames might be mistaken for command-line options)."
+  },
+  {
+    "flags": "--cached",
+    "description": "Use this option to unstage and remove paths only from the index. Working tree files, whether modified or not, will be left alone."
   },
   {
     "flags": "--ignore-unmatch",
-    "description": "exit with a zero status even if nothing matched"
+    "description": "Exit with a zero status even if no files matched."
   },
   {
     "flags": "--sparse",
-    "description": "allow updating entries outside of the sparse-checkout cone"
+    "description": "Allow updating index entries outside of the sparse-checkout cone. Normally, git rm refuses to update index entries whose paths do not fit within the sparse-checkout cone. See git-sparse-checkout(1) for more."
   },
   {
-    "flags": "--pathspec-from-file <file>",
-    "description": "read pathspec from file"
+    "flags": "-q, --quiet",
+    "description": "git rm normally outputs one line (in the form of an rm command) for each file removed. This option suppresses that output."
+  },
+  {
+    "flags": "--pathspec-from-file=<file>",
+    "description": "Pathspec is passed in <file> instead of commandline args. If <file> is exactly - then standard input is used. Pathspec elements are separated by LF or CR/LF. Pathspec elements can be quoted as explained for the configuration variable core.quotePath (see git- config(1)). See also --pathspec-file-nul and global --literal-pathspecs."
   },
   {
     "flags": "--pathspec-file-nul",
-    "description": "with --pathspec-from-file, pathspec elements are separated with NUL character"
+    "description": "Only meaningful with --pathspec-from-file. Pathspec elements are separated with NUL character and all other characters are taken literally (including newlines and quotes)."
   }
 ]

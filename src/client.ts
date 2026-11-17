@@ -1,326 +1,389 @@
-import { Terminal } from '@xterm/xterm';
-import { FitAddon } from '@xterm/addon-fit';
+import {Terminal} from '@xterm/xterm';
+import {FitAddon} from '@xterm/addon-fit';
 import '@xterm/xterm/css/xterm.css';
+import Fuse from 'fuse.js';
 
 // ----- Command Palette -------------------------------------------------------
 type Suggestion =
-  | { kind: 'command'; label: string; symbol: string }
-  | { kind: 'link';    label: string; symbol: string; url: string };
+    | { kind: 'command'; label: string; symbol: string }
+    | { kind: 'link'; label: string; symbol: string; url: string };
 
 interface LauncherConfig {
-  commands: { label: string; symbol?: string }[];
-  links:    { label: string; url: string; symbol?: string }[];
+    commands: { label: string; symbol?: string }[];
+    links: { label: string; url: string; symbol?: string }[];
 }
 
 interface PaletteConfig {
-  launcher: LauncherConfig;
+    launcher: LauncherConfig;
 }
 
 async function loadSuggestions(): Promise<Suggestion[]> {
-  const res      = await fetch('/api/config');
-  const config   = await res.json() as PaletteConfig;
-  const launcher = config.launcher ?? { commands: [], links: [] };
-  const cmds: Suggestion[]  = launcher.commands.map(c => ({ kind: 'command', label: c.label, symbol: c.symbol ?? '$' }));
-  const links: Suggestion[] = launcher.links.map(l => ({ kind: 'link',    label: l.label, symbol: l.symbol ?? '↗', url: l.url }));
-  return [...cmds, ...links];
+    const res = await fetch('/api/config');
+    const config = await res.json() as PaletteConfig;
+    const launcher = config.launcher ?? {commands: [], links: []};
+    const cmds: Suggestion[] = launcher.commands.map(c => ({kind: 'command', label: c.label, symbol: c.symbol ?? '$'}));
+    const links: Suggestion[] = launcher.links.map(l => ({
+        kind: 'link',
+        label: l.label,
+        symbol: l.symbol ?? '↗',
+        url: l.url
+    }));
+    return [...cmds, ...links];
+}
+
+interface FilteredSuggestion {
+    s: Suggestion;
+    matchIndices: number[];
 }
 
 class CommandPalette {
-  private backdrop: HTMLElement;
-  private input: HTMLInputElement;
-  private list: HTMLElement;
-  private filtered: Suggestion[] = [];
-  private selectedIndex = 0;
-  private suggestions: Suggestion[] = [];
+    private backdrop: HTMLElement;
+    private input: HTMLInputElement;
+    private list: HTMLElement;
+    private filtered: FilteredSuggestion[] = [];
+    private selectedIndex = 0;
+    private suggestions: Suggestion[] = [];
+    private fuse: Fuse<Suggestion>;
 
-  constructor(private ws: WebSocket, private term: Terminal, suggestions: Suggestion[]) {
-    this.suggestions = suggestions;
-    this.backdrop = document.getElementById('cp-backdrop')!;
-    this.input    = document.getElementById('cp-input') as HTMLInputElement;
-    this.list     = document.getElementById('cp-list')!;
+    constructor(private ws: WebSocket, private term: Terminal, suggestions: Suggestion[]) {
+        this.suggestions = suggestions;
+        this.fuse = new Fuse(suggestions, {
+            keys: ['label'],
+            includeScore: true,
+            includeMatches: true,
+            threshold: 0.4,
+            ignoreLocation: true,
+            minMatchCharLength: 1,
+        });
+        this.backdrop = document.getElementById('cp-backdrop')!;
+        this.input = document.getElementById('cp-input') as HTMLInputElement;
+        this.list = document.getElementById('cp-list')!;
 
-    // Cmd+X (Mac) or Alt+X (Windows/Linux) — capture phase fires before xterm
-    document.addEventListener('keydown', (e) => {
-      if ((e.metaKey || e.altKey) && e.key === 'x') {
-        e.preventDefault();
-        this.open();
-      }
-    }, true);
+        // Cmd+X (Mac) or Alt+X (Windows/Linux) — capture phase fires before xterm
+        document.addEventListener('keydown', (e) => {
+            if ((e.metaKey || e.altKey) && (e.key === 'x' || e.key === 'X')) {
+                e.preventDefault();
+                this.open();
+            }
+        }, true);
 
-    this.backdrop.addEventListener('mousedown', (e) => {
-      if (e.target === this.backdrop) this.close();
-    });
+        this.backdrop.addEventListener('mousedown', (e) => {
+            if (e.target === this.backdrop) this.close();
+        });
 
-    this.input.addEventListener('input', () => this.updateFilter());
-    this.input.addEventListener('keydown', (e) => this.onKeydown(e));
-  }
+        this.input.addEventListener('input', () => this.updateFilter());
+        this.input.addEventListener('keydown', (e) => this.onKeydown(e));
+    }
 
-  private open() {
-    this.input.value   = '';
-    this.filtered      = [...this.suggestions];
-    this.selectedIndex = 0;
-    this.render();
-    this.backdrop.style.display = 'block';
-    this.input.focus();
-  }
-
-  private close() {
-    this.backdrop.style.display = 'none';
-    this.term.focus();
-  }
-
-  private updateFilter() {
-    const q   = this.input.value.toLowerCase();
-    this.filtered = q
-      ? this.suggestions.filter(s => s.label.toLowerCase().includes(q))
-      : [...this.suggestions];
-    this.selectedIndex = 0;
-    this.render();
-  }
-
-  private render() {
-    this.list.innerHTML = '';
-    this.filtered.slice(0, 10).forEach((s, i) => {
-      const li   = document.createElement('li');
-      if (i === this.selectedIndex) li.classList.add('cp-selected');
-
-      const icon = document.createElement('span');
-      icon.className   = s.kind === 'link' ? 'cp-icon cp-icon-link' : 'cp-icon cp-icon-cmd';
-      icon.textContent = s.symbol;
-
-      const text = document.createElement('span');
-      text.textContent = s.label;
-
-      li.append(icon, text);
-      li.addEventListener('mousedown', (e) => { e.preventDefault(); this.submit(s); });
-      this.list.appendChild(li);
-    });
-  }
-
-  private onKeydown(e: KeyboardEvent) {
-    const max = Math.min(this.filtered.length, 10) - 1;
-    switch (e.key) {
-      case 'ArrowDown':
-        e.preventDefault();
-        this.selectedIndex = Math.min(this.selectedIndex + 1, max);
+    private open() {
+        this.input.value = '';
+        this.filtered = this.suggestions.map(s => ({s, matchIndices: []}));
+        this.selectedIndex = 0;
         this.render();
-        break;
-      case 'ArrowUp':
-        e.preventDefault();
-        this.selectedIndex = Math.max(this.selectedIndex - 1, 0);
-        this.render();
-        break;
-      case 'Tab': {
-        e.preventDefault();
-        if (this.filtered.length === 0) break;
-        this.selectedIndex = e.shiftKey
-          ? Math.max(this.selectedIndex - 1, 0)
-          : Math.min(this.selectedIndex + 1, max);
-        const sel = this.filtered[this.selectedIndex];
-        if (sel) this.input.value = sel.label;
-        this.render();
-        break;
-      }
-      case 'Enter': {
-        e.preventDefault();
-        const s = this.filtered[this.selectedIndex];
-        if (s) {
-          this.submit(s);
-        } else if (this.input.value.trim()) {
-          this.submit({ kind: 'command', label: this.input.value.trim() });
+        this.backdrop.style.display = 'block';
+        this.input.focus();
+    }
+
+    private close() {
+        this.backdrop.style.display = 'none';
+        this.term.focus();
+    }
+
+    private updateFilter() {
+        const q = this.input.value;
+        if (!q) {
+            this.filtered = this.suggestions.map(s => ({s, matchIndices: []}));
+        } else {
+            this.filtered = this.fuse.search(q).map(r => {
+                const pairs = r.matches?.find(m => m.key === 'label')?.indices ?? [];
+                const matchIndices: number[] = [];
+                for (const [start, end] of pairs) {
+                    for (let i = start; i <= end; i++) matchIndices.push(i);
+                }
+                return {s: r.item, matchIndices};
+            });
         }
-        break;
-      }
-      case 'Escape':
-        this.close();
-        break;
+        this.selectedIndex = 0;
+        this.render();
     }
-  }
 
-  private submit(s: Suggestion) {
-    if (s.kind === 'link') {
-      window.open(s.url, '_blank', 'noopener,noreferrer');
-    } else {
-      if (this.ws.readyState === WebSocket.OPEN) {
-        this.ws.send(JSON.stringify({ type: 'command', name: s.label }));
-      }
+    private render() {
+        this.list.innerHTML = '';
+        this.filtered.slice(0, 10).forEach(({s, matchIndices}, i) => {
+            const li = document.createElement('li');
+            if (i === this.selectedIndex) li.classList.add('cp-selected');
+
+            const icon = document.createElement('span');
+            icon.className = s.kind === 'link' ? 'cp-icon cp-icon-link' : 'cp-icon cp-icon-cmd';
+            icon.textContent = s.symbol;
+
+            const text = document.createElement('span');
+            if (matchIndices.length > 0) {
+                const hit = new Set(matchIndices);
+                for (let ci = 0; ci < s.label.length; ci++) {
+                    const ch = s.label[ci];
+                    if (hit.has(ci)) {
+                        const mark = document.createElement('mark');
+                        mark.textContent = ch;
+                        text.appendChild(mark);
+                    } else {
+                        text.appendChild(document.createTextNode(ch));
+                    }
+                }
+            } else {
+                text.textContent = s.label;
+            }
+
+            li.append(icon, text);
+            li.addEventListener('mousedown', (e) => {
+                e.preventDefault();
+                this.submit(s);
+            });
+            this.list.appendChild(li);
+        });
     }
-    this.close();
-  }
+
+    private onKeydown(e: KeyboardEvent) {
+        const max = Math.min(this.filtered.length, 10) - 1;
+        switch (e.key) {
+            case 'ArrowDown':
+                e.preventDefault();
+                this.selectedIndex = Math.min(this.selectedIndex + 1, max);
+                this.render();
+                break;
+            case 'ArrowUp':
+                e.preventDefault();
+                this.selectedIndex = Math.max(this.selectedIndex - 1, 0);
+                this.render();
+                break;
+            case 'Tab': {
+                e.preventDefault();
+                if (this.filtered.length === 0) break;
+                this.selectedIndex = e.shiftKey
+                    ? Math.max(this.selectedIndex - 1, 0)
+                    : Math.min(this.selectedIndex + 1, max);
+                const sel = this.filtered[this.selectedIndex];
+                if (sel) this.input.value = sel.s.label;
+                this.render();
+                break;
+            }
+            case 'Enter': {
+                e.preventDefault();
+                const r = this.filtered[this.selectedIndex];
+                if (r) {
+                    this.submit(r.s);
+                } else if (this.input.value.trim()) {
+                    this.submit({kind: 'command', label: this.input.value.trim(), symbol: '$'});
+                }
+                break;
+            }
+            case 'Escape':
+                this.close();
+                break;
+        }
+    }
+
+    private submit(s: Suggestion) {
+        if (s.kind === 'link') {
+            window.open(s.url, '_blank', 'noopener,noreferrer');
+        } else {
+            if (this.ws.readyState === WebSocket.OPEN) {
+                this.ws.send(JSON.stringify({type: 'command', name: s.label}));
+            }
+        }
+        this.close();
+    }
 }
+
 // ----- Options overlay -------------------------------------------------------
-interface CommandOption { flags: string; description: string; }
+interface CommandOption {
+    flags: string;
+    description: string;
+}
 
 class InputTracker {
-  private line = '';
-  private cursor = 0;
+    private line = '';
+    private cursor = 0;
 
-  feed(data: string): string {
-    if (data.startsWith('\x1b')) {
-      if (data === '\x1b[C') this.cursor = Math.min(this.cursor + 1, this.line.length);
-      else if (data === '\x1b[D') this.cursor = Math.max(this.cursor - 1, 0);
-      else if (data === '\x1b[H') this.cursor = 0;
-      else if (data === '\x1b[F') this.cursor = this.line.length;
-      else if (data === '\x1b[3~') {
-        this.line = this.line.slice(0, this.cursor) + this.line.slice(this.cursor + 1);
-      }
-      return this.line;
+    feed(data: string): string {
+        if (data.startsWith('\x1b')) {
+            if (data === '\x1b[C') this.cursor = Math.min(this.cursor + 1, this.line.length);
+            else if (data === '\x1b[D') this.cursor = Math.max(this.cursor - 1, 0);
+            else if (data === '\x1b[H') this.cursor = 0;
+            else if (data === '\x1b[F') this.cursor = this.line.length;
+            else if (data === '\x1b[3~') {
+                this.line = this.line.slice(0, this.cursor) + this.line.slice(this.cursor + 1);
+            }
+            return this.line;
+        }
+        for (const ch of data) {
+            const code = ch.charCodeAt(0);
+            if (ch === '\r' || ch === '\x03') {
+                this.line = '';
+                this.cursor = 0;
+            } else if (ch === '\x7f') {
+                if (this.cursor > 0) {
+                    this.line = this.line.slice(0, this.cursor - 1) + this.line.slice(this.cursor);
+                    this.cursor--;
+                }
+            } else if (code >= 32) {
+                this.line = this.line.slice(0, this.cursor) + ch + this.line.slice(this.cursor);
+                this.cursor++;
+            }
+        }
+        return this.line;
     }
-    for (const ch of data) {
-      const code = ch.charCodeAt(0);
-      if (ch === '\r' || ch === '\x03') {
+
+    reset() {
         this.line = '';
         this.cursor = 0;
-      } else if (ch === '\x7f') {
-        if (this.cursor > 0) {
-          this.line = this.line.slice(0, this.cursor - 1) + this.line.slice(this.cursor);
-          this.cursor--;
-        }
-      } else if (code >= 32) {
-        this.line = this.line.slice(0, this.cursor) + ch + this.line.slice(this.cursor);
-        this.cursor++;
-      }
     }
-    return this.line;
-  }
-
-  reset() { this.line = ''; this.cursor = 0; }
 }
 
 function parseInput(line: string): { cmd: string | null; filterText: string } {
-  // After a pipe, analyse only the last pipeline segment
-  const pipeIdx = line.lastIndexOf('|');
-  const raw = (pipeIdx === -1 ? line : line.slice(pipeIdx + 1)).trimStart();
-  if (!raw) return { cmd: null, filterText: '' };
+    // After a pipe, analyse only the last pipeline segment
+    const pipeIdx = line.lastIndexOf('|');
+    const raw = (pipeIdx === -1 ? line : line.slice(pipeIdx + 1)).trimStart();
+    if (!raw) return {cmd: null, filterText: ''};
 
-  const tokens = raw.split(/\s+/);
-  const first = tokens[0] ?? '';
-  if (!first) return { cmd: null, filterText: '' };
+    const tokens = raw.split(/\s+/);
+    const first = tokens[0] ?? '';
+    if (!first) return {cmd: null, filterText: ''};
 
-  const trailingSpace = raw.endsWith(' ');
-  const second = tokens[1] ?? '';
-  const third = tokens[2] ?? '';
+    const trailingSpace = raw.endsWith(' ');
+    const second = tokens[1] ?? '';
+    const third = tokens[2] ?? '';
 
-  // "cmd word [...]" where word is not a flag → subcommand pattern
-  if (second && !second.startsWith('-')) {
-    // 3-level: "cmd sub1 sub2 [flags...]" — e.g. "ng generate component --flag"
-    if (third && !third.startsWith('-')) {
-      if (trailingSpace || tokens.length > 3) {
-        const tripleKey = `${first}-${second}-${third}`;
-        const last = tokens[tokens.length - 1] ?? '';
-        return { cmd: tripleKey, filterText: !trailingSpace && last.startsWith('-') ? last : '' };
-      }
-      // Still completing third token: filter sub1 results by prefix
-      return { cmd: `${first}-${second}`, filterText: third };
+    // "cmd word [...]" where word is not a flag → subcommand pattern
+    if (second && !second.startsWith('-')) {
+        // 3-level: "cmd sub1 sub2 [flags...]" — e.g. "ng generate component --flag"
+        if (third && !third.startsWith('-')) {
+            if (trailingSpace || tokens.length > 3) {
+                const tripleKey = `${first}-${second}-${third}`;
+                const last = tokens[tokens.length - 1] ?? '';
+                return {cmd: tripleKey, filterText: !trailingSpace && last.startsWith('-') ? last : ''};
+            }
+            // Still completing third token: filter sub1 results by prefix
+            return {cmd: `${first}-${second}`, filterText: third};
+        }
+
+        // 2-level: subcommand is locked in once there's a trailing space or further tokens
+        if (trailingSpace || tokens.length > 2) {
+            const compoundKey = `${first}-${second}`;
+            const last = tokens[tokens.length - 1] ?? '';
+            return {cmd: compoundKey, filterText: !trailingSpace && last.startsWith('-') ? last : ''};
+        }
+        // still completing the subcommand name: show parent options filtered by prefix
+        return {cmd: first, filterText: second};
     }
 
-    // 2-level: subcommand is locked in once there's a trailing space or further tokens
-    if (trailingSpace || tokens.length > 2) {
-      const compoundKey = `${first}-${second}`;
-      const last = tokens[tokens.length - 1] ?? '';
-      return { cmd: compoundKey, filterText: !trailingSpace && last.startsWith('-') ? last : '' };
-    }
-    // still completing the subcommand name: show parent options filtered by prefix
-    return { cmd: first, filterText: second };
-  }
-
-  // Single command + optional flags
-  const last = tokens[tokens.length - 1] ?? '';
-  const hasArgs = tokens.length > 1 || trailingSpace;
-  return { cmd: first, filterText: hasArgs && last.startsWith('-') ? last : '' };
+    // Single command + optional flags
+    const last = tokens[tokens.length - 1] ?? '';
+    const hasArgs = tokens.length > 1 || trailingSpace;
+    return {cmd: first, filterText: hasArgs && last.startsWith('-') ? last : ''};
 }
 
 function optionMatchesFlag(opt: CommandOption, filterText: string): boolean {
-  if (!filterText || filterText === '-') return true;
-  if (filterText.startsWith('-')) {
-    if (filterText.startsWith('--')) return opt.flags.includes(filterText);
-    return filterText.slice(1).split('').some(c =>
-      new RegExp(`(?:^|[ ,])-${c}(?:$|[ ,=\\[])`).test(opt.flags)
-    );
-  }
-  // Subcommand prefix match
-  return opt.flags.toLowerCase().startsWith(filterText.toLowerCase());
+    if (!filterText || filterText === '-') return true;
+    if (filterText.startsWith('-')) {
+        if (filterText.startsWith('--')) return opt.flags.includes(filterText);
+        return filterText.slice(1).split('').some(c =>
+            new RegExp(`(?:^|[ ,])-${c}(?:$|[ ,=\\[])`).test(opt.flags)
+        );
+    }
+    // Subcommand prefix match
+    return opt.flags.toLowerCase().startsWith(filterText.toLowerCase());
 }
 
 class OptionsOverlay {
-  private panel: HTMLElement;
-  private titleEl: HTMLElement;
-  private listEl: HTMLElement;
-  private cache = new Map<string, CommandOption[]>();
-  private generation = 0;
+    private panel: HTMLElement;
+    private titleEl: HTMLElement;
+    private listEl: HTMLElement;
+    private cache = new Map<string, CommandOption[]>();
+    private generation = 0;
 
-  constructor() {
-    this.panel   = document.getElementById('opt-panel')!;
-    this.titleEl = document.getElementById('opt-title')!;
-    this.listEl  = document.getElementById('opt-list')!;
-    // Prevent clicks on the panel from stealing focus away from the terminal.
-    // Wheel events are unaffected so the list stays scrollable.
-    this.panel.addEventListener('mousedown', e => e.preventDefault());
-  }
-
-  async update(cmd: string | null, flagText: string) {
-    if (!cmd) { this.hide(); return; }
-
-    const gen = ++this.generation;
-
-    if (!this.cache.has(cmd)) {
-      const res = await fetch(`/api/options/${cmd}`);
-      if (gen !== this.generation) return;
-      this.cache.set(cmd, await res.json() as CommandOption[]);
+    constructor() {
+        this.panel = document.getElementById('opt-panel')!;
+        this.titleEl = document.getElementById('opt-title')!;
+        this.listEl = document.getElementById('opt-list')!;
+        // Prevent clicks on the panel from stealing focus away from the terminal.
+        // Wheel events are unaffected so the list stays scrollable.
+        this.panel.addEventListener('mousedown', e => e.preventDefault());
     }
 
-    if (gen !== this.generation) return;
-    const opts = this.cache.get(cmd)!;
-    if (!opts.length) { this.hide(); return; }
+    async update(cmd: string | null, flagText: string) {
+        if (!cmd) {
+            this.hide();
+            return;
+        }
 
-    this.titleEl.textContent = cmd;
-    this.renderList(opts, flagText);
-    this.panel.style.display = 'flex';
-  }
+        const gen = ++this.generation;
 
-  hide() { this.panel.style.display = 'none'; this.generation++; }
+        if (!this.cache.has(cmd)) {
+            const res = await fetch(`/api/options/${cmd}`);
+            if (gen !== this.generation) return;
+            this.cache.set(cmd, await res.json() as CommandOption[]);
+        }
 
-  private renderList(opts: CommandOption[], flagText: string) {
-    this.listEl.innerHTML = '';
+        if (gen !== this.generation) return;
+        const opts = this.cache.get(cmd)!;
+        if (!opts.length) {
+            this.hide();
+            return;
+        }
 
-    // When a flag is typed, show only matching options (with full description).
-    // Otherwise show all options in compact single-line form.
-    const matches = flagText ? opts.filter(o => optionMatchesFlag(o, flagText)) : [];
-    const toShow  = matches.length > 0 ? matches : opts;
-    const matched = matches.length > 0;
-
-    toShow.forEach(opt => {
-      const row = document.createElement('div');
-      row.className = 'opt-row' + (matched ? ' opt-row-match' : '');
-
-      const flagSpan = document.createElement('span');
-      flagSpan.className   = 'opt-flag';
-      flagSpan.textContent = opt.flags;
-
-      const descSpan = document.createElement('span');
-      descSpan.className   = 'opt-desc';
-      descSpan.textContent = opt.description;
-
-      row.append(flagSpan, descSpan);
-      this.listEl.appendChild(row);
-    });
-
-    // Scroll first entry into view when switching to filtered mode
-    if (matched) {
-      (this.listEl.firstElementChild as HTMLElement | null)?.scrollIntoView({ block: 'nearest' });
+        this.titleEl.textContent = cmd;
+        this.renderList(opts, flagText);
+        this.panel.style.display = 'flex';
     }
-  }
+
+    hide() {
+        this.panel.style.display = 'none';
+        this.generation++;
+    }
+
+    private renderList(opts: CommandOption[], flagText: string) {
+        this.listEl.innerHTML = '';
+
+        // When a flag is typed, show only matching options (with full description).
+        // Otherwise show all options in compact single-line form.
+        const matches = flagText ? opts.filter(o => optionMatchesFlag(o, flagText)) : [];
+        const toShow = matches.length > 0 ? matches : opts;
+        const matched = matches.length > 0;
+
+        toShow.forEach(opt => {
+            const row = document.createElement('div');
+            row.className = 'opt-row' + (matched ? ' opt-row-match' : '');
+
+            const flagSpan = document.createElement('span');
+            flagSpan.className = 'opt-flag';
+            flagSpan.textContent = opt.flags;
+
+            const descSpan = document.createElement('span');
+            descSpan.className = 'opt-desc';
+            descSpan.textContent = opt.description;
+
+            row.append(flagSpan, descSpan);
+            this.listEl.appendChild(row);
+        });
+
+        // Scroll first entry into view when switching to filtered mode
+        if (matched) {
+            (this.listEl.firstElementChild as HTMLElement | null)?.scrollIntoView({block: 'nearest'});
+        }
+    }
 }
+
 // -----------------------------------------------------------------------------
 
 const terminal = new Terminal({
-  cursorBlink: true,
-  fontFamily: 'Menlo, Monaco, "Courier New", monospace',
-  fontSize: 14,
-  theme: {
-    background: '#1e1e1e',
-    foreground: '#d4d4d4',
-  },
+    cursorBlink: true,
+    fontFamily: 'Menlo, Monaco, "Courier New", monospace',
+    fontSize: 14,
+    theme: {
+        background: '#1e1e1e',
+        foreground: '#d4d4d4',
+    },
 });
 
 const fitAddon = new FitAddon();
@@ -336,47 +399,47 @@ const inputTracker = new InputTracker();
 const optionsOverlay = new OptionsOverlay();
 
 ws.addEventListener('open', () => {
-  terminal.focus();
-  const { cols, rows } = terminal;
-  ws.send(JSON.stringify({ type: 'resize', cols, rows }));
+    terminal.focus();
+    const {cols, rows} = terminal;
+    ws.send(JSON.stringify({type: 'resize', cols, rows}));
 });
 
 function formatBytes(n: number): string {
-  return (n / (1024 ** 3)).toFixed(1) + ' GB';
+    return (n / (1024 ** 3)).toFixed(1) + ' GB';
 }
 
-const cpuEl  = document.getElementById('stats-cpu')!;
-const memEl  = document.getElementById('stats-mem')!;
+const cpuEl = document.getElementById('stats-cpu')!;
+const memEl = document.getElementById('stats-mem')!;
 
 ws.addEventListener('message', (event) => {
-  const msg = JSON.parse(event.data as string);
-  if (msg.type === 'output') {
-    terminal.write(msg.data as string);
-  } else if (msg.type === 'stats') {
-    cpuEl.textContent = `CPU ${msg.cpu}%`;
-    memEl.textContent = `${formatBytes(msg.memUsed)} / ${formatBytes(msg.memTotal)}`;
-  }
+    const msg = JSON.parse(event.data as string);
+    if (msg.type === 'output') {
+        terminal.write(msg.data as string);
+    } else if (msg.type === 'stats') {
+        cpuEl.textContent = `CPU ${msg.cpu}%`;
+        memEl.textContent = `${formatBytes(msg.memUsed)} / ${formatBytes(msg.memTotal)}`;
+    }
 });
 
 ws.addEventListener('close', () => {
-  terminal.write('\r\n\x1b[31mConnection closed.\x1b[0m\r\n');
+    terminal.write('\r\n\x1b[31mConnection closed.\x1b[0m\r\n');
 });
 
 terminal.onData((data) => {
-  if (ws.readyState === WebSocket.OPEN) {
-    ws.send(JSON.stringify({ type: 'input', data }));
-  }
-  const line = inputTracker.feed(data);
-  const { cmd, filterText } = parseInput(line);
-  optionsOverlay.update(cmd, filterText);
+    if (ws.readyState === WebSocket.OPEN) {
+        ws.send(JSON.stringify({type: 'input', data}));
+    }
+    const line = inputTracker.feed(data);
+    const {cmd, filterText} = parseInput(line);
+    optionsOverlay.update(cmd, filterText);
 });
 
-terminal.onResize(({ cols, rows }) => {
-  if (ws.readyState === WebSocket.OPEN) {
-    ws.send(JSON.stringify({ type: 'resize', cols, rows }));
-  }
+terminal.onResize(({cols, rows}) => {
+    if (ws.readyState === WebSocket.OPEN) {
+        ws.send(JSON.stringify({type: 'resize', cols, rows}));
+    }
 });
 
 window.addEventListener('resize', () => {
-  fitAddon.fit();
+    fitAddon.fit();
 });
